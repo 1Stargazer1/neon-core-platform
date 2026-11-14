@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Calculate data transferred, transfer duration, or required speed using decimal and binary units.">
+    <title>Data Transfer Calculator | NEON//CORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/data-transfer-calculator.js" defer></script>
+  </head>
+  <body data-tool-id="data-transfer">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> TECHNOLOGY / TOOL 06</p>
+          <h1>Data transfer <span class="accent-text">calculator.</span></h1>
+          <p>Find the transferred amount, transfer time, or speed you need.</p>
+        </header>
+
+        <div class="utility-layout">
+          <section class="surface-panel utility-panel" aria-labelledby="transfer-settings-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">TRANSFER INPUT</span>
+              <span class="utility-index">NC / 06</span>
+            </div>
+            <h2 id="transfer-settings-title">Choose a calculation.</h2>
+
+            <form class="utility-form" id="transfer-form" novalidate>
+              <fieldset class="standard-fieldset">
+                <legend>Calculation mode</legend>
+                <div class="standard-options transfer-mode-options">
+                  <label class="standard-option">
+                    <input type="radio" name="transfer-mode" value="data" checked>
+                    <span><strong>Data transferred</strong><small>Speed + duration</small></span>
+                  </label>
+                  <label class="standard-option">
+                    <input type="radio" name="transfer-mode" value="duration">
+                    <span><strong>Transfer duration</strong><small>Data + speed</small></span>
+                  </label>
+                  <label class="standard-option">
+                    <input type="radio" name="transfer-mode" value="speed">
+                    <span><strong>Required speed</strong><small>Data + duration</small></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="mode-inputs" id="data-mode-inputs">
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="data-speed">Transfer speed</label>
+                    <input class="form-control" id="data-speed" type="number" min="0" step="any" value="100" inputmode="decimal" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="data-speed-unit">Speed unit</label>
+                    <select class="form-control" id="data-speed-unit">
+                      <option value="kbps">Kbps</option>
+                      <option value="mbps" selected>Mbps</option>
+                      <option value="gbps">Gbps</option>
+                      <option value="kBps">KB/s</option>
+                      <option value="MBps">MB/s</option>
+                      <option value="GBps">GB/s</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="data-duration">Duration</label>
+                    <input class="form-control" id="data-duration" type="number" min="0" step="any" value="60" inputmode="decimal" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="data-time-unit">Time unit</label>
+                    <select class="form-control" id="data-time-unit">
+                      <option value="1">Seconds</option>
+                      <option value="60" selected>Minutes</option>
+                      <option value="3600">Hours</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="data-result-unit">Show data in</label>
+                  <select class="form-control" id="data-result-unit">
+                    <option value="B">Bytes (B)</option>
+                    <option value="KB">Kilobytes (KB)</option>
+                    <option value="MB">Megabytes (MB)</option>
+                    <option value="GB" selected>Gigabytes (GB)</option>
+                    <option value="TB">Terabytes (TB)</option>
+                    <option value="KiB">Kibibytes (KiB)</option>
+                    <option value="MiB">Mebibytes (MiB)</option>
+                    <option value="GiB">Gibibytes (GiB)</option>
+                    <option value="TiB">Tebibytes (TiB)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="mode-inputs" id="duration-mode-inputs" hidden>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="duration-data">Data amount</label>
+                    <input class="form-control" id="duration-data" type="number" min="0" step="any" value="1" inputmode="decimal" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="duration-data-unit">Data unit</label>
+                    <select class="form-control" id="duration-data-unit">
+                      <option value="B">Bytes (B)</option>
+                      <option value="KB">Kilobytes (KB)</option>
+                      <option value="MB">Megabytes (MB)</option>
+                      <option value="GB" selected>Gigabytes (GB)</option>
+                      <option value="TB">Terabytes (TB)</option>
+                      <option value="KiB">Kibibytes (KiB)</option>
+                      <option value="MiB">Mebibytes (MiB)</option>
+                      <option value="GiB">Gibibytes (GiB)</option>
+                      <option value="TiB">Tebibytes (TiB)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="duration-speed">Transfer speed</label>
+                    <input class="form-control" id="duration-speed" type="number" min="0" step="any" value="100" inputmode="decimal" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="duration-speed-unit">Speed unit</label>
+                    <select class="form-control" id="duration-speed-unit">
+                      <option value="kbps">Kbps</option>
+                      <option value="mbps" selected>Mbps</option>
+                      <option value="gbps">Gbps</option>
+                      <option value="kBps">KB/s</option>
+                      <option value="MBps">MB/s</option>
+                      <option value="GBps">GB/s</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="duration-result-unit">Show duration in</label>
+                  <select class="form-control" id="duration-result-unit">
+                    <option value="1" selected>Seconds</option>
+                    <option value="60">Minutes</option>
+                    <option value="3600">Hours</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="mode-inputs" id="speed-mode-inputs" hidden>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="speed-data">Data amount</label>
+                    <input class="form-control" id="speed-data" type="number" min="0" step="any" value="1" inputmode="decimal" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="speed-data-unit">Data unit</label>
+                    <select class="form-control" id="speed-data-unit">
+                      <option value="B">Bytes (B)</option>
+                      <option value="KB">Kilobytes (KB)</option>
+                      <option value="MB">Megabytes (MB)</option>
+                      <option value="GB" selected>Gigabytes (GB)</option>
+                      <option value="TB">Terabytes (TB)</option>
+                      <option value="KiB">Kibibytes (KiB)</option>
+                      <option value="MiB">Mebibytes (MiB)</option>
+                      <option value="GiB">Gibibytes (GiB)</option>
+                      <option value="TiB">Tebibytes (TiB)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="required-duration">Available duration</label>
+                    <input class="form-control" id="required-duration" type="number" min="0" step="any" value="60" inputmode="decimal" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="required-time-unit">Time unit</label>
+                    <select class="form-control" id="required-time-unit">
+                      <option value="1">Seconds</option>
+                      <option value="60" selected>Minutes</option>
+                      <option value="3600">Hours</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="required-speed-unit">Show speed in</label>
+                  <select class="form-control" id="required-speed-unit">
+                    <option value="kbps">Kbps</option>
+                    <option value="mbps" selected>Mbps</option>
+                    <option value="gbps">Gbps</option>
+                    <option value="kBps">KB/s</option>
+                    <option value="MBps">MB/s</option>
+                    <option value="GBps">GB/s</option>
+                  </select>
+                </div>
+              </div>
+
+              <p class="input-error" id="transfer-error" role="alert" hidden></p>
+            </form>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel" aria-labelledby="transfer-result-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">CALCULATED OUTPUT</span>
+              <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> LIVE</span>
+            </div>
+            <h2 id="transfer-result-title">Data transferred.</h2>
+            <p class="result-equation" id="transfer-equation">100 Mbps × 60 minutes</p>
+            <output class="result-value" id="transfer-result" aria-live="polite">45 GB</output>
+            <p class="result-caption" id="transfer-caption">Estimated data transferred at a steady rate.</p>
+            <div class="calculation-note">
+              <p class="mono-label">BITS / BYTES / UNITS</p>
+              <p>Speed units ending in b/s are bits per second; units ending in B/s are bytes per second. Eight bits equal one byte. K/M/G/T units use powers of 1,000; Ki/Mi/Gi/Ti units use powers of 1,024.</p>
+              <p class="unit-example" id="transfer-formula">Data = speed in bytes/second × duration in seconds</p>
+            </div>
+          </section>
+        </div>
+        <p class="tool-footnote">This is an ideal estimate; protocol overhead and speed variation are not included.</p>
+      </div>
+    </main>
+  </body>
+</html>

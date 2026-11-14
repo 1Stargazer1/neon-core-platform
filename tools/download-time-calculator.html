@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Estimate a file download time using megabits per second or megabytes per second.">
+    <title>Download Time Calculator | NEON//CORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/download-time-calculator.js" defer></script>
+  </head>
+  <body data-tool-id="download-time-calculator">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> TECHNOLOGY / TOOL 05</p>
+          <h1>Download time <span class="accent-text">calculator.</span></h1>
+          <p>Estimate how long a file transfer may take at your connection speed.</p>
+        </header>
+
+        <div class="utility-layout">
+          <section class="surface-panel utility-panel" aria-labelledby="download-settings-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">TRANSFER INPUT</span>
+              <span class="utility-index">NC / 05</span>
+            </div>
+            <h2 id="download-settings-title">Enter transfer details.</h2>
+
+            <form class="utility-form" id="download-form" novalidate>
+              <div class="unit-fields">
+                <div class="form-field">
+                  <label for="file-size">File size</label>
+                  <input class="form-control" id="file-size" type="number" min="0" step="any" value="1" inputmode="decimal" required>
+                </div>
+                <div class="form-field">
+                  <label for="file-unit">Size unit</label>
+                  <select class="form-control" id="file-unit">
+                    <option value="0">Bytes (B)</option>
+                    <option value="1">KB</option>
+                    <option value="2">MB</option>
+                    <option value="3" selected>GB</option>
+                    <option value="4">TB</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="unit-fields">
+                <div class="form-field">
+                  <label for="download-speed">Download speed</label>
+                  <input class="form-control" id="download-speed" type="number" min="0" step="any" value="100" inputmode="decimal" required>
+                </div>
+                <div class="form-field">
+                  <label for="speed-unit">Speed unit</label>
+                  <select class="form-control" id="speed-unit">
+                    <option value="mbps" selected>Mbps</option>
+                    <option value="mb-per-second">MB/s</option>
+                  </select>
+                </div>
+              </div>
+
+              <p class="input-error" id="download-error" role="alert" hidden></p>
+            </form>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel" aria-labelledby="download-result-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">TIME ESTIMATE</span>
+              <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> LIVE</span>
+            </div>
+            <h2 id="download-result-title">Estimated duration.</h2>
+            <p class="result-equation" id="download-equation">1 GB at 100 Mbps</p>
+            <output class="result-value" id="download-result" for="file-size download-speed file-unit speed-unit" aria-live="polite">1 minute 20 seconds</output>
+            <p class="result-caption" id="download-caption">A practical estimate assumes a steady connection and excludes network overhead.</p>
+            <div class="calculation-note">
+              <p class="mono-label">BITS ARE NOT BYTES</p>
+              <p>Mbps means megabits per second. MB/s means megabytes per second. One byte contains 8 bits, so 100 Mbps transfers at up to 12.5 MB/s.</p>
+              <p class="unit-example">Time = file size in bytes ÷ speed in bytes per second</p>
+            </div>
+          </section>
+        </div>
+        <p class="tool-footnote">Calculations happen in your browser. No data is sent anywhere.</p>
+      </div>
+    </main>
+  </body>
+</html>

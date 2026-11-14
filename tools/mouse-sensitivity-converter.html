@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Calculate eDPI, convert sensitivity between verified FPS game yaw scales, or estimate cm/360.">
+    <title>Mouse Sensitivity Converter | NEON//CORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/mouse-sensitivity-converter.js" defer></script>
+  </head>
+  <body data-tool-id="mouse-sensitivity">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> GAMING / TOOL 01</p>
+          <h1>Mouse sensitivity <span class="accent-text">converter.</span></h1>
+          <p>Compare same-game eDPI, convert verified yaw-based game scales, or estimate physical cm/360.</p>
+        </header>
+
+        <div class="utility-layout">
+          <section class="surface-panel utility-panel" aria-labelledby="sensitivity-settings-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">AIM SETTINGS</span>
+              <span class="utility-index">NC / 01</span>
+            </div>
+            <h2 id="sensitivity-settings-title">Choose a calculation.</h2>
+
+            <form class="utility-form" id="sensitivity-form" novalidate>
+              <fieldset class="standard-fieldset">
+                <legend>Calculation mode</legend>
+                <div class="standard-options transfer-mode-options">
+                  <label class="standard-option">
+                    <input type="radio" name="sensitivity-mode" value="edpi" checked>
+                    <span><strong>eDPI</strong><small>Within one game's scale</small></span>
+                  </label>
+                  <label class="standard-option">
+                    <input type="radio" name="sensitivity-mode" value="convert">
+                    <span><strong>Sensitivity converter</strong><small>Verified yaw values only</small></span>
+                  </label>
+                  <label class="standard-option">
+                    <input type="radio" name="sensitivity-mode" value="cm360">
+                    <span><strong>cm/360</strong><small>Physical mouse distance</small></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="mode-inputs" id="edpi-mode-inputs">
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="edpi-dpi">Mouse DPI</label>
+                    <input class="form-control" id="edpi-dpi" type="number" min="1" step="any" value="800" inputmode="decimal" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="edpi-sensitivity">In-game sensitivity</label>
+                    <input class="form-control" id="edpi-sensitivity" type="number" min="0" step="any" value="1" inputmode="decimal" required>
+                  </div>
+                </div>
+                <p class="field-help">eDPI is useful for comparing settings within the same game. Different games use different sensitivity scales.</p>
+              </div>
+
+              <div class="mode-inputs" id="convert-mode-inputs" hidden>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="source-game">Source game</label>
+                    <select class="form-control" id="source-game">
+                      <option value="cs2">Counter-Strike 2</option>
+                      <option value="overwatch">Overwatch</option>
+                      <option value="custom">Custom yaw</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label for="target-game">Destination game</label>
+                    <select class="form-control" id="target-game">
+                      <option value="cs2">Counter-Strike 2</option>
+                      <option value="overwatch" selected>Overwatch</option>
+                      <option value="custom">Custom yaw</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="source-dpi">Current mouse DPI</label>
+                    <input class="form-control" id="source-dpi" type="number" min="1" step="any" value="800" inputmode="decimal" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="source-sensitivity">Current sensitivity</label>
+                    <input class="form-control" id="source-sensitivity" type="number" min="0" step="any" value="1" inputmode="decimal" required>
+                  </div>
+                </div>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="target-dpi">Destination mouse DPI</label>
+                    <input class="form-control" id="target-dpi" type="number" min="1" step="any" value="800" inputmode="decimal" required>
+                  </div>
+                  <div class="form-field" id="source-yaw-field" hidden>
+                    <label for="source-yaw">Source yaw (degrees/count)</label>
+                    <input class="form-control" id="source-yaw" type="number" min="0" step="any" value="0.022" inputmode="decimal">
+                  </div>
+                  <div class="form-field" id="target-yaw-field" hidden>
+                    <label for="target-yaw">Destination yaw (degrees/count)</label>
+                    <input class="form-control" id="target-yaw" type="number" min="0" step="any" value="0.0066" inputmode="decimal">
+                  </div>
+                </div>
+                <p class="field-help" id="game-data-note">CS2 uses the documented Source-family default yaw (0.022); Overwatch uses a published yaw value (0.0066). Updates or custom configs may differ.</p>
+              </div>
+
+              <div class="mode-inputs" id="cm360-mode-inputs" hidden>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="cm360-game">Game yaw preset</label>
+                    <select class="form-control" id="cm360-game">
+                      <option value="cs2">Counter-Strike 2</option>
+                      <option value="overwatch">Overwatch</option>
+                      <option value="custom">Custom yaw</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label for="cm360-dpi">Mouse DPI</label>
+                    <input class="form-control" id="cm360-dpi" type="number" min="1" step="any" value="800" inputmode="decimal" required>
+                  </div>
+                </div>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="cm360-sensitivity">In-game sensitivity</label>
+                    <input class="form-control" id="cm360-sensitivity" type="number" min="0" step="any" value="1" inputmode="decimal" required>
+                  </div>
+                  <div class="form-field" id="cm360-yaw-field" hidden>
+                    <label for="cm360-yaw">Yaw (degrees/count)</label>
+                    <input class="form-control" id="cm360-yaw" type="number" min="0" step="any" value="0.022" inputmode="decimal">
+                  </div>
+                </div>
+                <p class="field-help">The cm/360 estimate depends on the selected game's yaw value. Custom games need a verified yaw.</p>
+              </div>
+
+              <p class="input-error" id="sensitivity-error" role="alert" hidden></p>
+            </form>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel" aria-labelledby="sensitivity-result-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">AIM READOUT</span>
+              <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> LIVE</span>
+            </div>
+            <h2 id="sensitivity-result-title">Effective sensitivity.</h2>
+            <p class="result-equation" id="sensitivity-equation">800 DPI × 1 sensitivity</p>
+            <output class="result-value" id="sensitivity-result" aria-live="polite">800 eDPI</output>
+            <p class="result-caption" id="sensitivity-caption">eDPI = mouse DPI × in-game sensitivity. Compare eDPI within the same game's scale only.</p>
+            <div class="calculation-note">
+              <p class="mono-label">HOW TO USE IT</p>
+              <p>Use eDPI to compare settings in the same game. Use the converter only with listed yaw presets or a verified custom yaw. cm/360 estimates how far the mouse moves for one full turn.</p>
+              <p class="unit-example" id="sensitivity-example">Example: 800 DPI × 1 sensitivity = 800 eDPI</p>
+            </div>
+            <p class="source-note">Yaw reference: <a href="https://www.kovaak.com/sensitivity-matcher/" target="_blank" rel="noopener noreferrer">KovaaK's Sensitivity Matcher theory</a> documents the Source-family default (0.022) and Overwatch (0.0066). Presets are baselines, not guarantees for modified configs or every game version.</p>
+          </section>
+        </div>
+        <p class="tool-footnote">Cross-game results are only as reliable as each game's verified yaw and settings.</p>
+      </div>
+    </main>
+  </body>
+</html>

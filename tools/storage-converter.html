@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Convert storage sizes between bytes, KB, MB, GB, and TB using decimal or binary standards.">
+    <title>Storage Converter | NEON//CORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/storage-converter.js" defer></script>
+  </head>
+  <body data-tool-id="storage-converter">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> TECHNOLOGY / TOOL 04</p>
+          <h1>Storage <span class="accent-text">converter.</span></h1>
+          <p>Translate storage sizes between decimal and binary units.</p>
+        </header>
+
+        <div class="utility-layout">
+          <section class="surface-panel utility-panel" aria-labelledby="conversion-settings-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">CONVERSION INPUT</span>
+              <span class="utility-index">NC / 04</span>
+            </div>
+            <h2 id="conversion-settings-title">Choose your units.</h2>
+
+            <form class="utility-form" id="storage-form" novalidate>
+              <div class="form-field">
+                <label for="storage-amount">Amount</label>
+                <input class="form-control" id="storage-amount" name="amount" type="number" min="0" step="any" value="1" inputmode="decimal" required>
+              </div>
+
+              <div class="unit-fields">
+                <div class="form-field">
+                  <label for="source-unit">From</label>
+                  <select class="form-control" id="source-unit" name="source-unit">
+                    <option value="0">Bytes (B)</option>
+                    <option value="1">Kilobytes (KB)</option>
+                    <option value="2">Megabytes (MB)</option>
+                    <option value="3" selected>Gigabytes (GB)</option>
+                    <option value="4">Terabytes (TB)</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="target-unit">To</label>
+                  <select class="form-control" id="target-unit" name="target-unit">
+                    <option value="0">Bytes (B)</option>
+                    <option value="1">Kilobytes (KB)</option>
+                    <option value="2" selected>Megabytes (MB)</option>
+                    <option value="3">Gigabytes (GB)</option>
+                    <option value="4">Terabytes (TB)</option>
+                  </select>
+                </div>
+              </div>
+
+              <fieldset class="standard-fieldset">
+                <legend>Conversion standard</legend>
+                <div class="standard-options">
+                  <label class="standard-option">
+                    <input type="radio" name="standard" value="decimal" checked>
+                    <span><strong>Decimal</strong><small>Base 1,000</small></span>
+                  </label>
+                  <label class="standard-option">
+                    <input type="radio" name="standard" value="binary">
+                    <span><strong>Binary</strong><small>Base 1,024</small></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <p class="input-error" id="storage-error" role="alert" hidden></p>
+            </form>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel" aria-labelledby="storage-result-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">CONVERSION OUTPUT</span>
+              <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> LIVE</span>
+            </div>
+            <h2 id="storage-result-title">Converted size.</h2>
+            <p class="result-equation" id="storage-equation">1 GB = 1,000 MB</p>
+            <output class="result-value" id="storage-result" for="storage-amount source-unit target-unit">1,000 MB</output>
+            <p class="result-caption" id="storage-caption" aria-live="polite">Using decimal units (1,000 bytes per KB).</p>
+            <div class="calculation-note">
+              <p class="mono-label">WHY TWO STANDARDS?</p>
+              <p>Decimal units use powers of 1,000 and are common on drive packaging and network speeds. Binary units use powers of 1,024; their IEC names are Kibibytes, Mebibytes, Gibibytes, and Tebibytes.</p>
+              <p class="unit-example" id="unit-example">1 KB = 1,000 bytes</p>
+            </div>
+          </section>
+        </div>
+        <p class="tool-footnote">Calculations happen in your browser. No data is sent anywhere.</p>
+      </div>
+    </main>
+  </body>
+</html>

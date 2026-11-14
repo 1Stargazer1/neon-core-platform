@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Count characters with and without whitespace, words, and paragraphs as you type.">
+    <title>Text Analyzer | NEON//CORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/text-analyzer.js" defer></script>
+  </head>
+  <body data-tool-id="text-analyzer">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> EVERYDAY / TOOL 07</p>
+          <h1>Text <span class="accent-text">analyzer.</span></h1>
+          <p>Get a live read on the shape and length of your text.</p>
+        </header>
+
+        <div class="utility-layout">
+          <section class="surface-panel utility-panel" aria-labelledby="text-input-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">TEXT INPUT</span>
+              <span class="utility-index">NC / 07</span>
+            </div>
+            <h2 id="text-input-title">Write or paste text.</h2>
+            <div class="text-entry">
+              <label class="visually-hidden" for="text-input">Text to analyze</label>
+              <textarea class="form-control text-input" id="text-input" placeholder="Start typing or paste your text..." spellcheck="true"></textarea>
+              <button class="button button-quiet clear-button" id="clear-text" type="button">Clear text</button>
+            </div>
+            <div class="calculation-note text-rules">
+              <p class="mono-label">COUNTING RULES</p>
+              <p>Characters with spaces include line breaks. Without spaces excludes all whitespace. Words are separated by whitespace. A paragraph is a non-empty block separated by a blank line.</p>
+            </div>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel" aria-labelledby="text-results-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">LIVE ANALYSIS</span>
+              <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> LIVE</span>
+            </div>
+            <h2 id="text-results-title">Your text, quantified.</h2>
+            <div class="metric-grid" aria-describedby="text-rules-summary">
+              <div class="metric-cell">
+                <span class="metric-label" id="characters-with-spaces-label">CHARACTERS / WITH SPACES</span>
+                <output class="metric-value" id="characters-with-spaces" aria-labelledby="characters-with-spaces-label" aria-live="off">0</output>
+              </div>
+              <div class="metric-cell">
+                <span class="metric-label" id="characters-without-spaces-label">CHARACTERS / NO WHITESPACE</span>
+                <output class="metric-value" id="characters-without-spaces" aria-labelledby="characters-without-spaces-label" aria-live="off">0</output>
+              </div>
+              <div class="metric-cell">
+                <span class="metric-label" id="word-count-label">WORDS</span>
+                <output class="metric-value" id="word-count" aria-labelledby="word-count-label" aria-live="off">0</output>
+              </div>
+              <div class="metric-cell">
+                <span class="metric-label" id="paragraph-count-label">PARAGRAPHS</span>
+                <output class="metric-value" id="paragraph-count" aria-labelledby="paragraph-count-label" aria-live="off">0</output>
+              </div>
+            </div>
+            <p class="visually-hidden" id="text-rules-summary">The character counts include and exclude whitespace respectively; paragraphs are separated by blank lines.</p>
+            <p class="visually-hidden" id="text-count-announcement" aria-live="polite"></p>
+            <p class="tool-footnote text-footnote">Counts update as you type. Text stays in this browser.</p>
+          </section>
+        </div>
+        <p class="tool-footnote">Calculations happen in your browser. No data is sent anywhere.</p>
+      </div>
+    </main>
+  </body>
+</html>

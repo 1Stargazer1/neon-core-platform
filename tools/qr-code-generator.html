@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Create and download QR codes locally in your browser for links, text, email, phone, Wi-Fi, and SMS.">
+    <title>QR Code Generator | NEON//CORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@2.0.4/dist/qrcode.js" defer></script>
+    <script src="../js/tools/qr-code-generator.js" defer></script>
+  </head>
+  <body data-tool-id="qr-code-generator">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell qr-utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> EVERYDAY / TOOL 08</p>
+          <h1>QR code <span class="accent-text">generator.</span></h1>
+          <p>Create a scannable code for a link, message, contact, or network.</p>
+        </header>
+
+        <div class="utility-layout qr-layout">
+          <section class="surface-panel utility-panel" aria-labelledby="qr-settings-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">CODE CONTENT</span>
+              <span class="utility-index">NC / 08</span>
+            </div>
+            <h2 id="qr-settings-title">Choose what to encode.</h2>
+
+            <form class="utility-form" id="qr-form" novalidate>
+              <div class="form-field">
+                <label for="qr-type">Content type</label>
+                <select class="form-control" id="qr-type">
+                  <option value="url">URL / Website</option>
+                  <option value="text">Plain text</option>
+                  <option value="email">Email address</option>
+                  <option value="phone">Phone number</option>
+                  <option value="wifi">Wi-Fi network</option>
+                  <option value="sms">SMS message</option>
+                </select>
+              </div>
+
+              <div class="qr-content-fields" data-content="url">
+                <div class="form-field">
+                  <label for="url-value">Website address</label>
+                  <input class="form-control" id="url-value" type="url" inputmode="url" placeholder="https://example.com" autocomplete="url">
+                </div>
+              </div>
+
+              <div class="qr-content-fields" data-content="text" hidden>
+                <div class="form-field">
+                  <label for="text-value">Text to encode</label>
+                  <textarea class="form-control qr-textarea" id="text-value" placeholder="Write a short message..."></textarea>
+                </div>
+              </div>
+
+              <div class="qr-content-fields" data-content="email" hidden>
+                <div class="form-field">
+                  <label for="email-value">Email address</label>
+                  <input class="form-control" id="email-value" type="email" inputmode="email" placeholder="name@example.com" autocomplete="email">
+                </div>
+                <div class="form-field">
+                  <label for="email-subject">Subject <span class="optional-label">OPTIONAL</span></label>
+                  <input class="form-control" id="email-subject" type="text" placeholder="Message subject">
+                </div>
+                <div class="form-field">
+                  <label for="email-body">Message <span class="optional-label">OPTIONAL</span></label>
+                  <textarea class="form-control qr-textarea qr-textarea-short" id="email-body" placeholder="Message body"></textarea>
+                </div>
+              </div>
+
+              <div class="qr-content-fields" data-content="phone" hidden>
+                <div class="form-field">
+                  <label for="phone-value">Phone number</label>
+                  <input class="form-control" id="phone-value" type="tel" inputmode="tel" placeholder="+1 555 123 4567" autocomplete="tel">
+                  <span class="field-help">Use an international country code when possible.</span>
+                </div>
+              </div>
+
+              <div class="qr-content-fields" data-content="wifi" hidden>
+                <div class="form-field">
+                  <label for="wifi-ssid">Network name (SSID)</label>
+                  <input class="form-control" id="wifi-ssid" type="text" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="wifi-encryption">Encryption</label>
+                  <select class="form-control" id="wifi-encryption">
+                    <option value="WPA" selected>WPA / WPA2 / WPA3</option>
+                    <option value="WEP">WEP</option>
+                    <option value="nopass">Open network (no password)</option>
+                  </select>
+                </div>
+                <div class="form-field" id="wifi-password-field">
+                  <label for="wifi-password">Network password</label>
+                  <input class="form-control" id="wifi-password" type="password" autocomplete="new-password">
+                </div>
+                <label class="check-option">
+                  <input id="wifi-hidden" type="checkbox">
+                  <span>Hidden network</span>
+                </label>
+              </div>
+
+              <div class="qr-content-fields" data-content="sms" hidden>
+                <div class="form-field">
+                  <label for="sms-phone">Phone number</label>
+                  <input class="form-control" id="sms-phone" type="tel" inputmode="tel" placeholder="+1 555 123 4567" autocomplete="tel">
+                </div>
+                <div class="form-field">
+                  <label for="sms-message">Message</label>
+                  <textarea class="form-control qr-textarea qr-textarea-short" id="sms-message" placeholder="Text message..."></textarea>
+                </div>
+              </div>
+
+              <fieldset class="standard-fieldset qr-customization">
+                <legend>Appearance</legend>
+                <div class="qr-color-row">
+                  <label class="color-field" for="qr-foreground">
+                    <span>Foreground</span>
+                    <input id="qr-foreground" type="color" value="#080b12">
+                  </label>
+                  <label class="color-field" for="qr-background">
+                    <span>Background</span>
+                    <input id="qr-background" type="color" value="#ffffff">
+                  </label>
+                </div>
+                <div class="unit-fields qr-options-row">
+                  <div class="form-field">
+                    <label for="qr-size">Maximum image size</label>
+                    <select class="form-control" id="qr-size">
+                      <option value="160">160 px</option>
+                      <option value="256" selected>256 px</option>
+                      <option value="384">384 px</option>
+                      <option value="512">512 px</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label for="qr-error-level">Error correction</label>
+                    <select class="form-control" id="qr-error-level">
+                      <option value="L">Low · 7%</option>
+                      <option value="M" selected>Medium · 15%</option>
+                      <option value="Q">Quartile · 25%</option>
+                      <option value="H">High · 30%</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+
+              <p class="input-error" id="qr-error" role="alert" hidden></p>
+              <p class="field-help" id="qr-warning" role="status" hidden></p>
+              <p class="qr-library-error" id="qr-library-error" role="alert" hidden>QR generation could not load. Check your connection and reload this page.</p>
+            </form>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel qr-preview-panel" aria-labelledby="qr-preview-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">LOCAL PREVIEW</span>
+              <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> PRIVATE</span>
+            </div>
+            <h2 id="qr-preview-title">Scan to verify.</h2>
+            <div class="qr-preview-frame" id="qr-preview-frame">
+              <canvas id="qr-canvas" width="256" height="256" role="img" aria-label="QR code preview"></canvas>
+              <p class="qr-preview-placeholder" id="qr-placeholder">Choose a content type and enter its details to build a QR code.</p>
+            </div>
+            <p class="result-caption" id="qr-caption">Preview updates in your browser. Content is not saved or uploaded.</p>
+            <div class="qr-download-actions">
+              <button class="button button-primary" id="download-png" type="button" disabled>Download PNG <span aria-hidden="true">↓</span></button>
+              <button class="button button-secondary" id="download-svg" type="button" disabled>Download SVG <span aria-hidden="true">↓</span></button>
+              <button class="button button-quiet" id="reset-qr" type="button">Reset</button>
+            </div>
+            <div class="calculation-note qr-privacy-note">
+              <p class="mono-label">PRIVACY / SAFE SHARING</p>
+              <p>Your content is encoded locally in this browser and is not sent to NEON//CORE. Scan and verify the downloaded code before printing or sharing it, especially before embedding passwords or personal details.</p>
+            </div>
+          </section>
+        </div>
+        <p class="tool-footnote">A QR reader opens the encoded link or action; it does not verify that destination is safe.</p>
+      </div>
+    </main>
+  </body>
+</html>

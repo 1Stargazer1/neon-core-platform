@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Calculate the nominal time per frame from a display refresh rate or frame rate.">
+    <title>Refresh Rate Calculator | NEON//CORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/refresh-rate-calculator.js" defer></script>
+  </head>
+  <body data-tool-id="refresh-rate-calculator">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> GAMING / TOOL 03</p>
+          <h1>Refresh rate <span class="accent-text">calculator.</span></h1>
+          <p>See how long one refresh or rendered frame takes.</p>
+        </header>
+
+        <div class="utility-layout">
+          <section class="surface-panel utility-panel" aria-labelledby="refresh-settings-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">RATE INPUT</span>
+              <span class="utility-index">NC / 03</span>
+            </div>
+            <h2 id="refresh-settings-title">Enter a rate.</h2>
+
+            <form class="utility-form" id="refresh-form" novalidate>
+              <fieldset class="standard-fieldset">
+                <legend>Rate type</legend>
+                <div class="standard-options">
+                  <label class="standard-option">
+                    <input type="radio" name="rate-type" value="hz" checked>
+                    <span><strong>Refresh rate</strong><small>Display · Hz</small></span>
+                  </label>
+                  <label class="standard-option">
+                    <input type="radio" name="rate-type" value="fps">
+                    <span><strong>Frame rate</strong><small>Rendered frames · FPS</small></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="form-field">
+                <label id="rate-label" for="rate-input">Refresh rate in hertz (Hz)</label>
+                <input class="form-control" id="rate-input" type="number" min="0" step="any" value="144" inputmode="decimal" required>
+              </div>
+              <p class="input-error" id="refresh-error" role="alert" hidden></p>
+            </form>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel" aria-labelledby="refresh-result-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">FRAME DURATION</span>
+              <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> LIVE</span>
+            </div>
+            <h2 id="refresh-result-title">Time per frame.</h2>
+            <p class="result-equation" id="refresh-equation">1,000 ms ÷ 144 Hz</p>
+            <output class="result-value" id="refresh-result" for="rate-input" aria-live="polite">6.944 ms</output>
+            <p class="result-caption" id="refresh-caption">At 144 Hz, one display refresh takes about 6.944 milliseconds.</p>
+            <div class="calculation-note">
+              <p class="mono-label">THE CALCULATION</p>
+              <p>There are 1,000 milliseconds in one second. Divide 1,000 by the number of refreshes or frames per second to find the time for one.</p>
+              <p class="unit-example">Frame duration (ms) = 1,000 ÷ rate per second</p>
+            </div>
+          </section>
+        </div>
+        <p class="tool-footnote">This is a nominal frame duration, not a measurement of frame-time variation.</p>
+      </div>
+    </main>
+  </body>
+</html>

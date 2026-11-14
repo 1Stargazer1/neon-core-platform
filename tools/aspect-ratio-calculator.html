@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Simplify a screen aspect ratio or calculate a missing width or height.">
+    <title>Aspect Ratio Calculator | NEON//CORE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/aspect-ratio-calculator.js" defer></script>
+  </head>
+  <body data-tool-id="aspect-ratio-calculator">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> GAMING / TOOL 02</p>
+          <h1>Aspect ratio <span class="accent-text">calculator.</span></h1>
+          <p>Simplify dimensions or solve for a missing width or height.</p>
+        </header>
+
+        <div class="utility-layout">
+          <section class="surface-panel utility-panel" aria-labelledby="ratio-settings-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">DIMENSION INPUT</span>
+              <span class="utility-index">NC / 02</span>
+            </div>
+            <h2 id="ratio-settings-title">Choose a calculation.</h2>
+
+            <form class="utility-form" id="ratio-form" novalidate>
+              <fieldset class="standard-fieldset">
+                <legend>Calculation mode</legend>
+                <div class="standard-options">
+                  <label class="standard-option">
+                    <input type="radio" name="ratio-mode" value="simplify" checked>
+                    <span><strong>Simplify ratio</strong><small>Width + height</small></span>
+                  </label>
+                  <label class="standard-option">
+                    <input type="radio" name="ratio-mode" value="missing">
+                    <span><strong>Find dimension</strong><small>Use a known ratio</small></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="mode-inputs" id="simplify-inputs">
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="pixel-width">Width in pixels</label>
+                    <input class="form-control" id="pixel-width" type="number" min="1" step="1" value="1920" inputmode="numeric" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="pixel-height">Height in pixels</label>
+                    <input class="form-control" id="pixel-height" type="number" min="1" step="1" value="1080" inputmode="numeric" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mode-inputs" id="missing-inputs" hidden>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="ratio-width">Ratio width part</label>
+                    <input class="form-control" id="ratio-width" type="number" min="1" step="1" value="16" inputmode="numeric" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="ratio-height">Ratio height part</label>
+                    <input class="form-control" id="ratio-height" type="number" min="1" step="1" value="9" inputmode="numeric" required>
+                  </div>
+                </div>
+                <div class="unit-fields">
+                  <div class="form-field">
+                    <label for="known-dimension">Known dimension in pixels</label>
+                    <input class="form-control" id="known-dimension" type="number" min="1" step="1" value="1920" inputmode="numeric" required>
+                  </div>
+                  <div class="form-field">
+                    <label for="known-side">Known side</label>
+                    <select class="form-control" id="known-side">
+                      <option value="width" selected>Width</option>
+                      <option value="height">Height</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <p class="input-error" id="ratio-error" role="alert" hidden></p>
+            </form>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel" aria-labelledby="ratio-result-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">CALCULATED OUTPUT</span>
+              <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> LIVE</span>
+            </div>
+            <h2 id="ratio-result-title">Aspect ratio.</h2>
+            <p class="result-equation" id="ratio-equation">1920 × 1080 pixels</p>
+            <output class="result-value" id="ratio-result" aria-live="polite">16:9</output>
+            <p class="result-caption" id="ratio-caption">The two dimensions have been reduced to their simplest whole-number ratio.</p>
+            <div class="calculation-note">
+              <p class="mono-label">HOW IT WORKS</p>
+              <p id="ratio-explanation">The greatest common divisor (GCD) divides both dimensions by the same amount, leaving the simplest ratio.</p>
+              <p class="unit-example">Aspect ratio = width : height</p>
+            </div>
+          </section>
+        </div>
+        <p class="tool-footnote">Calculations happen in your browser. No data is sent anywhere.</p>
+      </div>
+    </main>
+  </body>
+</html>
