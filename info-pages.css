@@ -1,0 +1,93 @@
+.info-main {
+  min-height: calc(100vh - 170px);
+  padding-block: 74px 96px;
+}
+
+.info-shell {
+  width: min(940px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.info-heading {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+.info-heading .eyebrow {
+  margin-bottom: 18px;
+}
+
+.info-heading h1 {
+  margin-bottom: 16px;
+  font-size: 56px;
+  line-height: 1.05;
+}
+
+.info-heading > p:last-child {
+  color: var(--color-text-secondary);
+}
+
+.policy-content {
+  max-width: 720px;
+}
+
+.info-section {
+  padding-block: 26px;
+  border-top: 1px solid var(--color-border-strong);
+}
+
+.info-section .mono-label {
+  margin-bottom: 14px;
+  color: var(--color-primary);
+}
+
+.info-section h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.info-section > p:not(.mono-label) {
+  max-width: 680px;
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+}
+
+.info-section a:not(.button) {
+  color: var(--color-primary);
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.contact-address {
+  display: block;
+  width: fit-content;
+  margin-bottom: 26px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .info-main {
+    padding-block: 54px 70px;
+  }
+
+  .info-shell {
+    width: calc(100% - 40px);
+  }
+
+  .info-heading h1 {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 380px) {
+  .info-shell {
+    width: calc(100% - 32px);
+  }
+
+  .info-heading h1 {
+    font-size: 36px;
+  }
+}
