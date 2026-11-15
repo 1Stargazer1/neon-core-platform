@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://neon-core-platform.oeb2708.workers.dev/sitemap.xml
+Sitemap: https://neoncoretools.com/sitemap.xml
