@@ -95,6 +95,19 @@ const headerInner = document.querySelector(".header-inner");
 const navigation = headerInner?.querySelector(".main-nav");
 if (navigation && !navigation.id) navigation.id = "main-nav";
 
+if (navigation && !navigation.querySelector('a[href$="/software"]')) {
+  const softwareLink = document.createElement("a");
+  softwareLink.className = "nav-link";
+  softwareLink.href = document.body.dataset.toolId ? "../software" : "/software";
+  softwareLink.textContent = "Software directory";
+  const aboutLink = navigation.querySelector('a[href*="#about"]');
+  if (aboutLink) {
+    navigation.insertBefore(softwareLink, aboutLink);
+  } else {
+    navigation.append(softwareLink);
+  }
+}
+
 if (navigation && !navigation.querySelector('a[href$="pricing.html"]')) {
   const pricingLink = document.createElement("a");
   pricingLink.className = "nav-link";

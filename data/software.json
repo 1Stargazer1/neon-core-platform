@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "listings": [
+    {
+      "id": "amd-software-adrenalin-edition",
+      "name": "AMD Software: Adrenalin Edition",
+      "publisher": "Advanced Micro Devices, Inc.",
+      "category": "hardware-drivers",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "proprietary",
+        "identifier": "AMD Software End User License Agreement",
+        "url": "https://www.amd.com/en/legal/eula/amd-software-eula.html"
+      },
+      "summary": "Driver and companion suite for supported AMD Radeon graphics. GPU-specific support and features vary by driver and Windows version.",
+      "tags": ["amd", "radeon", "graphics driver", "gpu", "gaming"],
+      "officialUrl": "https://www.amd.com/en/products/software/adrenalin.html",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "intel-driver-support-assistant",
+      "name": "Intel Driver & Support Assistant",
+      "publisher": "Intel Corporation",
+      "category": "hardware-drivers",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "unknown"
+      },
+      "summary": "Windows utility that detects supported Intel hardware and offers selected driver and software updates. It does not cover every Intel product or driver and requires a supported browser.",
+      "tags": ["intel", "drivers", "updates", "hardware", "support"],
+      "officialUrl": "https://www.intel.com/content/www/us/en/support/detect.html",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "nvidia-app",
+      "name": "NVIDIA App",
+      "publisher": "NVIDIA Corporation",
+      "category": "hardware-drivers",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "proprietary",
+        "identifier": "NVIDIA License for Customer Use of Software",
+        "url": "https://www.nvidia.com/en-us/drivers/nvidia-license/"
+      },
+      "summary": "Windows companion app for supported NVIDIA GPUs. Supported GPU generations and features vary, so check NVIDIA's current requirements before installing.",
+      "tags": ["nvidia", "drivers", "gpu", "graphics", "gaming"],
+      "officialUrl": "https://www.nvidia.com/en-us/software/nvidia-app/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "alienware-command-center",
+      "name": "Alienware Command Center",
+      "publisher": "Dell Technologies",
+      "category": "hardware-drivers",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "unknown"
+      },
+      "summary": "Configuration software included with supported Alienware and Dell G systems. Package availability and features depend on the system model and operating system.",
+      "tags": ["alienware", "dell", "device management", "drivers", "hardware"],
+      "officialUrl": "https://www.dell.com/support/home/en-us/drivers/DriversDetails?driverId=NRFFW",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "msi-afterburner",
+      "name": "MSI Afterburner",
+      "publisher": "Micro-Star International",
+      "category": "hardware-drivers",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "unknown"
+      },
+      "summary": "Free Windows GPU monitoring and tuning utility. It supports many GPU brands, but available controls depend on the GPU and driver.",
+      "tags": ["msi", "afterburner", "gpu", "overclocking", "monitoring"],
+      "officialUrl": "https://www.msi.com/Landing/afterburner/afterburner-download/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "asus-armoury-crate",
+      "name": "ASUS Armoury Crate",
+      "publisher": "ASUSTeK Computer Inc.",
+      "category": "hardware-drivers",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "unknown"
+      },
+      "summary": "ASUS device-management and hardware-configuration suite. Supported devices and available modules depend on the model and operating system.",
+      "tags": ["asus", "armoury crate", "device management", "drivers", "hardware"],
+      "officialUrl": "https://www.asus.com/support/faq/1041654/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "amd-ryzen-master",
+      "name": "AMD Ryzen Master",
+      "publisher": "Advanced Micro Devices, Inc.",
+      "category": "hardware-drivers",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "unknown"
+      },
+      "summary": "Monitoring and tuning utility for compatible Ryzen systems. Requires Windows 10 64-bit or Windows 11 64-bit; supported controls depend on the CPU, motherboard and firmware, and tuning can affect stability.",
+      "tags": ["amd", "ryzen", "cpu", "overclocking", "monitoring"],
+      "officialUrl": "https://www.amd.com/en/products/software/ryzen-master.html",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "hwinfo",
+      "name": "HWiNFO",
+      "publisher": "REALiX",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows"],
+      "pricingModel": "freemium",
+      "sourceLicense": {
+        "type": "unknown"
+      },
+      "summary": "Detailed hardware inventory and monitoring utility. Free for personal, non-commercial use; commercial use requires a paid licence.",
+      "tags": ["hwinfo", "hardware", "sensors", "monitoring", "diagnostics"],
+      "officialUrl": "https://www.hwinfo.com/",
+      "downloadUrl": "https://www.hwinfo.com/download/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "cpu-z",
+      "name": "CPU-Z",
+      "publisher": "CPUID",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "unknown"
+      },
+      "summary": "Windows utility that reports processor, motherboard, memory and graphics information.",
+      "tags": ["cpuid", "cpu", "memory", "motherboard", "hardware"],
+      "officialUrl": "https://www.cpuid.com/softwares/cpu-z.html",
+      "downloadUrl": "https://www.cpuid.com/softwares/cpu-z.html",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "gpu-z",
+      "name": "GPU-Z",
+      "publisher": "TechPowerUp",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "unknown"
+      },
+      "summary": "Windows utility for graphics-adapter and sensor information. Free-use terms include redistribution restrictions.",
+      "tags": ["techpowerup", "gpu", "graphics", "sensors", "hardware"],
+      "officialUrl": "https://www.techpowerup.com/gpuz/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "crystaldiskinfo",
+      "name": "CrystalDiskInfo",
+      "publisher": "Crystal Dew World",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "MIT",
+        "url": "https://github.com/hiyohiyo/CrystalDiskInfo/blob/master/LICENSE.txt"
+      },
+      "summary": "Windows utility for monitoring disk health and SMART status. Available features depend on the storage device and interface.",
+      "tags": ["crystaldiskinfo", "storage", "disk health", "smart", "diagnostics"],
+      "officialUrl": "https://crystalmark.info/en/software/crystaldiskinfo/",
+      "downloadUrl": "https://crystalmark.info/en/download/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "crystaldiskmark",
+      "name": "CrystalDiskMark",
+      "publisher": "Crystal Dew World",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "MIT",
+        "url": "https://github.com/hiyohiyo/CrystalDiskMark/blob/master/DiskMark.h"
+      },
+      "summary": "Windows storage benchmark. Repeated tests write to storage and can contribute to SSD or USB-flash-device wear.",
+      "tags": ["crystaldiskmark", "storage", "benchmark", "ssd", "performance"],
+      "officialUrl": "https://crystalmark.info/en/software/crystaldiskmark/",
+      "downloadUrl": "https://crystalmark.info/en/download/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "occt",
+      "name": "OCCT",
+      "publisher": "OCBASE",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows", "linux"],
+      "pricingModel": "freemium",
+      "sourceLicense": {
+        "type": "proprietary",
+        "identifier": "OCCT End User License Agreement",
+        "url": "https://www.ocbase.com/eula"
+      },
+      "summary": "Hardware stress-testing and monitoring suite with CPU, GPU and memory tests. Free for personal use; commercial use requires a paid licence. Stress tests can cause high temperatures and load.",
+      "tags": ["occt", "memory testing", "stress test", "stability", "hardware"],
+      "officialUrl": "https://www.ocbase.com/occt-personal-use",
+      "downloadUrl": "https://www.ocbase.com/download-personal",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "obs-studio",
+      "name": "OBS Studio",
+      "publisher": "OBS Project",
+      "category": "creative-productivity",
+      "operatingSystems": ["windows", "macos", "linux"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GPL-2.0-or-later",
+        "url": "https://github.com/obsproject/obs-studio/blob/master/COPYING"
+      },
+      "summary": "Free, open-source software for live streaming and video recording. Official builds are available for Windows, macOS and Linux; requirements vary by platform.",
+      "tags": ["obs", "streaming", "recording", "video", "broadcast"],
+      "officialUrl": "https://obsproject.com/",
+      "downloadUrl": "https://obsproject.com/download",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "blender",
+      "name": "Blender",
+      "publisher": "Blender Foundation",
+      "category": "creative-productivity",
+      "operatingSystems": ["windows", "macos", "linux"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GPL-3.0-or-later",
+        "url": "https://www.blender.org/about/license/"
+      },
+      "summary": "Free, open-source 3D creation suite. Check Blender's current operating-system and GPU requirements before installing.",
+      "tags": ["blender", "3d", "modelling", "animation", "rendering"],
+      "officialUrl": "https://www.blender.org/",
+      "downloadUrl": "https://www.blender.org/download/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "gimp",
+      "name": "GIMP",
+      "publisher": "GIMP Development Team",
+      "category": "creative-productivity",
+      "operatingSystems": ["windows", "macos", "linux"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GPL-3.0-or-later",
+        "url": "https://www.gimp.org/about/COPYING"
+      },
+      "summary": "Free, open-source raster image editor for Windows, macOS and Linux. Minimum operating-system requirements depend on the package and release.",
+      "tags": ["gimp", "image editing", "photo editing", "graphics", "raster"],
+      "officialUrl": "https://www.gimp.org/",
+      "downloadUrl": "https://www.gimp.org/downloads/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "krita",
+      "name": "Krita",
+      "publisher": "Krita Foundation",
+      "category": "creative-productivity",
+      "operatingSystems": ["windows", "macos", "linux"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GPL-3.0",
+        "url": "https://krita.org/en/about/license/"
+      },
+      "summary": "Free, open-source digital painting and illustration software. Optional paid store editions are available; check current system requirements.",
+      "tags": ["krita", "digital painting", "illustration", "drawing", "art"],
+      "officialUrl": "https://krita.org/en/",
+      "downloadUrl": "https://krita.org/en/download/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "audacity",
+      "name": "Audacity",
+      "publisher": "Audacity Team",
+      "category": "creative-productivity",
+      "operatingSystems": ["windows", "macos", "linux"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GPL-3.0",
+        "url": "https://github.com/audacity/audacity/blob/master/LICENSE.txt"
+      },
+      "summary": "Free, open-source multi-track audio editor and recorder for Windows, macOS and Linux.",
+      "tags": ["audacity", "audio", "recording", "editing", "podcast"],
+      "officialUrl": "https://www.audacityteam.org/",
+      "downloadUrl": "https://www.audacityteam.org/download/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "7-zip",
+      "name": "7-Zip",
+      "publisher": "Igor Pavlov",
+      "category": "development-utilities",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GNU LGPL; LGPL with unRAR restriction; BSD 2-Clause and BSD 3-Clause components",
+        "url": "https://www.7-zip.org/license.txt"
+      },
+      "summary": "Free, open-source file archiver for Windows. Its components have different licence terms, including an unRAR restriction.",
+      "tags": ["7-zip", "archive", "compression", "files", "utility"],
+      "officialUrl": "https://www.7-zip.org/",
+      "downloadUrl": "https://www.7-zip.org/download.html",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "visual-studio-code",
+      "name": "Visual Studio Code",
+      "publisher": "Microsoft",
+      "category": "development-utilities",
+      "operatingSystems": ["windows", "macos", "linux"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "proprietary",
+        "identifier": "Microsoft Visual Studio Code product licence",
+        "url": "https://code.visualstudio.com/license"
+      },
+      "summary": "Microsoft's free code editor distribution. Its product licence is proprietary and distinct from the MIT-licensed Code-OSS source project.",
+      "tags": ["visual studio code", "vscode", "editor", "programming", "development"],
+      "officialUrl": "https://code.visualstudio.com/",
+      "downloadUrl": "https://code.visualstudio.com/Download",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "git",
+      "name": "Git",
+      "publisher": "The Git Project",
+      "category": "development-utilities",
+      "operatingSystems": ["windows", "macos", "linux"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GPL-2.0-only",
+        "url": "https://github.com/git/git/blob/master/COPYING"
+      },
+      "summary": "Free, open-source distributed version-control system available for Windows, macOS and Linux.",
+      "tags": ["git", "version control", "source control", "development", "repository"],
+      "officialUrl": "https://git-scm.com/",
+      "downloadUrl": "https://git-scm.com/downloads",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "github-desktop",
+      "name": "GitHub Desktop",
+      "publisher": "GitHub, Inc.",
+      "category": "development-utilities",
+      "operatingSystems": ["windows", "macos"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "MIT",
+        "url": "https://github.com/desktop/desktop/blob/development/LICENSE"
+      },
+      "summary": "Desktop Git client for GitHub workflows. Official support is for Windows and macOS; there is no official Linux build.",
+      "tags": ["github desktop", "git", "version control", "repository", "github"],
+      "officialUrl": "https://desktop.github.com/",
+      "downloadUrl": "https://desktop.github.com/download/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "python",
+      "name": "Python",
+      "publisher": "Python Software Foundation",
+      "category": "development-utilities",
+      "operatingSystems": ["windows", "macos", "linux"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "PSF-2.0",
+        "url": "https://docs.python.org/3/license.html"
+      },
+      "summary": "Free, open-source programming language and runtime available for Windows, macOS and Linux. Supported systems and installers vary by release.",
+      "tags": ["python", "programming", "language", "development", "scripting"],
+      "officialUrl": "https://www.python.org/",
+      "downloadUrl": "https://www.python.org/downloads/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "notepad-plus-plus",
+      "name": "Notepad++",
+      "publisher": "Don Ho",
+      "category": "development-utilities",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GPL-3.0-or-later",
+        "url": "https://github.com/notepad-plus-plus/notepad-plus-plus/blob/master/LICENSE"
+      },
+      "summary": "Free, open-source text and source-code editor for Windows. Supported Windows versions depend on the current release.",
+      "tags": ["notepad++", "text editor", "code editor", "programming", "windows"],
+      "officialUrl": "https://notepad-plus-plus.org/",
+      "downloadUrl": "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/latest",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "windirstat",
+      "name": "WinDirStat",
+      "publisher": "WinDirStat Project",
+      "category": "development-utilities",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GPL-3.0-or-later",
+        "url": "https://github.com/windirstat/windirstat/blob/master/LICENSE.md"
+      },
+      "summary": "Free, open-source Windows disk-usage viewer. Review its file selections carefully before taking cleanup actions.",
+      "tags": ["windirstat", "disk usage", "storage", "files", "cleanup"],
+      "officialUrl": "https://windirstat.net/",
+      "downloadUrl": "https://windirstat.net/download.html",
+      "verifiedAt": "2026-11-17"
+    }
+  ]
+}

@@ -12,15 +12,19 @@ py -m http.server 8000
 
 Then visit [http://localhost:8000](http://localhost:8000). Press `Ctrl+C` in PowerShell to stop the server.
 
+To test the software directory, visit [http://localhost:8000/software.html](http://localhost:8000/software.html). The page loads its catalogue from `data/software.json`; use an HTTP server rather than opening the page directly as a file.
+
 ## Project structure
 
 ```text
 NEON-CORE/
 |-- .gitattributes
+|-- 404.html
 |-- index.html
 |-- pricing.html
 |-- contact.html
 |-- privacy.html
+|-- software.html
 |-- robots.txt
 |-- sitemap.xml
 |-- neon-core-qr-code.png
@@ -28,11 +32,15 @@ NEON-CORE/
 |   |-- style.css
 |   |-- info-pages.css
 |   |-- pricing.css
+|   |-- software-directory.css
 |   `-- tool-pages.css
+|-- data/
+|   `-- software.json
 |-- js/
 |   |-- platform.js
 |   |-- pricing.js
 |   |-- tool-directory.js
+|   |-- software-directory.js
 |   `-- tools/
 |       |-- aspect-ratio-calculator.js
 |       |-- data-transfer-calculator.js
@@ -67,6 +75,8 @@ NEON-CORE/
 ```
 
 The tool list and its search and category filters are in `js/tool-directory.js`. The homepage lives in `index.html`; each working tool has its own page in `tools/` and calculation code in `js/tools/`. Shared tool-page layout styles live in `css/tool-pages.css`, alongside the design system in `css/style.css`.
+
+The software directory in `software.html` is a searchable catalogue of third-party software and official publisher resources. `js/software-directory.js` validates and renders the schema-versioned catalogue in `data/software.json`, with search, category, operating-system, and pricing filters. `css/software-directory.css` contains its page-specific layout styles.
 
 The pricing concept is in `pricing.html`. Upgrade buttons open an informational preview only; payment processing and Premium access are not implemented. See [docs/monetization-architecture.md](docs/monetization-architecture.md) for the proposed free/premium boundary and the backend checks required before a future Stripe integration.
 

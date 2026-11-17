@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Explore a curated directory of third-party software for Windows, macOS, and Linux.">
+    <title>Software Directory | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/software">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="Software Directory | NEON//CORE">
+    <meta property="og:description" content="Explore a curated directory of third-party software for Windows, macOS, and Linux.">
+    <meta property="og:url" content="https://neoncoretools.com/software">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Software Directory | NEON//CORE">
+    <meta name="twitter:description" content="Explore a curated directory of third-party software for Windows, macOS, and Linux.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/software-directory.css">
+    <script src="js/platform.js" defer></script>
+    <script src="js/software-directory.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand" href="index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="index.html#tools">Tool directory</a>
+          <a class="nav-link" href="/software" aria-current="page">Software directory</a>
+          <a class="nav-link" href="index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="index.html#tools">Explore tools <span aria-hidden="true">↘</span></a>
+      </div>
+    </header>
+
+    <main class="software-main" id="main-content">
+      <div class="software-shell">
+        <header class="software-intro">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> SOFTWARE / DIRECTORY</p>
+          <h1>Find useful <span class="accent-text">software.</span></h1>
+          <p>Explore a curated directory of third-party software and official resources for Windows, macOS, and Linux.</p>
+        </header>
+
+        <aside class="software-preview-notice" aria-label="Software directory information">
+          <span class="mono-label">THIRD-PARTY RESOURCES</span>
+          <p>Listings link to official publisher resources. Check compatibility, pricing, and licence terms on the official site before installing.</p>
+        </aside>
+
+        <section class="software-directory" aria-labelledby="software-results-title" aria-busy="true">
+          <form class="software-controls surface-panel" id="software-filters" aria-label="Search and filter software">
+            <label class="software-search-field" for="software-search">
+              <span class="mono-label">SEARCH THE DIRECTORY</span>
+              <input class="form-control" id="software-search" type="search" placeholder="Search software..." aria-describedby="software-controls-note" aria-controls="software-results-grid" disabled>
+            </label>
+
+            <div class="software-filter-grid">
+              <fieldset class="software-filter-group" aria-describedby="software-controls-note" disabled>
+                <legend>Category</legend>
+                <label for="software-category">Filter by category</label>
+                <select class="form-control" id="software-category">
+                  <option value="">All categories</option>
+                  <option value="hardware-drivers">Hardware &amp; Drivers</option>
+                  <option value="monitoring-diagnostics">Monitoring &amp; Diagnostics</option>
+                  <option value="creative-productivity">Creative &amp; Productivity</option>
+                  <option value="development-utilities">Development &amp; Utilities</option>
+                </select>
+              </fieldset>
+
+              <fieldset class="software-filter-group" aria-describedby="software-controls-note" disabled>
+                <legend>Operating system</legend>
+                <div class="software-option-list">
+                  <label for="software-os-windows"><input id="software-os-windows" name="operatingSystems" type="checkbox" value="windows"> Windows</label>
+                  <label for="software-os-macos"><input id="software-os-macos" name="operatingSystems" type="checkbox" value="macos"> macOS</label>
+                  <label for="software-os-linux"><input id="software-os-linux" name="operatingSystems" type="checkbox" value="linux"> Linux</label>
+                </div>
+              </fieldset>
+
+              <fieldset class="software-filter-group" aria-describedby="software-controls-note" disabled>
+                <legend>Pricing</legend>
+                <div class="software-option-list">
+                  <label for="software-pricing-free"><input id="software-pricing-free" name="pricingModels" type="checkbox" value="free"> Free</label>
+                  <label for="software-pricing-freemium"><input id="software-pricing-freemium" name="pricingModels" type="checkbox" value="freemium"> Freemium</label>
+                  <label for="software-pricing-paid"><input id="software-pricing-paid" name="pricingModels" type="checkbox" value="paid"> Paid</label>
+                </div>
+              </fieldset>
+            </div>
+            <p class="software-controls-note" id="software-controls-note">Search matches names, publishers, summaries, and tags. Select one category and any combination of operating systems or pricing models.</p>
+            <button class="button button-secondary software-reset" id="software-reset" type="reset" disabled>Reset filters</button>
+          </form>
+
+          <div class="software-results-heading">
+            <h2 id="software-results-title">Directory results</h2>
+            <p class="software-results-status" id="software-results-status" role="status" aria-live="polite" aria-atomic="true">Loading software directory.</p>
+          </div>
+
+          <p class="software-load-message" id="software-load-message" role="status" aria-live="polite" hidden></p>
+          <button class="button button-secondary software-retry" id="software-retry" type="button" hidden>Retry loading directory</button>
+          <div class="software-results-grid" id="software-results-grid" aria-describedby="software-results-status"></div>
+          <p class="software-empty-state" id="software-empty-state" hidden>No software matches those search terms and filters. Change or reset your selections.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+        <a class="back-to-top" href="#top">Back to top <span aria-hidden="true">↑</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>
