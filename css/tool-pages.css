@@ -10,6 +10,7 @@
 
 .tool-back-link {
   display: inline-flex;
+  min-height: 44px;
   align-items: center;
   gap: var(--space-2);
   color: var(--color-text-muted);
@@ -378,10 +379,6 @@ select.form-control {
   width: min(100%, 384px);
   height: auto;
   image-rendering: pixelated;
-}
-
-.qr-preview-frame canvas[hidden] {
-  display: none;
 }
 
 .qr-preview-placeholder {

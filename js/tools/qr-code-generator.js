@@ -411,11 +411,8 @@ function resetGenerator() {
 }
 
 qrForm.addEventListener("input", updateQrPreview);
-qrForm.addEventListener("change", updateQrPreview);
 pngButton.addEventListener("click", downloadPng);
 svgButton.addEventListener("click", downloadSvg);
 resetButton.addEventListener("click", resetGenerator);
-qrTypeSelect.addEventListener("change", updateQrPreview);
-wifiEncryptionSelect.addEventListener("change", updateQrPreview);
 
 updateQrPreview(false);

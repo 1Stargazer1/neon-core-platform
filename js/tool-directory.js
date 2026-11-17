@@ -81,11 +81,21 @@ const resetDirectoryButton = document.querySelector("#reset-directory");
 
 let activeCategory = window.NeonCore.getPreferences().category;
 
-function createToolCard(tool, index) {
+function createToolCard(tool, index, favoriteIds) {
   const card = document.createElement("article");
   card.className = "surface-card tool-card";
   card.dataset.category = tool.category;
   card.dataset.toolId = tool.id;
+
+  const favoriteButton = document.createElement("button");
+  favoriteButton.className = "tool-favorite";
+  favoriteButton.type = "button";
+  const isFavorite = favoriteIds.has(tool.id);
+  favoriteButton.setAttribute("aria-label", `${isFavorite ? "Remove" : "Add"} ${tool.name} ${isFavorite ? "from" : "to"} favorites`);
+  favoriteButton.setAttribute("aria-pressed", String(isFavorite));
+  favoriteButton.title = isFavorite ? "Remove from favorites" : "Add to favorites";
+  favoriteButton.textContent = isFavorite ? "★" : "☆";
+  favoriteButton.addEventListener("click", () => window.NeonCore.toggleFavorite(tool.id));
 
   const cardTop = document.createElement("div");
   cardTop.className = "tool-card-top";
@@ -98,16 +108,7 @@ function createToolCard(tool, index) {
   category.className = "tool-category";
   category.textContent = tool.category;
 
-  const isFavorite = window.NeonCore.getPreferences().favorites.includes(tool.id);
-  const favoriteButton = document.createElement("button");
-  favoriteButton.className = "tool-favorite";
-  favoriteButton.type = "button";
-  favoriteButton.setAttribute("aria-label", `${isFavorite ? "Remove" : "Add"} ${tool.name} ${isFavorite ? "from" : "to"} favorites`);
-  favoriteButton.setAttribute("aria-pressed", String(isFavorite));
-  favoriteButton.title = isFavorite ? "Remove from favorites" : "Add to favorites";
-  favoriteButton.textContent = isFavorite ? "★" : "☆";
-  favoriteButton.addEventListener("click", () => window.NeonCore.toggleFavorite(tool.id));
-  cardTop.append(number, category, favoriteButton);
+  cardTop.append(number, category);
 
   const title = document.createElement("h3");
   title.textContent = tool.name;
@@ -122,22 +123,21 @@ function createToolCard(tool, index) {
   status.className = "development-status";
   status.textContent = tool.href ? "Ready to use" : "In development";
 
+  const arrow = document.createElement("span");
+  arrow.className = "tool-arrow";
+  arrow.setAttribute("aria-hidden", "true");
+  arrow.textContent = "↗";
+  cardBottom.append(status, arrow);
+
+  const cardContent = document.createElement(tool.href ? "a" : "div");
+  cardContent.className = tool.href ? "tool-card-link" : "tool-card-content";
   if (tool.href) {
-    const openLink = document.createElement("a");
-    openLink.className = "tool-arrow";
-    openLink.href = tool.href;
-    openLink.setAttribute("aria-label", `Open ${tool.name}`);
-    openLink.textContent = "↗";
-    cardBottom.append(status, openLink);
-  } else {
-    const arrow = document.createElement("span");
-    arrow.className = "tool-arrow";
-    arrow.setAttribute("aria-hidden", "true");
-    arrow.textContent = "↗";
-    cardBottom.append(status, arrow);
+    cardContent.href = tool.href;
+    cardContent.setAttribute("aria-label", `Open ${tool.name}`);
   }
 
-  card.append(cardTop, title, description, cardBottom);
+  cardContent.append(cardTop, title, description, cardBottom);
+  card.append(cardContent, favoriteButton);
   return card;
 }
 
@@ -180,7 +180,7 @@ function renderTools() {
     return matchesCategory && searchableText.includes(searchTerm);
   });
 
-  toolGrid.replaceChildren(...matchingTools.map((tool) => createToolCard(tool, tools.indexOf(tool))));
+  toolGrid.replaceChildren(...matchingTools.map((tool) => createToolCard(tool, tools.indexOf(tool), favoriteIds)));
   if (activeFavoriteToolId) {
     const replacementCard = Array.from(toolGrid.children)
       .find((card) => card.dataset.toolId === activeFavoriteToolId);

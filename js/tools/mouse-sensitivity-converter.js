@@ -192,7 +192,6 @@ function updateMode() {
 modeInputs.forEach((radio) => radio.addEventListener("change", updateMode));
 document.querySelectorAll(".mode-inputs input, .mode-inputs select").forEach((input) => {
   input.addEventListener("input", updateMode);
-  input.addEventListener("change", updateMode);
 });
 
 updateMode();

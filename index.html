@@ -64,10 +64,10 @@
           <div class="hero-note"><span class="note-rule" aria-hidden="true"></span><span>LESS FRICTION. MORE FLOW.</span></div>
         </div>
 
-        <aside class="surface-panel signal-panel" aria-label="NEON Core platform status">
+        <aside class="surface-panel signal-panel" aria-label="NEON Core tool index">
           <div class="panel-topline">
-            <span class="mono-label">CORE / SYSTEM STATUS</span>
-            <span class="live-state"><span class="status-dot" aria-hidden="true"></span> ONLINE</span>
+            <span class="mono-label">CORE / TOOL INDEX</span>
+            <span class="mono-label">CURATED SET</span>
           </div>
           <div class="signal-heading">
             <div>
@@ -76,7 +76,7 @@
             </div>
             <div class="signal-orbit" aria-hidden="true"><span></span><i></i></div>
           </div>
-          <div class="signal-graph" role="img" aria-label="Decorative activity graph">
+          <div class="signal-graph" aria-hidden="true">
             <span style="--bar-height: 34%"></span><span style="--bar-height: 52%"></span><span style="--bar-height: 41%"></span><span style="--bar-height: 68%"></span><span style="--bar-height: 55%"></span><span style="--bar-height: 82%"></span><span style="--bar-height: 64%"></span><span style="--bar-height: 91%"></span><span style="--bar-height: 70%"></span><span style="--bar-height: 100%"></span><span style="--bar-height: 76%"></span><span style="--bar-height: 88%"></span><span style="--bar-height: 63%"></span><span style="--bar-height: 94%"></span><span style="--bar-height: 72%"></span><span style="--bar-height: 100%"></span><span style="--bar-height: 79%"></span><span style="--bar-height: 89%"></span><span style="--bar-height: 67%"></span><span style="--bar-height: 96%"></span><span style="--bar-height: 74%"></span><span style="--bar-height: 91%"></span><span style="--bar-height: 80%"></span><span style="--bar-height: 100%"></span>
           </div>
           <div class="signal-bottom">
@@ -97,12 +97,15 @@
         </div>
 
         <div class="directory-controls">
-          <div class="filter-list" role="group" aria-label="Filter tools by category">
-            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All tools <span>08</span></button>
-            <button class="filter-button" type="button" data-filter="gaming" aria-pressed="false">Gaming <span>03</span></button>
-            <button class="filter-button" type="button" data-filter="technology" aria-pressed="false">Technology <span>03</span></button>
-            <button class="filter-button" type="button" data-filter="everyday" aria-pressed="false">Everyday <span>02</span></button>
-            <button class="filter-button" type="button" data-filter="favorites" aria-pressed="false">Favorites <span id="favorite-count">00</span></button>
+          <div class="directory-filter-group">
+            <div class="filter-list" role="group" aria-label="Filter tools by category">
+              <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All tools <span>08</span></button>
+              <button class="filter-button" type="button" data-filter="gaming" aria-pressed="false">Gaming <span>03</span></button>
+              <button class="filter-button" type="button" data-filter="technology" aria-pressed="false">Technology <span>03</span></button>
+              <button class="filter-button" type="button" data-filter="everyday" aria-pressed="false">Everyday <span>02</span></button>
+              <button class="filter-button" type="button" data-filter="favorites" aria-pressed="false">Favorites <span id="favorite-count">00</span></button>
+            </div>
+            <p class="directory-hint">Star a tool to save it to Favorites on this device.</p>
           </div>
           <label class="input-shell search-box">
             <span class="search-icon" aria-hidden="true"></span>
@@ -117,6 +120,7 @@
             <div>
               <p class="mono-label">YOUR ACTIVITY</p>
               <h3 id="recent-tools-title">Recently used</h3>
+              <p class="recent-tools-description">Your five most recently opened tools on this device.</p>
             </div>
             <button class="text-button" id="clear-recent-tools" type="button">Clear history</button>
           </div>

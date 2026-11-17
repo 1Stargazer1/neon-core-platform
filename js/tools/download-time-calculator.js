@@ -122,7 +122,6 @@ function updateDownloadEstimate() {
 
 [fileSizeInput, fileUnitSelect, speedInput, speedUnitSelect].forEach((input) => {
   input.addEventListener("input", updateDownloadEstimate);
-  input.addEventListener("change", updateDownloadEstimate);
 });
 
 updateDownloadEstimate();

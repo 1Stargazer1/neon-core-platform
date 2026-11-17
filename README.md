@@ -1,6 +1,6 @@
 # NEON//CORE
 
-A responsive, static homepage for a growing collection of gaming, technology, and everyday digital tools. The first version uses plain HTML, CSS, and JavaScript so it can be explored without installing a framework or setting up a server.
+A responsive, static website for a growing collection of gaming, technology, and everyday digital tools. It uses plain HTML, CSS, and JavaScript without a framework or build step.
 
 ## Run locally
 
@@ -16,16 +16,23 @@ Then visit [http://localhost:8000](http://localhost:8000). Press `Ctrl+C` in Pow
 
 ```text
 NEON-CORE/
+|-- .gitattributes
 |-- index.html
 |-- pricing.html
+|-- contact.html
+|-- privacy.html
+|-- robots.txt
+|-- sitemap.xml
+|-- neon-core-qr-code.png
 |-- css/
 |   |-- style.css
+|   |-- info-pages.css
 |   |-- pricing.css
 |   `-- tool-pages.css
 |-- js/
 |   |-- platform.js
 |   |-- pricing.js
-|   |-- script.js
+|   |-- tool-directory.js
 |   `-- tools/
 |       |-- aspect-ratio-calculator.js
 |       |-- data-transfer-calculator.js
@@ -45,14 +52,21 @@ NEON-CORE/
 |   |-- storage-converter.html
 |   `-- text-analyzer.html
 |-- docs/
-|   `-- monetization-architecture.md
+|   |-- monetization-architecture.md
+|   `-- qr-code-generator-review-package.md
 |-- assets/
 |   |-- icons/
+|   |   |-- apple-touch-icon.png
+|   |   |-- favicon-32.png
+|   |   |-- favicon.svg
+|   |   |-- icon-192.png
+|   |   `-- icon-512.png
 |   `-- images/
+|       `-- social-preview.png
 `-- README.md
 ```
 
-The tool list and its search and category filters are in `js/script.js`. The homepage lives in `index.html`; each working tool has its own page in `tools/` and calculation code in `js/tools/`. Shared tool-page layout styles live in `css/tool-pages.css`, alongside the design system in `css/style.css`.
+The tool list and its search and category filters are in `js/tool-directory.js`. The homepage lives in `index.html`; each working tool has its own page in `tools/` and calculation code in `js/tools/`. Shared tool-page layout styles live in `css/tool-pages.css`, alongside the design system in `css/style.css`.
 
 The pricing concept is in `pricing.html`. Upgrade buttons open an informational preview only; payment processing and Premium access are not implemented. See [docs/monetization-architecture.md](docs/monetization-architecture.md) for the proposed free/premium boundary and the backend checks required before a future Stripe integration.
 
@@ -91,4 +105,4 @@ Shared design tokens and components are at the top of `css/style.css`. Prefer th
 - **Effects:** use `--border-default`, `--radius-control`, `--radius-card`, `--glow-primary`, `--glow-secondary`, and the `--motion-*` timing tokens. Hover, focus, and loading animations respect reduced-motion preferences.
 - **Responsive layout:** the homepage tool grid changes from four columns to two at `900px`, then to one at `380px`; the hero stacks at `640px`. The shared navigation becomes a menu at `760px`, and calculator panels stack at `760px`. Pricing cards change from three columns to two at `900px` and one at `640px`. At `640px`, tool pages tighten their padding; paired calculator fields stack at `380px`.
 
-For a future tool card, add its data entry in `js/script.js`; `createToolCard()` already applies `.surface-card` and `.tool-card`. For a separate tool screen, reuse classes such as `<button class="button button-secondary">...</button>`, `<input class="form-control" ...>`, or `<section class="surface-panel">...</section>`. Adjust the shared tokens first when you need to tune the site-wide look.
+For a future tool card, add its data entry in `js/tool-directory.js`; `createToolCard()` already applies `.surface-card` and `.tool-card`. For a separate tool screen, reuse classes such as `<button class="button button-secondary">...</button>`, `<input class="form-control" ...>`, or `<section class="surface-panel">...</section>`. Adjust the shared tokens first when you need to tune the site-wide look.
