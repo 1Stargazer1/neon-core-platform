@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Calculate effective DPI (eDPI) and compare gaming mouse sensitivity settings.">
+    <title>eDPI Calculator | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/edpi-calculator">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="eDPI Calculator | NEON//CORE">
+    <meta property="og:description" content="Calculate effective DPI (eDPI) and compare gaming mouse sensitivity settings.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/edpi-calculator">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="eDPI Calculator | NEON//CORE">
+    <meta name="twitter:description" content="Calculate effective DPI (eDPI) and compare gaming mouse sensitivity settings.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/edpi-calculator.js" defer></script>
+  </head>
+  <body data-tool-id="edpi-calculator">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> GAMING / TOOL 10</p>
+          <h1>eDPI <span class="accent-text">calculator.</span></h1>
+          <p>Calculate effective DPI and compare sensitivity settings.</p>
+        </header>
+
+        <div class="utility-layout">
+          <section class="surface-panel utility-panel" aria-labelledby="edpi-settings-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">MOUSE SETTINGS</span>
+              <span class="utility-index">NC / 10</span>
+            </div>
+            <h2 id="edpi-settings-title">Enter your mouse and game settings.</h2>
+
+            <form class="utility-form" id="edpi-form" novalidate>
+              <div class="form-field">
+                <label for="dpi-input">Mouse DPI</label>
+                <input class="form-control" id="dpi-input" type="number" min="0" step="1" value="800" inputmode="numeric" required>
+              </div>
+              <p class="input-error" id="dpi-error" role="alert" hidden></p>
+
+              <div class="form-field">
+                <label for="sensitivity-input">In-game sensitivity <small>(multiplier)</small></label>
+                <input class="form-control" id="sensitivity-input" type="number" min="0" step="any" value="1.5" inputmode="decimal" required>
+              </div>
+              <p class="input-error" id="sensitivity-error" role="alert" hidden></p>
+            </form>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel" aria-labelledby="edpi-result-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">EFFECTIVE DPI</span>
+              <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> LIVE</span>
+            </div>
+            <h2 id="edpi-result-title">Your eDPI.</h2>
+
+            <div class="result-group">
+              <div class="result-item">
+                <p class="result-label">Effective DPI</p>
+                <output class="result-value" id="edpi-output" for="dpi-input sensitivity-input" aria-live="polite">1200</output>
+              </div>
+            </div>
+
+            <div class="calculation-note">
+              <p class="mono-label">THE CALCULATION</p>
+              <p>Effective DPI (eDPI) is the product of your mouse DPI and your in-game sensitivity multiplier.</p>
+              <p class="unit-example">eDPI = Mouse DPI × In-game sensitivity</p>
+              <p>Matching eDPI helps maintain consistent aim within the same game, but eDPI varies between games due to different sensitivity scales. Use our <a href="../tools/mouse-sensitivity-converter.html">Mouse Sensitivity Converter</a> for cross-game comparisons.</p>
+            </div>
+
+            <p class="tool-footnote">eDPI is useful for comparing settings within the same game and sensitivity scale. It is not a universal cross-game standard.</p>
+          </section>
+        </div>
+
+        <div class="utility-layout utility-layout--secondary">
+          <section class="surface-panel utility-panel" aria-labelledby="edpi-compare-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">SENSITIVITY COMPARISON</span>
+              <span class="utility-index">OPTIONAL</span>
+            </div>
+            <h2 id="edpi-compare-title">Switch to a different DPI and adjust sensitivity.</h2>
+
+            <form class="utility-form" id="edpi-compare-form" novalidate>
+              <div class="form-field">
+                <label for="current-dpi-input">Current mouse DPI</label>
+                <input class="form-control" id="current-dpi-input" type="number" min="0" step="1" value="800" inputmode="numeric" required>
+              </div>
+              <p class="input-error" id="current-dpi-error" role="alert" hidden></p>
+
+              <div class="form-field">
+                <label for="current-sens-input">Current in-game sensitivity</label>
+                <input class="form-control" id="current-sens-input" type="number" min="0" step="any" value="1.5" inputmode="decimal" required>
+              </div>
+              <p class="input-error" id="current-sens-error" role="alert" hidden></p>
+
+              <div class="form-field">
+                <label for="target-dpi-input">Target mouse DPI</label>
+                <input class="form-control" id="target-dpi-input" type="number" min="0" step="1" value="1600" inputmode="numeric" required>
+              </div>
+              <p class="input-error" id="target-dpi-error" role="alert" hidden></p>
+            </form>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel" aria-labelledby="edpi-compare-result-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">TARGET SENSITIVITY</span>
+              <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> LIVE</span>
+            </div>
+            <h2 id="edpi-compare-result-title">Your new sensitivity.</h2>
+
+            <div class="result-group">
+              <div class="result-item">
+                <p class="result-label">Current eDPI</p>
+                <output class="result-value" id="current-edpi-output" for="current-dpi-input current-sens-input" aria-live="polite">1200</output>
+              </div>
+
+              <div class="result-item">
+                <p class="result-label">New sensitivity</p>
+                <output class="result-value" id="target-sens-output" for="target-dpi-input current-dpi-input current-sens-input" aria-live="polite">0.75</output>
+              </div>
+            </div>
+
+            <div class="calculation-note">
+              <p class="mono-label">THE CALCULATION</p>
+              <p>To maintain the same eDPI at a different mouse DPI:</p>
+              <p class="unit-example">New sensitivity = Current eDPI ÷ Target DPI</p>
+              <p>This keeps your muscle memory consistent when changing your mouse settings.</p>
+            </div>
+
+            <p class="tool-footnote">This applies within a single game using the same sensitivity scale.</p>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Generate SHA-256, SHA-384, and SHA-512 hashes for text and files. Verify file integrity with checksum comparison.">
+    <title>Hash Generator | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/hash-generator">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="Hash Generator | NEON//CORE">
+    <meta property="og:description" content="Generate SHA-256, SHA-384, and SHA-512 hashes for text and files. Verify file integrity with checksum comparison.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/hash-generator">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hash Generator | NEON//CORE">
+    <meta name="twitter:description" content="Generate SHA-256, SHA-384, and SHA-512 hashes for text and files. Verify file integrity with checksum comparison.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/hash-generator.js" defer></script>
+  </head>
+  <body data-tool-id="hash-generator">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> DEVELOPMENT / TOOL 11</p>
+          <h1>Hash <span class="accent-text">generator.</span></h1>
+          <p>Generate SHA cryptographic hashes for text and files. Verify checksums locally.</p>
+        </header>
+
+        <div class="tabs-container" role="tablist" aria-label="Hash input mode">
+          <button class="tab-button is-active" id="tab-text" role="tab" aria-selected="true" aria-controls="panel-text">Text</button>
+          <button class="tab-button" id="tab-file" role="tab" aria-selected="false" aria-controls="panel-file">File</button>
+        </div>
+
+        <div class="utility-layout">
+          <section id="panel-text" class="surface-panel utility-panel" role="tabpanel" aria-labelledby="tab-text">
+            <div class="utility-panel-heading">
+              <span class="mono-label">TEXT INPUT</span>
+              <span class="utility-index">NC / 11</span>
+            </div>
+            <h2>Paste or enter text.</h2>
+
+            <form class="utility-form" id="text-form" novalidate>
+              <div class="form-field">
+                <label for="text-input">Text to hash</label>
+                <textarea class="form-control" id="text-input" placeholder="Enter or paste text here..." rows="6" aria-describedby="text-encoding-hint"></textarea>
+              </div>
+              <p id="text-encoding-hint" class="form-hint">UTF-8 encoding</p>
+
+              <div class="form-field">
+                <label for="text-algorithm">Hash algorithm</label>
+                <select class="form-control" id="text-algorithm">
+                  <option value="SHA-256">SHA-256</option>
+                  <option value="SHA-384">SHA-384</option>
+                  <option value="SHA-512">SHA-512</option>
+                </select>
+              </div>
+            </form>
+          </section>
+
+          <section id="panel-file" class="surface-panel utility-panel" role="tabpanel" aria-labelledby="tab-file" hidden>
+            <div class="utility-panel-heading">
+              <span class="mono-label">FILE INPUT</span>
+              <span class="utility-index">NC / 11</span>
+            </div>
+            <h2>Select a file from your device.</h2>
+
+            <form class="utility-form" id="file-form" novalidate>
+              <div class="form-field">
+                <label for="file-input">Select file</label>
+                <input class="form-control" id="file-input" type="file" aria-describedby="file-limit-hint">
+              </div>
+              <p id="file-limit-hint" class="form-hint">Files up to 500 MB supported</p>
+              <p class="input-error" id="file-error" role="alert" hidden></p>
+
+              <div class="form-field">
+                <label for="file-algorithm">Hash algorithm</label>
+                <select class="form-control" id="file-algorithm">
+                  <option value="SHA-256">SHA-256</option>
+                  <option value="SHA-384">SHA-384</option>
+                  <option value="SHA-512">SHA-512</option>
+                </select>
+              </div>
+
+              <div class="form-field" id="file-info-field" hidden>
+                <div class="file-info">
+                  <p><strong>File:</strong> <span id="file-name">—</span></p>
+                  <p><strong>Size:</strong> <span id="file-size">—</span></p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <section class="surface-panel utility-panel result-panel" aria-labelledby="hash-result-title">
+          <div class="utility-panel-heading">
+            <span class="mono-label">HASH DIGEST</span>
+            <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> READY</span>
+          </div>
+          <h2 id="hash-result-title">Your hash.</h2>
+
+          <div class="result-group">
+            <div class="result-item">
+              <p class="result-label">Computed digest</p>
+              <output class="result-value result-value--monospace" id="hash-output" aria-live="polite">—</output>
+            </div>
+          </div>
+
+          <div class="result-actions">
+            <button class="button button-secondary" id="copy-hash-button" disabled>Copy hash</button>
+            <button class="button button-secondary" id="clear-hash-button" disabled>Clear</button>
+          </div>
+
+          <div class="calculation-note">
+            <p class="mono-label">ABOUT HASHING</p>
+            <p>Cryptographic hashing converts input data into a fixed-length hexadecimal string. The same input always produces the same hash, but changing even one character produces a completely different hash. Hashing is <strong>not encryption</strong>—a hash cannot be reversed to recover the original data.</p>
+            <p>Verifying a file's hash against a publisher's official checksum helps detect corruption or tampering, but does not independently establish that a file is safe or authentic.</p>
+            <p>All hashing is performed locally in your browser. Your data is never uploaded or stored.</p>
+          </div>
+        </section>
+
+        <section class="surface-panel utility-panel" aria-labelledby="checksum-verify-title" id="checksum-section" hidden>
+          <div class="utility-panel-heading">
+            <span class="mono-label">CHECKSUM VERIFICATION</span>
+            <span class="utility-index">OPTIONAL</span>
+          </div>
+          <h2 id="checksum-verify-title">Compare with an expected hash.</h2>
+
+          <form class="utility-form" id="verify-form" novalidate>
+            <div class="form-field">
+              <label for="expected-hash">Expected hash to compare</label>
+              <input class="form-control" id="expected-hash" type="text" placeholder="Paste the publisher's hash here...">
+            </div>
+            <p class="input-error" id="verify-error" role="alert" hidden></p>
+          </form>
+
+          <div class="result-group" id="verify-result" hidden>
+            <div class="result-item">
+              <p class="result-label">Verification result</p>
+              <output class="result-value" id="verify-output" aria-live="assertive">—</output>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>

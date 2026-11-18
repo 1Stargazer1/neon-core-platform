@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate electricity costs based on device power consumption, usage hours, and electricity rates.">
+    <meta name="keywords" content="electricity, cost, calculator, watts, kWh, power consumption">
+    <meta property="og:title" content="Electricity Cost Calculator">
+    <meta property="og:description" content="Estimate electricity costs for devices. Calculate daily and yearly energy consumption and costs.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/electricity-cost-calculator">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://neoncoretools.com/tools/electricity-cost-calculator">
+    <title>Electricity Cost Calculator — NEON//CORE</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+</head>
+<body data-tool-id="electricity-cost-calculator">
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-content header-inner">
+            <h1 class="site-title">NEON//CORE</h1>
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-link">Tools</a>
+                <a href="../software" class="nav-link">Software Directory</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="tool-page">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1 class="tool-title">Electricity Cost Calculator</h1>
+                <p class="tool-description">Estimate electricity costs for your devices based on power consumption and usage patterns.</p>
+            </div>
+
+            <!-- Main Calculator -->
+            <section class="tool-section">
+                <h2 class="section-title">Device Energy Cost</h2>
+                <p class="section-description">Calculate how much it costs to run a device.</p>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="device-watts" class="form-label">Power (Watts)</label>
+                        <input
+                            type="number"
+                            id="device-watts"
+                            class="form-input"
+                            value="100"
+                            min="0"
+                            step="1"
+                            aria-describedby="device-watts-error"
+                        >
+                        <div id="device-watts-error" class="form-error" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="device-hours" class="form-label">Hours per Day</label>
+                        <input
+                            type="number"
+                            id="device-hours"
+                            class="form-input"
+                            value="8"
+                            min="0"
+                            max="24"
+                            step="0.1"
+                            aria-describedby="device-hours-error"
+                        >
+                        <div id="device-hours-error" class="form-error" role="alert"></div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="electricity-rate" class="form-label">Electricity Rate (AUD/kWh)</label>
+                        <input
+                            type="number"
+                            id="electricity-rate"
+                            class="form-input"
+                            value="0.30"
+                            min="0"
+                            step="0.01"
+                            aria-describedby="electricity-rate-error"
+                        >
+                        <div id="electricity-rate-error" class="form-error" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="num-days" class="form-label">Number of Days</label>
+                        <input
+                            type="number"
+                            id="num-days"
+                            class="form-input"
+                            value="30"
+                            min="1"
+                            step="1"
+                            aria-describedby="num-days-error"
+                        >
+                        <div id="num-days-error" class="form-error" role="alert"></div>
+                    </div>
+                </div>
+
+                <div class="result-panel">
+                    <div class="result-item">
+                        <span class="result-label">Daily Energy:</span>
+                        <span class="result-value" id="daily-energy">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Energy:</span>
+                        <span class="result-value" id="total-energy">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Daily Cost:</span>
+                        <span class="result-value" id="daily-cost">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Cost:</span>
+                        <span class="result-value" id="total-cost">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">30-Day Estimate:</span>
+                        <span class="result-value" id="cost-30day">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">365-Day Estimate:</span>
+                        <span class="result-value" id="cost-365day">—</span>
+                    </div>
+                </div>
+
+                <button id="reset-main" class="btn btn-secondary">Reset</button>
+            </section>
+
+            <!-- Comparison Mode -->
+            <section class="tool-section">
+                <h2 class="section-title">Device Comparison</h2>
+                <p class="section-description">Compare the energy costs of two devices with the same usage pattern.</p>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="device-a-watts" class="form-label">Device A (Watts)</label>
+                        <input
+                            type="number"
+                            id="device-a-watts"
+                            class="form-input"
+                            value="1000"
+                            min="0"
+                            step="1"
+                            aria-describedby="device-a-error"
+                        >
+                        <div id="device-a-error" class="form-error" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="device-b-watts" class="form-label">Device B (Watts)</label>
+                        <input
+                            type="number"
+                            id="device-b-watts"
+                            class="form-input"
+                            value="500"
+                            min="0"
+                            step="1"
+                            aria-describedby="device-b-error"
+                        >
+                        <div id="device-b-error" class="form-error" role="alert"></div>
+                    </div>
+                </div>
+
+                <div class="result-panel">
+                    <div class="result-item">
+                        <span class="result-label">Device A Cost:</span>
+                        <span class="result-value" id="compare-a-cost">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Device B Cost:</span>
+                        <span class="result-value" id="compare-b-cost">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Difference:</span>
+                        <span class="result-value" id="compare-difference">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">More Expensive:</span>
+                        <span class="result-value" id="compare-more-expensive">—</span>
+                    </div>
+                </div>
+
+                <button id="reset-comparison" class="btn btn-secondary">Reset</button>
+            </section>
+
+            <!-- Disclaimer -->
+            <div class="accessibility-note">
+                <p><strong>Important:</strong> These are estimates based on the entered values. Real power usage may vary depending on device efficiency, usage patterns, and environmental factors. Results do not include standing charges, tiered pricing, taxes, or other billing factors. Devices may not always consume their rated maximum wattage.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 NEON//CORE. All rights reserved.</p>
+        <nav class="footer-nav">
+            <a href="../pricing.html" class="footer-link">Pricing</a>
+            <a href="../contact.html" class="footer-link">Contact</a>
+            <a href="../privacy.html" class="footer-link">Privacy</a>
+        </nav>
+    </footer>
+
+    <script src="../js/tools/electricity-cost-calculator.js"></script>
+</body>
+</html>

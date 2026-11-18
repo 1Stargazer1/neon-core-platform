@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Encode plain text to Base64 and decode Base64 to UTF-8 text. No backend, all processing local.">
+    <meta name="keywords" content="base64, encode, decode, utf-8, text, conversion">
+    <meta property="og:title" content="Base64 Encoder & Decoder">
+    <meta property="og:description" content="Encode and decode Base64 text with UTF-8 support. All processing happens locally in your browser.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/base64-encoder">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://neoncoretools.com/tools/base64-encoder">
+    <title>Base64 Encoder & Decoder — NEON//CORE</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+</head>
+<body data-tool-id="base64-encoder">
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-content header-inner">
+            <h1 class="site-title">NEON//CORE</h1>
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-link">Tools</a>
+                <a href="../software" class="nav-link">Software Directory</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="tool-page">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1 class="tool-title">Base64 Encoder & Decoder</h1>
+                <p class="tool-description">Encode and decode Base64 text with UTF-8 support. All processing happens locally.</p>
+            </div>
+
+            <!-- Mode Selection -->
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="encode" aria-pressed="true">Encode</button>
+                <button class="mode-btn" data-mode="decode" aria-pressed="false">Decode</button>
+            </div>
+
+            <!-- A. Encode Mode -->
+            <section class="tool-section mode-section" id="encode-mode">
+                <h2 class="section-title">Encode to Base64</h2>
+                <p class="section-description">Enter plain text to convert to Base64.</p>
+
+                <div class="form-group">
+                    <label for="encode-input" class="form-label">Plain Text</label>
+                    <textarea
+                        id="encode-input"
+                        class="form-input encode-textarea"
+                        placeholder="Enter text to encode..."
+                        aria-describedby="encode-input-help encode-input-error"
+                    ></textarea>
+                    <div id="encode-input-help" class="form-help">
+                        UTF-8 encoding. Unicode and emoji supported. Processing is local and secure.
+                    </div>
+                    <div id="encode-input-error" class="form-error" role="alert"></div>
+                </div>
+
+                <div class="result-panel">
+                    <div class="result-item">
+                        <span class="result-label">Base64 Output:</span>
+                        <div class="result-value-container">
+                            <div class="result-value" id="encode-output">—</div>
+                            <button class="copy-btn" data-target="encode-output" aria-label="Copy Base64 output">Copy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="reset-encode" class="btn btn-secondary">Clear</button>
+            </section>
+
+            <!-- B. Decode Mode -->
+            <section class="tool-section mode-section hidden" id="decode-mode">
+                <h2 class="section-title">Decode from Base64</h2>
+                <p class="section-description">Paste a Base64 string to decode to plain text.</p>
+
+                <div class="form-group">
+                    <label for="decode-input" class="form-label">Base64 String</label>
+                    <textarea
+                        id="decode-input"
+                        class="form-input decode-textarea"
+                        placeholder="Enter Base64 string to decode..."
+                        aria-describedby="decode-input-help decode-input-error"
+                    ></textarea>
+                    <div id="decode-input-help" class="form-help">
+                        Valid Base64 characters: A–Z, a–z, 0–9, +, /, and = for padding.
+                    </div>
+                    <div id="decode-input-error" class="form-error" role="alert"></div>
+                </div>
+
+                <div class="result-panel">
+                    <div class="result-item">
+                        <span class="result-label">Decoded Text:</span>
+                        <div class="result-value-container">
+                            <div class="result-value" id="decode-output">—</div>
+                            <button class="copy-btn" data-target="decode-output" aria-label="Copy decoded text">Copy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="reset-decode" class="btn btn-secondary">Clear</button>
+            </section>
+
+            <!-- Educational Note -->
+            <div class="accessibility-note">
+                <p><strong>What is Base64?</strong> Base64 is an encoding method that converts binary data into plain text. It is <strong>not encryption</strong> and does not protect confidential information. Base64 also increases data size by approximately one-third. All processing happens in your browser—no data is transmitted.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 NEON//CORE. All rights reserved.</p>
+        <nav class="footer-nav">
+            <a href="../pricing.html" class="footer-link">Pricing</a>
+            <a href="../contact.html" class="footer-link">Contact</a>
+            <a href="../privacy.html" class="footer-link">Privacy</a>
+        </nav>
+    </footer>
+
+    <script src="../js/tools/base64-encoder.js"></script>
+</body>
+</html>

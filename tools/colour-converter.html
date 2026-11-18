@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convert between colour formats (HEX, RGB, HSL) and check WCAG colour contrast accessibility.">
+    <meta name="keywords" content="colour, color, converter, contrast, WCAG, accessibility, HEX, RGB, HSL">
+    <meta property="og:title" content="Colour Converter & Contrast Checker">
+    <meta property="og:description" content="Convert between HEX, RGB, and HSL colour formats. Check contrast ratios for WCAG accessibility compliance.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/colour-converter">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://neoncoretools.com/tools/colour-converter">
+    <title>Colour Converter & Contrast Checker — NEON//CORE</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+</head>
+<body data-tool-id="colour-converter">
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-content header-inner">
+            <h1 class="site-title">NEON//CORE</h1>
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-link">Tools</a>
+                <a href="../software" class="nav-link">Software Directory</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="tool-page">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1 class="tool-title">Colour Converter & Contrast Checker</h1>
+                <p class="tool-description">Convert between colour formats and verify WCAG accessibility contrast ratios.</p>
+            </div>
+
+            <!-- Colour Converter Section -->
+            <section class="tool-section">
+                <h2 class="section-title">Colour Converter</h2>
+                <p class="section-description">Enter a colour in any format and convert to others.</p>
+
+                <div class="form-group">
+                    <label for="colour-input" class="form-label">Enter Colour</label>
+                    <input
+                        type="text"
+                        id="colour-input"
+                        class="form-input"
+                        placeholder="#FF5733, rgb(255, 87, 51), or hsl(10, 100%, 60%)"
+                        aria-describedby="colour-input-help colour-input-error"
+                    >
+                    <div id="colour-input-help" class="form-help">
+                        Supported formats: #RGB, #RRGGBB, rgb(r, g, b), hsl(h, s%, l%)
+                    </div>
+                    <div id="colour-input-error" class="form-error" role="alert"></div>
+                </div>
+
+                <div class="colour-preview-container">
+                    <div class="colour-preview" id="colour-preview" role="img" aria-label="Colour preview"></div>
+                </div>
+
+                <div class="colour-results-grid">
+                    <div class="colour-result-item">
+                        <label class="result-label">HEX</label>
+                        <div class="result-value" id="result-hex">—</div>
+                        <button class="copy-btn" data-target="result-hex" aria-label="Copy HEX value">Copy</button>
+                    </div>
+                    <div class="colour-result-item">
+                        <label class="result-label">RGB</label>
+                        <div class="result-value" id="result-rgb">—</div>
+                        <button class="copy-btn" data-target="result-rgb" aria-label="Copy RGB value">Copy</button>
+                    </div>
+                    <div class="colour-result-item">
+                        <label class="result-label">HSL</label>
+                        <div class="result-value" id="result-hsl">—</div>
+                        <button class="copy-btn" data-target="result-hsl" aria-label="Copy HSL value">Copy</button>
+                    </div>
+                </div>
+
+                <button id="reset-converter" class="btn btn-secondary">Reset Colour</button>
+            </section>
+
+            <!-- Contrast Checker Section -->
+            <section class="tool-section">
+                <h2 class="section-title">Contrast Checker</h2>
+                <p class="section-description">Check WCAG accessibility contrast ratios between foreground and background colours.</p>
+
+                <div class="contrast-inputs">
+                    <div class="form-group">
+                        <label for="fg-colour" class="form-label">Foreground Colour</label>
+                        <input
+                            type="text"
+                            id="fg-colour"
+                            class="form-input"
+                            placeholder="#000000"
+                            aria-describedby="fg-colour-error"
+                        >
+                        <div id="fg-colour-error" class="form-error" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bg-colour" class="form-label">Background Colour</label>
+                        <input
+                            type="text"
+                            id="bg-colour"
+                            class="form-input"
+                            placeholder="#FFFFFF"
+                            aria-describedby="bg-colour-error"
+                        >
+                        <div id="bg-colour-error" class="form-error" role="alert"></div>
+                    </div>
+                </div>
+
+                <div class="contrast-ratio-display">
+                    <div class="ratio-value" id="ratio-value">—</div>
+                    <div class="ratio-label">Contrast Ratio</div>
+                </div>
+
+                <div class="contrast-previews">
+                    <div class="contrast-preview-group">
+                        <div class="contrast-preview-label">Normal Text (12–17pt)</div>
+                        <div
+                            class="contrast-preview"
+                            id="contrast-normal-preview"
+                            style="background-color: white;"
+                        >
+                            Sample text at normal size
+                        </div>
+                    </div>
+                    <div class="contrast-preview-group">
+                        <div class="contrast-preview-label">Large Text (18pt+ or 14pt bold)</div>
+                        <div
+                            class="contrast-preview contrast-preview-large"
+                            id="contrast-large-preview"
+                            style="background-color: white;"
+                        >
+                            Sample text at large size
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wcag-results">
+                    <div class="wcag-result-row">
+                        <div class="wcag-label">WCAG AA (Normal Text)</div>
+                        <div class="wcag-value" id="wcag-aa-normal">—</div>
+                    </div>
+                    <div class="wcag-result-row">
+                        <div class="wcag-label">WCAG AA (Large Text)</div>
+                        <div class="wcag-value" id="wcag-aa-large">—</div>
+                    </div>
+                    <div class="wcag-result-row">
+                        <div class="wcag-label">WCAG AAA (Normal Text)</div>
+                        <div class="wcag-value" id="wcag-aaa-normal">—</div>
+                    </div>
+                    <div class="wcag-result-row">
+                        <div class="wcag-label">WCAG AAA (Large Text)</div>
+                        <div class="wcag-value" id="wcag-aaa-large">—</div>
+                    </div>
+                </div>
+
+                <div class="accessibility-note">
+                    <p><strong>Important:</strong> Large text generally means at least 18pt regular weight or 14pt bold. A passing contrast ratio does not guarantee full WCAG accessibility compliance—other factors such as font size, weight and design also matter.</p>
+                </div>
+
+                <button id="reset-contrast" class="btn btn-secondary">Reset Contrast</button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 NEON//CORE. All rights reserved.</p>
+        <nav class="footer-nav">
+            <a href="../pricing.html" class="footer-link">Pricing</a>
+            <a href="../contact.html" class="footer-link">Contact</a>
+            <a href="../privacy.html" class="footer-link">Privacy</a>
+        </nav>
+    </footer>
+
+    <script src="../js/tools/colour-converter.js"></script>
+</body>
+</html>

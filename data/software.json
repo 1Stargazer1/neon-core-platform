@@ -426,6 +426,168 @@
       "officialUrl": "https://windirstat.net/",
       "downloadUrl": "https://windirstat.net/download.html",
       "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "latencymon",
+      "name": "LatencyMon",
+      "publisher": "Resplendence Software",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "proprietary"
+      },
+      "summary": "Windows utility for investigating audio dropouts, driver latency and DPC/ISR latency issues. Advanced troubleshooting tool for audio professionals and advanced users.",
+      "tags": ["latency", "audio", "dpc", "driver", "diagnostics", "troubleshooting"],
+      "officialUrl": "https://www.resplendence.com/latencymon",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "autoruns",
+      "name": "Autoruns",
+      "publisher": "Sysinternals (Microsoft)",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "proprietary",
+        "identifier": "Sysinternals Software Licence Terms",
+        "url": "https://learn.microsoft.com/en-us/sysinternals/license-terms"
+      },
+      "summary": "Windows utility for inspecting startup applications, services and other automatically launched components. Advanced tool for troubleshooting unwanted startup behaviour.",
+      "tags": ["autoruns", "startup", "services", "sysinternals", "diagnostics", "malware"],
+      "officialUrl": "https://learn.microsoft.com/en-us/sysinternals/downloads/autoruns",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "rammap",
+      "name": "RAMMap",
+      "publisher": "Sysinternals (Microsoft)",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "proprietary",
+        "identifier": "Sysinternals Software Licence Terms",
+        "url": "https://learn.microsoft.com/en-us/sysinternals/license-terms"
+      },
+      "summary": "Windows utility for analysing physical memory usage and cached memory allocation. Advanced memory diagnostics for system optimization and troubleshooting.",
+      "tags": ["rammap", "memory", "ram", "cache", "sysinternals", "diagnostics"],
+      "officialUrl": "https://learn.microsoft.com/en-us/sysinternals/downloads/rammap",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "memtest86",
+      "name": "MemTest86",
+      "publisher": "Passmark Software",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows", "linux", "macos"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "proprietary"
+      },
+      "summary": "Free RAM testing utility available as bootable media for Windows, Linux and macOS systems. Requires bootable media creation and testing from outside the operating system.",
+      "tags": ["memtest86", "memory", "ram", "stability", "diagnostics", "testing"],
+      "officialUrl": "https://www.memtest86.com/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "smartmontools",
+      "name": "smartmontools",
+      "publisher": "smartmontools Project",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows", "linux", "macos"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GPL-2.0-or-later",
+        "url": "https://github.com/smartmontools/smartmontools/blob/master/COPYING"
+      },
+      "summary": "Free, open-source utility for monitoring disk and SSD health via SMART information. Available for Windows, Linux and macOS with optional GUI tools.",
+      "tags": ["smartmontools", "storage", "smart", "disk health", "ssd", "hdd"],
+      "officialUrl": "https://www.smartmontools.org/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "usb-device-tree-viewer",
+      "name": "USB Device Tree Viewer",
+      "publisher": "Uwe Sieber",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "proprietary"
+      },
+      "summary": "Windows utility for inspecting USB devices, controllers, connection speeds and port information. Useful for diagnosing USB connectivity and performance issues.",
+      "tags": ["usb", "devices", "ports", "connection", "hardware", "diagnostics"],
+      "officialUrl": "https://www.uwe-sieber.de/usbtreeview_e.html",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "custom-resolution-utility",
+      "name": "Custom Resolution Utility (CRU)",
+      "publisher": "ToastyX",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "proprietary"
+      },
+      "summary": "Windows utility for inspecting and modifying display resolution and refresh-rate information. Modifying display configuration can affect monitor and GPU settings; use with caution.",
+      "tags": ["cru", "display", "resolution", "refresh rate", "monitor", "graphics"],
+      "officialUrl": "https://www.monitortests.com/",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "testdisk",
+      "name": "TestDisk",
+      "publisher": "CGSecurity",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows", "linux", "macos"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GPL-2.0-or-later",
+        "url": "https://www.cgsecurity.org/wiki/TestDisk"
+      },
+      "summary": "Free, open-source data recovery utility for recovering lost partitions and investigating file-system damage. Can modify partition structures; backup critical data before use.",
+      "tags": ["testdisk", "data recovery", "partition", "file system", "storage", "repair"],
+      "officialUrl": "https://www.cgsecurity.org/wiki/TestDisk",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "process-monitor",
+      "name": "Process Monitor",
+      "publisher": "Sysinternals (Microsoft)",
+      "category": "monitoring-diagnostics",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "proprietary",
+        "identifier": "Sysinternals Software Licence Terms",
+        "url": "https://learn.microsoft.com/en-us/sysinternals/license-terms"
+      },
+      "summary": "Windows utility for tracing file-system, Registry and process activity in real-time. Advanced troubleshooting tool for understanding system behaviour and diagnosing problems.",
+      "tags": ["process monitor", "procmon", "sysinternals", "tracing", "diagnostics", "monitoring"],
+      "officialUrl": "https://learn.microsoft.com/en-us/sysinternals/downloads/procmon",
+      "verifiedAt": "2026-11-17"
+    },
+    {
+      "id": "openhashtab",
+      "name": "OpenHashTab",
+      "publisher": "namazso",
+      "category": "development-utilities",
+      "operatingSystems": ["windows"],
+      "pricingModel": "free",
+      "sourceLicense": {
+        "type": "open-source",
+        "identifier": "GPL-3.0",
+        "url": "https://github.com/namazso/OpenHashTab/blob/master/COPYING"
+      },
+      "summary": "Free, open-source Windows shell extension for calculating and verifying file hashes. Supports MD5, SHA1, SHA256, SHA3 and other hash algorithms.",
+      "tags": ["openhashtab", "hash", "checksum", "file verification", "integrity", "security"],
+      "officialUrl": "https://github.com/namazso/OpenHashTab",
+      "verifiedAt": "2026-11-17"
     }
   ]
 }

@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate date differences, add/subtract days, and count working days (Monday to Friday).">
+    <meta name="keywords" content="date, time, calculator, working days, day difference, duration">
+    <meta property="og:title" content="Date & Time Calculator">
+    <meta property="og:description" content="Calculate date differences, add/subtract days, and count working days.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/date-time-calculator">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://neoncoretools.com/tools/date-time-calculator">
+    <title>Date & Time Calculator — NEON//CORE</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+</head>
+<body data-tool-id="date-time-calculator">
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-content header-inner">
+            <h1 class="site-title">NEON//CORE</h1>
+            <nav class="main-nav">
+                <a href="../index.html" class="nav-link">Tools</a>
+                <a href="../software" class="nav-link">Software Directory</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content" class="tool-page">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1 class="tool-title">Date & Time Calculator</h1>
+                <p class="tool-description">Calculate date differences, add/subtract days, and count working days.</p>
+            </div>
+
+            <!-- Mode Selection -->
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="difference" aria-pressed="true">Date Difference</button>
+                <button class="mode-btn" data-mode="add-subtract" aria-pressed="false">Add/Subtract Days</button>
+                <button class="mode-btn" data-mode="working-days" aria-pressed="false">Working Days</button>
+            </div>
+
+            <!-- A. Date Difference -->
+            <section class="tool-section mode-section" id="difference-mode">
+                <h2 class="section-title">Date Difference</h2>
+                <p class="section-description">Calculate the number of days between two dates.</p>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="diff-start-date" class="form-label">Start Date</label>
+                        <input
+                            type="date"
+                            id="diff-start-date"
+                            class="form-input"
+                            aria-describedby="diff-start-error"
+                        >
+                        <div id="diff-start-error" class="form-error" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="diff-end-date" class="form-label">End Date</label>
+                        <input
+                            type="date"
+                            id="diff-end-date"
+                            class="form-input"
+                            aria-describedby="diff-end-error"
+                        >
+                        <div id="diff-end-error" class="form-error" role="alert"></div>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input
+                        type="checkbox"
+                        id="diff-inclusive"
+                        class="form-checkbox"
+                    >
+                    <label for="diff-inclusive" class="checkbox-label">Inclusive (include both start and end dates)</label>
+                </div>
+
+                <div class="result-panel">
+                    <div class="result-item">
+                        <span class="result-label">Total Days:</span>
+                        <span class="result-value" id="diff-total-days">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Weeks & Days:</span>
+                        <span class="result-value" id="diff-weeks-days">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Direction:</span>
+                        <span class="result-value" id="diff-direction">—</span>
+                    </div>
+                </div>
+
+                <button id="reset-difference" class="btn btn-secondary">Reset</button>
+            </section>
+
+            <!-- B. Add or Subtract Days -->
+            <section class="tool-section mode-section hidden" id="add-subtract-mode">
+                <h2 class="section-title">Add or Subtract Days</h2>
+                <p class="section-description">Start with a date and add or subtract a number of days.</p>
+
+                <div class="form-group">
+                    <label for="as-start-date" class="form-label">Starting Date</label>
+                    <input
+                        type="date"
+                        id="as-start-date"
+                        class="form-input"
+                        aria-describedby="as-start-error"
+                    >
+                    <div id="as-start-error" class="form-error" role="alert"></div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="as-operation" class="form-label">Operation</label>
+                        <select id="as-operation" class="form-input">
+                            <option value="add">Add Days</option>
+                            <option value="subtract">Subtract Days</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="as-days" class="form-label">Number of Days</label>
+                        <input
+                            type="number"
+                            id="as-days"
+                            class="form-input"
+                            min="0"
+                            placeholder="0"
+                            aria-describedby="as-days-error"
+                        >
+                        <div id="as-days-error" class="form-error" role="alert"></div>
+                    </div>
+                </div>
+
+                <div class="result-panel">
+                    <div class="result-item">
+                        <span class="result-label">Result Date:</span>
+                        <span class="result-value" id="as-result-date">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Day of Week:</span>
+                        <span class="result-value" id="as-day-of-week">—</span>
+                    </div>
+                </div>
+
+                <button id="reset-add-subtract" class="btn btn-secondary">Reset</button>
+            </section>
+
+            <!-- C. Working Days -->
+            <section class="tool-section mode-section hidden" id="working-days-mode">
+                <h2 class="section-title">Working Days (Mon–Fri)</h2>
+                <p class="section-description">Count working days (Monday to Friday) between two dates. Weekends are excluded; public holidays are not.</p>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="wd-start-date" class="form-label">Start Date</label>
+                        <input
+                            type="date"
+                            id="wd-start-date"
+                            class="form-input"
+                            aria-describedby="wd-start-error"
+                        >
+                        <div id="wd-start-error" class="form-error" role="alert"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="wd-end-date" class="form-label">End Date</label>
+                        <input
+                            type="date"
+                            id="wd-end-date"
+                            class="form-input"
+                            aria-describedby="wd-end-error"
+                        >
+                        <div id="wd-end-error" class="form-error" role="alert"></div>
+                    </div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input
+                        type="checkbox"
+                        id="wd-inclusive"
+                        class="form-checkbox"
+                    >
+                    <label for="wd-inclusive" class="checkbox-label">Inclusive (include both start and end dates if they are working days)</label>
+                </div>
+
+                <div class="result-panel">
+                    <div class="result-item">
+                        <span class="result-label">Working Days:</span>
+                        <span class="result-value" id="wd-count">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total Calendar Days:</span>
+                        <span class="result-value" id="wd-total">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Weekend Days:</span>
+                        <span class="result-value" id="wd-weekends">—</span>
+                    </div>
+                </div>
+
+                <button id="reset-working-days" class="btn btn-secondary">Reset</button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 NEON//CORE. All rights reserved.</p>
+        <nav class="footer-nav">
+            <a href="../pricing.html" class="footer-link">Pricing</a>
+            <a href="../contact.html" class="footer-link">Contact</a>
+            <a href="../privacy.html" class="footer-link">Privacy</a>
+        </nav>
+    </footer>
+
+    <script src="../js/tools/date-time-calculator.js"></script>
+</body>
+</html>

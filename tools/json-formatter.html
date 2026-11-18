@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Validate, format, and minify JSON. Download formatted results as .json files.">
+    <title>JSON Formatter & Validator | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/json-formatter">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="JSON Formatter & Validator | NEON//CORE">
+    <meta property="og:description" content="Validate, format, and minify JSON. Download formatted results as .json files.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/json-formatter">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JSON Formatter & Validator | NEON//CORE">
+    <meta name="twitter:description" content="Validate, format, and minify JSON. Download formatted results as .json files.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/json-formatter.js" defer></script>
+  </head>
+  <body data-tool-id="json-formatter">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> DEVELOPMENT / TOOL 12</p>
+          <h1>JSON <span class="accent-text">formatter.</span></h1>
+          <p>Validate, format, and minify JSON with helpful error messages.</p>
+        </header>
+
+        <div class="utility-layout">
+          <section class="surface-panel utility-panel" aria-labelledby="json-input-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">JSON INPUT</span>
+              <span class="utility-index">NC / 12</span>
+            </div>
+            <h2 id="json-input-title">Paste or type JSON.</h2>
+
+            <form class="utility-form" id="json-form" novalidate>
+              <div class="form-field">
+                <label for="json-input">JSON input</label>
+                <textarea class="form-control" id="json-input" placeholder="Paste or type JSON here..." rows="12" spellcheck="false" aria-describedby="json-hint"></textarea>
+              </div>
+              <p id="json-hint" class="form-hint">Input size: <span id="input-size">0</span> characters</p>
+              <p class="input-error" id="json-error" role="alert" hidden></p>
+            </form>
+
+            <div class="form-field">
+              <label for="indent-select">Indentation</label>
+              <select class="form-control" id="indent-select">
+                <option value="2">2 spaces</option>
+                <option value="4">4 spaces</option>
+                <option value="tab">Tabs</option>
+              </select>
+            </div>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel" aria-labelledby="json-output-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">JSON OUTPUT</span>
+              <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> LIVE</span>
+            </div>
+            <h2 id="json-output-title">Formatted JSON.</h2>
+
+            <div class="result-group">
+              <div class="result-item">
+                <p class="result-label">Type: <span id="json-type">—</span> | Size: <span id="output-size">—</span></p>
+                <output class="result-value result-value--monospace result-value--large" id="json-output" aria-live="polite">—</output>
+              </div>
+            </div>
+
+            <div class="result-actions">
+              <button class="button button-secondary" id="format-button" disabled>Format</button>
+              <button class="button button-secondary" id="minify-button" disabled>Minify</button>
+              <button class="button button-secondary" id="copy-output-button" disabled>Copy output</button>
+              <button class="button button-secondary" id="download-button" disabled>Download .json</button>
+              <button class="button button-secondary" id="clear-button" disabled>Clear</button>
+            </div>
+
+            <div class="calculation-note">
+              <p class="mono-label">ABOUT JSON</p>
+              <p>JSON (JavaScript Object Notation) is a lightweight text format for structured data. Valid JSON contains objects, arrays, strings, numbers, booleans, and null values. This tool validates syntax, formats for readability, and minifies for efficiency.</p>
+              <p>Validation is performed using <code>JSON.parse()</code>. Formatting and minification use <code>JSON.stringify()</code>.</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>
