@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Explore possible PC performance limits using user-entered system information and observed measurements, without FPS predictions or bottleneck scores.">
+    <title>PC Bottleneck Explainer | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/pc-bottleneck-explainer">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="PC Bottleneck Explainer | NEON//CORE">
+    <meta property="og:description" content="Review possible performance limits from user-entered data, without fabricated benchmarks, bottleneck percentages, or FPS predictions.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/pc-bottleneck-explainer">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PC Bottleneck Explainer | NEON//CORE">
+    <meta name="twitter:description" content="Review possible performance limits from user-entered data without fabricated scores or predictions.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/pc-bottleneck-explainer.js" defer></script>
+  </head>
+  <body data-tool-id="pc-bottleneck-explainer">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell bottleneck-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> COMPUTING / DIAGNOSTIC TOOL</p>
+          <h1>PC bottleneck <span class="accent-text">explainer.</span></h1>
+          <p>Explore possible performance limits using your workload and measurements—not a score, ranking, or FPS prediction.</p>
+        </header>
+
+        <p class="bottleneck-notice">No CPU/GPU specifications or benchmark results are prefilled. Measurements are user-supplied observations. A single utilization or temperature reading is not definitive proof of a bottleneck.</p>
+
+        <form class="bottleneck-form" id="bottleneck-form" novalidate>
+          <section aria-labelledby="system-info-title">
+            <header class="bottleneck-section-heading">
+              <p class="mono-label">SYSTEM AND WORKLOAD</p>
+              <h2 id="system-info-title">Describe the test conditions.</h2>
+            </header>
+            <div class="bottleneck-system-grid">
+              <fieldset class="surface-panel bottleneck-panel" aria-labelledby="system-hardware-heading">
+                <legend class="visually-hidden">System hardware and display</legend>
+                <div class="utility-panel-heading">
+                  <span class="mono-label">CONFIGURATION</span>
+                  <span class="utility-index">SYSTEM / 01</span>
+                </div>
+                <h3 id="system-hardware-heading">Hardware and display</h3>
+                <div class="bottleneck-field-grid">
+                  <div class="form-field">
+                    <label for="cpu-model">CPU model <small>(optional)</small></label>
+                    <input class="form-control" id="cpu-model" type="text" maxlength="100" autocomplete="off">
+                  </div>
+                  <div class="form-field">
+                    <label for="gpu-model">GPU model <small>(optional)</small></label>
+                    <input class="form-control" id="gpu-model" type="text" maxlength="100" autocomplete="off">
+                  </div>
+                  <div class="form-field">
+                    <label for="installed-ram">Installed RAM <small>(GB)</small></label>
+                    <input class="form-control" id="installed-ram" type="number" min="0.25" max="1024" step="any" required inputmode="decimal" aria-describedby="installed-ram-hint">
+                    <small class="bottleneck-input-hint" id="installed-ram-hint">Required; 0.25–1,024 GB, up to 2 decimal places.</small>
+                    <p class="input-error" id="installed-ram-error" role="alert" hidden></p>
+                  </div>
+                  <div class="form-field">
+                    <label for="ram-configuration">RAM configuration</label>
+                    <select class="form-control" id="ram-configuration" required aria-describedby="ram-configuration-hint">
+                      <option value="unknown" selected>Unknown</option>
+                      <option value="single">Single-channel</option>
+                      <option value="dual">Dual-channel</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <small class="bottleneck-input-hint" id="ram-configuration-hint">Use Unknown if not confirmed.</small>
+                    <p class="input-error" id="ram-configuration-error" role="alert" hidden></p>
+                  </div>
+                  <div class="form-field">
+                    <label for="storage-type">Storage type</label>
+                    <select class="form-control" id="storage-type" required aria-describedby="storage-type-hint">
+                      <option value="unknown" selected>Unknown</option>
+                      <option value="hdd">HDD</option>
+                      <option value="sata-ssd">SATA SSD</option>
+                      <option value="nvme-ssd">NVMe SSD</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <small class="bottleneck-input-hint" id="storage-type-hint">Select the primary workload storage type.</small>
+                    <p class="input-error" id="storage-type-error" role="alert" hidden></p>
+                  </div>
+                  <div class="form-field">
+                    <label for="resolution">Display resolution</label>
+                    <select class="form-control" id="resolution" required aria-describedby="resolution-hint">
+                      <option value="" selected>Select resolution</option>
+                      <option value="1080p">1080p</option>
+                      <option value="1440p">1440p</option>
+                      <option value="4k">4K</option>
+                      <option value="ultrawide">Ultrawide</option>
+                      <option value="custom">Custom</option>
+                    </select>
+                    <small class="bottleneck-input-hint" id="resolution-hint">Use Custom for exact width and height.</small>
+                    <p class="input-error" id="resolution-error" role="alert" hidden></p>
+                  </div>
+                  <div class="form-field bottleneck-custom-resolution" id="custom-resolution-fields" hidden>
+                    <label for="resolution-width">Custom width <small>(pixels)</small></label>
+                    <input class="form-control" id="resolution-width" type="number" min="320" max="16384" step="1" inputmode="numeric" disabled aria-describedby="resolution-width-hint">
+                    <small class="bottleneck-input-hint" id="resolution-width-hint">When Custom is selected: whole number, 320–16,384.</small>
+                    <p class="input-error" id="resolution-width-error" role="alert" hidden></p>
+                  </div>
+                  <div class="form-field bottleneck-custom-resolution" id="custom-height-fields" hidden>
+                    <label for="resolution-height">Custom height <small>(pixels)</small></label>
+                    <input class="form-control" id="resolution-height" type="number" min="200" max="16384" step="1" inputmode="numeric" disabled aria-describedby="resolution-height-hint">
+                    <small class="bottleneck-input-hint" id="resolution-height-hint">When Custom is selected: whole number, 200–16,384.</small>
+                    <p class="input-error" id="resolution-height-error" role="alert" hidden></p>
+                  </div>
+                  <div class="form-field">
+                    <label for="refresh-rate">Refresh rate <small>(Hz)</small></label>
+                    <input class="form-control" id="refresh-rate" type="number" min="1" max="1000" step="any" required inputmode="decimal" aria-describedby="refresh-rate-hint">
+                    <small class="bottleneck-input-hint" id="refresh-rate-hint">Required; 1–1,000 Hz, up to 2 decimal places.</small>
+                    <p class="input-error" id="refresh-rate-error" role="alert" hidden></p>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="surface-panel bottleneck-panel" aria-labelledby="workload-heading">
+                <legend class="visually-hidden">Workload and graphics settings</legend>
+                <div class="utility-panel-heading">
+                  <span class="mono-label">WORKLOAD</span>
+                  <span class="utility-index">SYSTEM / 02</span>
+                </div>
+                <h3 id="workload-heading">Workload and settings</h3>
+                <div class="bottleneck-field-grid">
+                  <div class="form-field">
+                    <label for="primary-workload">Primary workload</label>
+                    <select class="form-control" id="primary-workload" required aria-describedby="primary-workload-hint">
+                      <option value="" selected>Select workload</option>
+                      <option value="competitive-gaming">Competitive gaming</option>
+                      <option value="general-gaming">General gaming</option>
+                      <option value="productivity">Productivity</option>
+                      <option value="video-editing">Video editing</option>
+                      <option value="3d-rendering">3D rendering</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <small class="bottleneck-input-hint" id="primary-workload-hint">Required; use the workload measured below.</small>
+                    <p class="input-error" id="primary-workload-error" role="alert" hidden></p>
+                  </div>
+                  <div class="form-field">
+                    <label for="graphics-settings">Graphics settings</label>
+                    <select class="form-control" id="graphics-settings" required aria-describedby="graphics-settings-hint">
+                      <option value="" selected>Select settings</option>
+                      <option value="low">Low</option>
+                      <option value="medium">Medium</option>
+                      <option value="high">High</option>
+                      <option value="ultra">Ultra</option>
+                      <option value="custom">Custom</option>
+                    </select>
+                    <small class="bottleneck-input-hint" id="graphics-settings-hint">Required; ray-tracing options can change GPU demands.</small>
+                    <p class="input-error" id="graphics-settings-error" role="alert" hidden></p>
+                  </div>
+                  <div class="form-field">
+                    <label for="target-fps">Target FPS <small>(optional)</small></label>
+                    <input class="form-control" id="target-fps" type="number" min="1" max="1000" step="any" inputmode="decimal" aria-describedby="target-fps-hint">
+                    <small class="bottleneck-input-hint" id="target-fps-hint">If supplied: 1–1,000 FPS, up to 2 decimal places.</small>
+                    <p class="input-error" id="target-fps-error" role="alert" hidden></p>
+                  </div>
+                  <div class="form-field">
+                    <label for="frame-limit">Frame cap / V-Sync status <small>(optional)</small></label>
+                    <select class="form-control" id="frame-limit" aria-describedby="frame-limit-hint">
+                      <option value="unknown" selected>Unknown</option>
+                      <option value="uncapped">Uncapped</option>
+                      <option value="capped">Frame-capped</option>
+                      <option value="vsync">V-Sync enabled</option>
+                      <option value="refresh-limited">Refresh / external limit</option>
+                    </select>
+                    <small class="bottleneck-input-hint" id="frame-limit-hint">User-observed context; limits can affect utilisation.</small>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </section>
+
+          <section class="bottleneck-measurements-section" aria-labelledby="measurements-title">
+            <header class="bottleneck-section-heading">
+              <p class="mono-label">OPTIONAL USER-SUPPLIED MEASUREMENTS</p>
+              <h2 id="measurements-title">Enter observations from a representative run.</h2>
+              <p>Measure the same scene or workload repeatedly with consistent resolution, settings, overlays, and background tasks. Utilisation and temperatures vary over time; one reading is not a diagnosis.</p>
+            </header>
+            <fieldset class="surface-panel bottleneck-panel">
+              <legend class="visually-hidden">User-supplied performance measurements</legend>
+              <div class="bottleneck-measurement-grid">
+                <div class="form-field">
+                  <label for="gpu-util">GPU utilisation <small>(user-measured %, optional)</small></label>
+                  <input class="form-control" id="gpu-util" type="number" min="0" max="100" step="any" inputmode="decimal" aria-describedby="gpu-util-hint">
+                  <small class="bottleneck-input-hint" id="gpu-util-hint">0–100%, up to 2 decimal places.</small>
+                  <p class="input-error" id="gpu-util-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="cpu-util">Overall CPU utilisation <small>(user-measured %, optional)</small></label>
+                  <input class="form-control" id="cpu-util" type="number" min="0" max="100" step="any" inputmode="decimal" aria-describedby="cpu-util-hint">
+                  <small class="bottleneck-input-hint" id="cpu-util-hint">0–100%; overall utilisation need not reach 100%.</small>
+                  <p class="input-error" id="cpu-util-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="thread-util">Highest CPU core / thread utilisation <small>(user-measured %, optional)</small></label>
+                  <input class="form-control" id="thread-util" type="number" min="0" max="100" step="any" inputmode="decimal" aria-describedby="thread-util-hint">
+                  <small class="bottleneck-input-hint" id="thread-util-hint">0–100%; sample the busiest individual core or thread.</small>
+                  <p class="input-error" id="thread-util-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="ram-util">RAM utilisation <small>(user-measured %, optional)</small></label>
+                  <input class="form-control" id="ram-util" type="number" min="0" max="100" step="any" inputmode="decimal" aria-describedby="ram-util-hint">
+                  <small class="bottleneck-input-hint" id="ram-util-hint">0–100%; capacity alone does not establish memory pressure.</small>
+                  <p class="input-error" id="ram-util-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="vram-util">VRAM utilisation <small>(user-measured %, optional)</small></label>
+                  <input class="form-control" id="vram-util" type="number" min="0" max="100" step="any" inputmode="decimal" aria-describedby="vram-util-hint">
+                  <small class="bottleneck-input-hint" id="vram-util-hint">0–100%; reported allocation may not equal active pressure.</small>
+                  <p class="input-error" id="vram-util-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="average-fps">Average FPS <small>(user-measured, optional)</small></label>
+                  <input class="form-control" id="average-fps" type="number" min="1" max="1000" step="any" inputmode="decimal" aria-describedby="average-fps-hint">
+                  <small class="bottleneck-input-hint" id="average-fps-hint">1–1,000 FPS, up to 2 decimal places.</small>
+                  <p class="input-error" id="average-fps-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="one-percent-low">1% low FPS <small>(user-measured, optional)</small></label>
+                  <input class="form-control" id="one-percent-low" type="number" min="1" max="1000" step="any" inputmode="decimal" aria-describedby="one-percent-low-hint">
+                  <small class="bottleneck-input-hint" id="one-percent-low-hint">1–1,000 FPS; if above average, only a small variance is accepted.</small>
+                  <p class="input-error" id="one-percent-low-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="cpu-temp">CPU temperature <small>(user-measured °C, optional)</small></label>
+                  <input class="form-control" id="cpu-temp" type="number" min="0" max="150" step="any" inputmode="decimal" aria-describedby="cpu-temp-hint">
+                  <small class="bottleneck-input-hint" id="cpu-temp-hint">0–150 °C; compare with the exact component's limits.</small>
+                  <p class="input-error" id="cpu-temp-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="gpu-temp">GPU temperature <small>(user-measured °C, optional)</small></label>
+                  <input class="form-control" id="gpu-temp" type="number" min="0" max="150" step="any" inputmode="decimal" aria-describedby="gpu-temp-hint">
+                  <small class="bottleneck-input-hint" id="gpu-temp-hint">0–150 °C; compare with the exact component's limits.</small>
+                  <p class="input-error" id="gpu-temp-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="memory-pressure">Paging or stuttering observed <small>(optional)</small></label>
+                  <select class="form-control" id="memory-pressure" aria-describedby="memory-pressure-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                  <small class="bottleneck-input-hint" id="memory-pressure-hint">User observation; does not identify the cause by itself.</small>
+                </div>
+              </div>
+            </fieldset>
+          </section>
+
+          <div class="bottleneck-actions">
+            <button class="button button-primary" type="submit">Analyse Workload</button>
+            <button class="button button-quiet" id="reset-bottleneck" type="button">Reset</button>
+            <p class="bottleneck-status" id="bottleneck-status" role="status" aria-live="polite">Enter system information; measurements are optional.</p>
+          </div>
+        </form>
+
+        <section class="bottleneck-results-section" aria-labelledby="bottleneck-results-title">
+          <header class="bottleneck-section-heading">
+            <p class="mono-label">CONDITIONAL ANALYSIS</p>
+            <h2 id="bottleneck-results-title">Signals to investigate, not a bottleneck verdict.</h2>
+            <p id="analysis-summary" role="status" aria-live="polite">Run an analysis to see the entered system summary, measurements, and conditional notes.</p>
+          </header>
+
+          <div class="bottleneck-result-grid">
+            <article class="surface-panel bottleneck-result-card">
+              <h3>System summary</h3>
+              <p id="system-summary">No system summary yet.</p>
+            </article>
+            <article class="surface-panel bottleneck-result-card">
+              <h3>User-supplied measurements</h3>
+              <ul id="measurement-summary"><li>Not analysed.</li></ul>
+            </article>
+          </div>
+
+          <div class="bottleneck-factor-grid">
+            <article class="surface-panel bottleneck-factor" id="factor-gpu" data-state="not-evaluated">
+              <h3>GPU-side load</h3>
+              <span class="bottleneck-factor-state">Not evaluated</span>
+              <p class="bottleneck-factor-message">Enter measurements to see whether a GPU utilisation signal warrants testing.</p>
+            </article>
+            <article class="surface-panel bottleneck-factor" id="factor-cpu" data-state="not-evaluated">
+              <h3>CPU-side load</h3>
+              <span class="bottleneck-factor-state">Not evaluated</span>
+              <p class="bottleneck-factor-message">Individual-thread and GPU utilisation can help guide a CPU-side investigation.</p>
+            </article>
+            <article class="surface-panel bottleneck-factor" id="factor-ram" data-state="not-evaluated">
+              <h3>RAM pressure</h3>
+              <span class="bottleneck-factor-state">Not evaluated</span>
+              <p class="bottleneck-factor-message">Capacity alone does not establish a RAM limitation.</p>
+            </article>
+            <article class="surface-panel bottleneck-factor" id="factor-vram" data-state="not-evaluated">
+              <h3>VRAM pressure</h3>
+              <span class="bottleneck-factor-state">Not evaluated</span>
+              <p class="bottleneck-factor-message">Reported usage alone does not establish VRAM pressure.</p>
+            </article>
+            <article class="surface-panel bottleneck-factor" id="factor-storage" data-state="not-evaluated">
+              <h3>Storage and asset access</h3>
+              <span class="bottleneck-factor-state">Not evaluated</span>
+              <p class="bottleneck-factor-message">Storage type may affect loading and asset access; no storage performance measurement is entered.</p>
+            </article>
+            <article class="surface-panel bottleneck-factor" id="factor-thermal" data-state="not-evaluated">
+              <h3>Thermal or power constraints</h3>
+              <span class="bottleneck-factor-state">Not evaluated</span>
+              <p class="bottleneck-factor-message">Temperature alone cannot establish throttling; compare limits with frequency and power evidence.</p>
+            </article>
+            <article class="surface-panel bottleneck-factor" id="factor-frame-limit" data-state="not-evaluated">
+              <h3>Frame limits and workload</h3>
+              <span class="bottleneck-factor-state">Not evaluated</span>
+              <p class="bottleneck-factor-message">Frame caps, V-Sync, refresh limits, resolution, settings, and workload can change utilisation.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="bottleneck-diagnostics-section" aria-labelledby="diagnostics-title">
+          <header class="bottleneck-section-heading">
+            <p class="mono-label">DIAGNOSTIC SUGGESTIONS</p>
+            <h2 id="diagnostics-title">Use repeatable tests to narrow the cause.</h2>
+          </header>
+          <ul class="bottleneck-diagnostics" id="diagnostic-suggestions">
+            <li>Repeat the same scene with the same settings and background tasks.</li>
+            <li>Compare GPU utilisation at different resolutions and at low versus high graphics settings.</li>
+            <li>Monitor individual CPU threads, frame-time consistency, RAM/VRAM pressure, background processes, and power/temperature behaviour.</li>
+          </ul>
+          <p class="bottleneck-diagnostic-note">These are investigation steps, not confirmed findings or upgrade recommendations.</p>
+        </section>
+
+        <section class="bottleneck-education-section" aria-labelledby="bottleneck-education-title">
+          <header class="bottleneck-section-heading">
+            <p class="mono-label">HOW PERFORMANCE LIMITS SHIFT</p>
+            <h2 id="bottleneck-education-title">The same PC can be limited by different things.</h2>
+          </header>
+          <div class="bottleneck-education-grid">
+            <article class="surface-panel bottleneck-education-card">
+              <h3>Resolution and graphics settings</h3>
+              <p>Higher resolution generally increases GPU rendering work. Lower graphics settings can shift the limiting factor toward CPU-side work. Ray tracing can substantially change GPU demands; results depend on the title and settings.</p>
+            </article>
+            <article class="surface-panel bottleneck-education-card">
+              <h3>Frame caps and refresh limits</h3>
+              <p>Frame caps, V-Sync, display refresh limits, and external limiters can reduce utilisation or change frame pacing. Compare uncapped and capped runs carefully, using the same scene and repeatable conditions.</p>
+            </article>
+            <article class="surface-panel bottleneck-education-card">
+              <h3>Workloads differ</h3>
+              <p>Games and applications distribute work differently, and the limiting component can change within one workload. A utilisation value is a clue about activity—not a universal bottleneck measurement.</p>
+            </article>
+            <article class="surface-panel bottleneck-education-card">
+              <h3>Memory and storage</h3>
+              <p>Paging, memory pressure, and stuttering may be related, but installed capacity or reported VRAM allocation alone does not prove a limitation. Storage can affect loading, streaming, and asset access; faster storage does not necessarily increase average FPS.</p>
+            </article>
+            <article class="surface-panel bottleneck-education-card">
+              <h3>Thermals and power</h3>
+              <p>Sustained thermal or power constraints can affect performance. A temperature by itself does not prove throttling: check the exact component limits alongside clock, power, and throttle indicators.</p>
+            </article>
+            <article class="surface-panel bottleneck-education-card">
+              <h3>Measurements need context</h3>
+              <p>Capture representative, repeatable measurements over time. Average FPS, 1% lows, utilisation, frame times, settings, and workload context together are more informative than a single snapshot, but still do not guarantee a diagnosis.</p>
+            </article>
+          </div>
+        </section>
+
+        <aside class="calculation-note bottleneck-limitations" aria-labelledby="bottleneck-limitations-title">
+          <p class="mono-label" id="bottleneck-limitations-title">IMPORTANT LIMITATIONS</p>
+          <p>This tool does not calculate bottleneck percentages, compatibility scores, predicted FPS, hardware rankings, or guaranteed upgrade recommendations. It does not measure hardware, inspect running processes, know model-specific thermal limits, or verify power/frequency throttling.</p>
+          <p>Conditional prompts use heuristic cues only: GPU, RAM, or VRAM utilisation at or above 90%; busiest CPU thread at or above 90%; and GPU utilisation at or below 80% for one possible CPU-side pattern. These are not universal cutoffs or bottleneck percentages.</p>
+          <p>FPS measurements can vary by scene, run length, capture method, driver, and background activity. A 1% low slightly above average is allowed only within a small tolerance and is flagged for review; recheck the measurement rather than treating it as a performance conclusion.</p>
+        </aside>
+        <p class="tool-footnote">All analysis runs locally in this browser. Entered system and measurement data are not transmitted or saved by this tool.</p>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>

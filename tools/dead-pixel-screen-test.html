@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Use static colours and patterns to visually inspect a display for pixel defects and screen artifacts.">
+    <title>Dead Pixel &amp; Screen Test | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/dead-pixel-screen-test">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="Dead Pixel &amp; Screen Test | NEON//CORE">
+    <meta property="og:description" content="Use static colours and patterns to visually inspect a display for pixel defects and screen artifacts.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/dead-pixel-screen-test">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dead Pixel &amp; Screen Test | NEON//CORE">
+    <meta name="twitter:description" content="Use static colours and patterns to visually inspect a display for pixel defects and screen artifacts.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/dead-pixel-screen-test.js" defer></script>
+  </head>
+  <body data-tool-id="dead-pixel-screen-test">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> DISPLAY / VISUAL INSPECTION</p>
+          <h1>Dead pixel <span class="accent-text">&amp; screen test.</span></h1>
+          <p>Show static colours and patterns to inspect your display by eye.</p>
+        </header>
+
+        <div class="pixel-test-tool">
+          <section class="surface-panel utility-panel pixel-test-setup" aria-labelledby="pixel-test-controls-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">TEST CONTROLS</span>
+              <span class="utility-index">NC / DISPLAY</span>
+            </div>
+            <h2 id="pixel-test-controls-title">Choose a test.</h2>
+            <div class="pixel-test-toolbar">
+              <div class="form-field pixel-test-selector">
+                <label for="pixel-test-select">Colour or pattern</label>
+                <select class="form-control" id="pixel-test-select">
+                  <optgroup label="Solid colours">
+                    <option value="0">Black (#000000)</option>
+                    <option value="1">White (#FFFFFF)</option>
+                    <option value="2">Red (#FF0000)</option>
+                    <option value="3">Green (#00FF00)</option>
+                    <option value="4">Blue (#0000FF)</option>
+                    <option value="5">Grey (#808080)</option>
+                    <option value="6">Cyan (#00FFFF)</option>
+                    <option value="7">Yellow (#FFFF00)</option>
+                    <option value="8">Magenta (#FF00FF)</option>
+                  </optgroup>
+                  <optgroup label="Patterns">
+                    <option value="9">Horizontal greyscale gradient</option>
+                    <option value="10">Vertical greyscale gradient</option>
+                    <option value="11">Fine checkerboard</option>
+                    <option value="12">Larger checkerboard</option>
+                  </optgroup>
+                </select>
+              </div>
+              <button class="button button-primary" id="start-fullscreen-button" type="button" aria-describedby="fullscreen-note">Start Fullscreen Test</button>
+            </div>
+            <p class="field-help" id="fullscreen-note">Fullscreen is optional. Use the tests in the page if your browser or device does not support it.</p>
+          </section>
+
+          <p class="pixel-test-feedback" id="pixel-test-feedback" role="status" aria-live="polite">Choose a test, or focus the test surface and use the arrow keys after starting.</p>
+
+          <section class="pixel-test-stage" id="pixel-test-stage" aria-label="Display test surface" tabindex="0">
+            <div class="pixel-test-stage-controls" role="group" aria-label="Test navigation">
+              <div class="pixel-test-label">
+                <span class="mono-label" id="pixel-test-index">TEST 01 / 13</span>
+                <p id="pixel-test-name">Black (#000000)</p>
+              </div>
+              <button class="button button-quiet" id="previous-test-button" type="button" aria-label="Previous test">Previous</button>
+              <button class="button button-primary" id="next-test-button" type="button" aria-label="Next test">Next</button>
+              <button class="button button-quiet" id="hide-controls-button" type="button" hidden>Hide Controls</button>
+              <button class="button button-quiet pixel-test-exit" id="exit-test-button" type="button">Exit Test</button>
+            </div>
+          </section>
+
+          <section class="surface-panel utility-panel pixel-test-instructions" aria-labelledby="pixel-test-instructions-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">HOW TO INSPECT</span>
+              <span class="utility-index">MANUAL TEST</span>
+            </div>
+            <h2 id="pixel-test-instructions-title">Look for pixels that differ.</h2>
+            <p>View each solid colour and look for dots that stay a different colour from the surrounding area. Gradients and checkerboards can help reveal banding or display artifacts. Use Previous and Next, or focus the test surface and press the left or right arrow key. In fullscreen, controls hide after about three seconds; move the mouse, touch the screen, or press a key to reveal them. Tests remain still until you choose another one.</p>
+            <p>This tool cannot automatically detect physical pixel defects; inspection is visual only. Browser fullscreen does not guarantee that the operating system displays every physical pixel. Do not press or tap on the screen. Use a comfortable brightness and stop if the display is uncomfortable to view.</p>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>

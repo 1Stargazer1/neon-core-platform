@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Compare the physical dimensions and pixel density of two displays.">
+    <title>Monitor Size Visualiser | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/monitor-size-visualiser">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="Monitor Size Visualiser | NEON//CORE">
+    <meta property="og:description" content="Compare the physical dimensions and pixel density of two displays.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/monitor-size-visualiser">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Monitor Size Visualiser | NEON//CORE">
+    <meta name="twitter:description" content="Compare the physical dimensions and pixel density of two displays.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/monitor-size-visualiser.js" defer></script>
+  </head>
+  <body data-tool-id="monitor-size-visualiser">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell monitor-visualiser">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> GAMING / DISPLAY TOOL</p>
+          <h1>Monitor size <span class="accent-text">visualiser.</span></h1>
+          <p>Compare the real-world dimensions and pixel density of two displays.</p>
+        </header>
+
+        <form class="monitor-config-form" id="monitor-form" novalidate>
+          <div class="monitor-config-grid">
+            <fieldset class="surface-panel monitor-config-panel" aria-labelledby="monitor-a-title">
+              <legend class="visually-hidden">Monitor A configuration</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">DISPLAY A</span>
+                <span class="utility-index">MONITOR 01</span>
+              </div>
+              <h2 id="monitor-a-title">Monitor A</h2>
+              <div class="monitor-field-grid">
+                <div class="form-field monitor-wide-field">
+                  <label for="monitor-a-name">Display name <small>(optional)</small></label>
+                  <input class="form-control" id="monitor-a-name" type="text" maxlength="40" autocomplete="off" value="Monitor A">
+                </div>
+                <div class="form-field monitor-wide-field">
+                  <label for="monitor-a-diagonal">Diagonal size <small>(inches)</small></label>
+                  <input class="form-control" id="monitor-a-diagonal" type="number" min="1" max="200" step="any" value="24" inputmode="decimal" required aria-describedby="monitor-a-diagonal-hint">
+                  <small class="monitor-input-hint" id="monitor-a-diagonal-hint">Allowed range: 1–200 inches.</small>
+                  <p class="input-error" id="monitor-a-diagonal-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="monitor-a-aspect-width">Aspect ratio width</label>
+                  <input class="form-control" id="monitor-a-aspect-width" type="number" min="1" max="100" step="1" value="16" inputmode="numeric" required aria-describedby="monitor-a-aspect-width-hint">
+                  <small class="monitor-input-hint" id="monitor-a-aspect-width-hint">Whole number, 1–100.</small>
+                  <p class="input-error" id="monitor-a-aspect-width-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="monitor-a-aspect-height">Aspect ratio height</label>
+                  <input class="form-control" id="monitor-a-aspect-height" type="number" min="1" max="100" step="1" value="9" inputmode="numeric" required aria-describedby="monitor-a-aspect-height-hint">
+                  <small class="monitor-input-hint" id="monitor-a-aspect-height-hint">Whole number, 1–100.</small>
+                  <p class="input-error" id="monitor-a-aspect-height-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="monitor-a-resolution-width">Resolution width <small>(pixels)</small></label>
+                  <input class="form-control" id="monitor-a-resolution-width" type="number" min="1" max="100000" step="1" value="1920" inputmode="numeric" required aria-describedby="monitor-a-resolution-width-hint">
+                  <small class="monitor-input-hint" id="monitor-a-resolution-width-hint">Whole number, 1–100,000.</small>
+                  <p class="input-error" id="monitor-a-resolution-width-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="monitor-a-resolution-height">Resolution height <small>(pixels)</small></label>
+                  <input class="form-control" id="monitor-a-resolution-height" type="number" min="1" max="100000" step="1" value="1080" inputmode="numeric" required aria-describedby="monitor-a-resolution-height-hint">
+                  <small class="monitor-input-hint" id="monitor-a-resolution-height-hint">Whole number, 1–100,000.</small>
+                  <p class="input-error" id="monitor-a-resolution-height-error" role="alert" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel monitor-config-panel" aria-labelledby="monitor-b-title">
+              <legend class="visually-hidden">Monitor B configuration</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">DISPLAY B</span>
+                <span class="utility-index">MONITOR 02</span>
+              </div>
+              <h2 id="monitor-b-title">Monitor B</h2>
+              <div class="monitor-field-grid">
+                <div class="form-field monitor-wide-field">
+                  <label for="monitor-b-name">Display name <small>(optional)</small></label>
+                  <input class="form-control" id="monitor-b-name" type="text" maxlength="40" autocomplete="off" value="Monitor B">
+                </div>
+                <div class="form-field monitor-wide-field">
+                  <label for="monitor-b-diagonal">Diagonal size <small>(inches)</small></label>
+                  <input class="form-control" id="monitor-b-diagonal" type="number" min="1" max="200" step="any" value="32" inputmode="decimal" required aria-describedby="monitor-b-diagonal-hint">
+                  <small class="monitor-input-hint" id="monitor-b-diagonal-hint">Allowed range: 1–200 inches.</small>
+                  <p class="input-error" id="monitor-b-diagonal-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="monitor-b-aspect-width">Aspect ratio width</label>
+                  <input class="form-control" id="monitor-b-aspect-width" type="number" min="1" max="100" step="1" value="16" inputmode="numeric" required aria-describedby="monitor-b-aspect-width-hint">
+                  <small class="monitor-input-hint" id="monitor-b-aspect-width-hint">Whole number, 1–100.</small>
+                  <p class="input-error" id="monitor-b-aspect-width-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="monitor-b-aspect-height">Aspect ratio height</label>
+                  <input class="form-control" id="monitor-b-aspect-height" type="number" min="1" max="100" step="1" value="9" inputmode="numeric" required aria-describedby="monitor-b-aspect-height-hint">
+                  <small class="monitor-input-hint" id="monitor-b-aspect-height-hint">Whole number, 1–100.</small>
+                  <p class="input-error" id="monitor-b-aspect-height-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="monitor-b-resolution-width">Resolution width <small>(pixels)</small></label>
+                  <input class="form-control" id="monitor-b-resolution-width" type="number" min="1" max="100000" step="1" value="2560" inputmode="numeric" required aria-describedby="monitor-b-resolution-width-hint">
+                  <small class="monitor-input-hint" id="monitor-b-resolution-width-hint">Whole number, 1–100,000.</small>
+                  <p class="input-error" id="monitor-b-resolution-width-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="monitor-b-resolution-height">Resolution height <small>(pixels)</small></label>
+                  <input class="form-control" id="monitor-b-resolution-height" type="number" min="1" max="100000" step="1" value="1440" inputmode="numeric" required aria-describedby="monitor-b-resolution-height-hint">
+                  <small class="monitor-input-hint" id="monitor-b-resolution-height-hint">Whole number, 1–100,000.</small>
+                  <p class="input-error" id="monitor-b-resolution-height-error" role="alert" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="monitor-controls surface-panel">
+            <fieldset class="standard-fieldset">
+              <legend>Visual comparison mode</legend>
+              <div class="standard-options monitor-mode-options">
+                <label class="standard-option">
+                  <input type="radio" name="comparison-mode" value="side-by-side" checked>
+                  <span><strong>Side by side</strong><small>COMPARE WIDTH AND HEIGHT</small></span>
+                </label>
+                <label class="standard-option">
+                  <input type="radio" name="comparison-mode" value="overlay">
+                  <span><strong>Overlay</strong><small>COMPARE OUTLINES</small></span>
+                </label>
+              </div>
+            </fieldset>
+            <button class="button button-quiet" id="reset-monitors" type="button">Reset to defaults</button>
+          </div>
+        </form>
+
+        <section class="surface-panel monitor-visual-panel" aria-labelledby="visualisation-title">
+          <div class="utility-panel-heading">
+            <span class="mono-label">TO-SCALE VIEW</span>
+            <span class="result-live"><span class="status-dot status-dot--primary" aria-hidden="true"></span> LIVE</span>
+          </div>
+          <h2 id="visualisation-title">Physical screen comparison.</h2>
+          <figure class="monitor-figure">
+            <div class="monitor-legend" aria-label="Display labels">
+              <span class="monitor-legend-item"><span class="monitor-swatch monitor-swatch-a" aria-hidden="true"></span><output id="monitor-a-visual-label">Monitor A</output></span>
+              <span class="monitor-legend-item"><span class="monitor-swatch monitor-swatch-b" aria-hidden="true"></span><output id="monitor-b-visual-label">Monitor B</output></span>
+            </div>
+            <svg class="monitor-visual" id="monitor-visual" viewBox="0 0 600 320" role="img" aria-labelledby="monitor-visual-title monitor-visual-description" preserveAspectRatio="xMidYMid meet">
+              <title id="monitor-visual-title">Monitor dimensions to scale</title>
+              <desc id="monitor-visual-description">Monitor A and Monitor B are shown side by side at the same physical scale.</desc>
+              <rect class="monitor-visual-background" x="0" y="0" width="600" height="320" rx="4"></rect>
+              <rect class="monitor-display monitor-display-a" id="monitor-a-display" x="0" y="0" width="0" height="0" rx="2"></rect>
+              <rect class="monitor-display monitor-display-b" id="monitor-b-display" x="0" y="0" width="0" height="0" rx="2"></rect>
+            </svg>
+            <figcaption class="monitor-visual-caption">Both screens use one shared physical scale. The rectangles show screen areas, not monitor bezels.</figcaption>
+          </figure>
+        </section>
+
+        <section class="monitor-results" aria-labelledby="results-title">
+          <header class="monitor-results-heading">
+            <p class="mono-label">CALCULATED DIMENSIONS</p>
+            <h2 id="results-title">Display properties.</h2>
+          </header>
+          <div class="monitor-results-grid">
+            <section class="surface-panel monitor-results-panel" aria-labelledby="monitor-a-results-title">
+              <h3 id="monitor-a-results-title">Monitor A</h3>
+              <dl class="monitor-property-list">
+                <div><dt>Width</dt><dd><output id="monitor-a-width-output">—</output></dd></div>
+                <div><dt>Height</dt><dd><output id="monitor-a-height-output">—</output></dd></div>
+                <div><dt>Physical area</dt><dd><output id="monitor-a-area-output">—</output></dd></div>
+                <div><dt>Pixel density</dt><dd><output id="monitor-a-ppi-output">—</output></dd></div>
+              </dl>
+            </section>
+            <section class="surface-panel monitor-results-panel" aria-labelledby="monitor-b-results-title">
+              <h3 id="monitor-b-results-title">Monitor B</h3>
+              <dl class="monitor-property-list">
+                <div><dt>Width</dt><dd><output id="monitor-b-width-output">—</output></dd></div>
+                <div><dt>Height</dt><dd><output id="monitor-b-height-output">—</output></dd></div>
+                <div><dt>Physical area</dt><dd><output id="monitor-b-area-output">—</output></dd></div>
+                <div><dt>Pixel density</dt><dd><output id="monitor-b-ppi-output">—</output></dd></div>
+              </dl>
+            </section>
+          </div>
+
+          <section class="surface-panel monitor-difference-panel" aria-labelledby="difference-title">
+            <h3 id="difference-title">Monitor B minus Monitor A</h3>
+            <div class="monitor-difference-grid" aria-live="polite">
+              <div><span>Width difference</span><output id="width-difference-output">—</output></div>
+              <div><span>Height difference</span><output id="height-difference-output">—</output></div>
+              <div><span>Area difference</span><output id="area-difference-output">—</output></div>
+              <div><span>Area difference vs A</span><output id="area-percent-output">—</output></div>
+              <div><span>PPI difference</span><output id="ppi-difference-output">—</output></div>
+              <div><span>Relative area (B ÷ A)</span><output id="relative-area-output">—</output></div>
+            </div>
+            <p class="monitor-area-summary" id="monitor-area-summary" role="status" aria-live="polite">Enter valid values for both displays to compare their physical areas.</p>
+          </section>
+        </section>
+
+        <aside class="calculation-note monitor-explanation" aria-labelledby="monitor-explanation-title">
+          <p class="mono-label" id="monitor-explanation-title">PHYSICAL SIZE VS RESOLUTION</p>
+          <p>Diagonal size and aspect ratio determine the physical width and height. Pixel resolution is used only to calculate pixels per inch; it does not determine the screen’s physical size.</p>
+          <p>A higher resolution does not necessarily mean a physically larger display. Area percentage difference is relative to Monitor A.</p>
+          <p class="unit-example">Width = diagonal × aspect width ÷ √(aspect width² + aspect height²)</p>
+        </aside>
+        <p class="tool-footnote">All calculations run in this browser. Display names and specifications are not transmitted or stored.</p>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>

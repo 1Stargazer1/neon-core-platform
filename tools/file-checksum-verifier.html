@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Calculate and compare SHA-256 or SHA-512 checksums for files locally in your browser.">
+    <title>File Checksum Verifier | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/file-checksum-verifier">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="File Checksum Verifier | NEON//CORE">
+    <meta property="og:description" content="Calculate and compare SHA-256 or SHA-512 checksums for files locally in your browser.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/file-checksum-verifier">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="File Checksum Verifier | NEON//CORE">
+    <meta name="twitter:description" content="Calculate and compare SHA-256 or SHA-512 checksums for files locally in your browser.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/file-checksum-verifier.js" defer></script>
+  </head>
+  <body data-tool-id="file-checksum-verifier">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> SECURITY / FILE INTEGRITY</p>
+          <h1>File checksum <span class="accent-text">verifier.</span></h1>
+          <p>Calculate a SHA-256 or SHA-512 digest and compare it with a checksum you expect.</p>
+        </header>
+
+        <div class="utility-layout checksum-tool-layout">
+          <section class="surface-panel utility-panel" aria-labelledby="file-selection-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">FILE SELECTION</span>
+              <span class="utility-index">NC / LOCAL</span>
+            </div>
+            <h2 id="file-selection-title">Choose one file.</h2>
+            <div class="checksum-drop-zone" id="checksum-drop-zone" role="region" aria-label="File selection drop area">
+              <p>Drop one file here, or choose it from your device.</p>
+              <div class="form-field">
+                <label for="file-input">File to verify</label>
+                <input class="form-control" id="file-input" type="file" aria-describedby="file-size-limit">
+              </div>
+              <p class="field-help" id="file-size-limit">Maximum file size: 100 MiB. Web Crypto digest requires the complete file buffer; this conservative limit helps reduce browser memory use but does not guarantee a specific memory footprint.</p>
+            </div>
+            <p class="checksum-file-info" id="checksum-file-info" role="status" aria-live="polite">No file selected.</p>
+            <p class="input-error" id="file-error" role="alert" hidden></p>
+            <div class="checksum-actions">
+              <button class="button button-quiet" id="clear-file-button" type="button" disabled>Clear File</button>
+            </div>
+            <div class="form-field checksum-algorithm-field">
+              <label for="checksum-algorithm">Hash algorithm</label>
+              <select class="form-control" id="checksum-algorithm">
+                <option value="SHA-256">SHA-256</option>
+                <option value="SHA-512">SHA-512</option>
+              </select>
+            </div>
+            <p class="field-help" id="crypto-support-note">Hashing runs locally in a secure browser context using the native Web Crypto API.</p>
+          </section>
+
+          <section class="surface-panel utility-panel result-panel" aria-labelledby="checksum-result-title">
+            <div class="utility-panel-heading">
+              <span class="mono-label">CHECKSUM RESULT</span>
+              <span class="utility-index">SHA-2</span>
+            </div>
+            <h2 id="checksum-result-title">Calculate and compare.</h2>
+            <div class="form-field">
+              <label for="expected-checksum">Expected checksum (optional)</label>
+              <input class="form-control checksum-value" id="expected-checksum" type="text" inputmode="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-describedby="expected-checksum-help">
+              <p class="field-help" id="expected-checksum-help">Enter hexadecimal characters. Spaces around the value are ignored; length depends on the selected algorithm.</p>
+              <p class="input-error" id="expected-checksum-error" role="alert" hidden></p>
+            </div>
+            <div class="checksum-actions">
+              <button class="button button-primary" id="calculate-checksum-button" type="button" disabled>Calculate Checksum</button>
+              <button class="button button-quiet" id="reset-checksum-button" type="button">Reset</button>
+            </div>
+            <p class="checksum-status" id="checksum-status" role="status" aria-live="polite">Select a file to begin.</p>
+            <p class="checksum-processing" id="checksum-processing" role="status" aria-live="polite" hidden>Calculating checksum locally...</p>
+            <p class="input-error" id="checksum-error" role="alert" hidden></p>
+            <div class="form-field">
+              <label for="calculated-checksum">Calculated checksum</label>
+              <div class="checksum-output-row">
+                <input class="form-control checksum-value" id="calculated-checksum" type="text" readonly autocomplete="off" spellcheck="false" aria-describedby="checksum-output-help">
+                <button class="button button-secondary" id="copy-checksum-button" type="button" disabled>Copy</button>
+              </div>
+              <p class="field-help" id="checksum-output-help">The digest is shown in lowercase hexadecimal.</p>
+              <p class="field-help" id="copy-checksum-feedback" role="status" aria-live="polite"></p>
+            </div>
+            <p class="checksum-comparison" id="checksum-comparison" role="status" aria-live="polite">No comparison yet.</p>
+          </section>
+        </div>
+
+        <section class="surface-panel utility-panel checksum-explanation" aria-labelledby="checksum-explanation-title">
+          <div class="utility-panel-heading">
+            <span class="mono-label">WHAT A CHECKSUM TELLS YOU</span>
+            <span class="utility-index">SHA-256 / SHA-512</span>
+          </div>
+          <h2 id="checksum-explanation-title">Compare file contents.</h2>
+          <p>A cryptographic checksum is a digest of a file's binary contents. Matching an expected digest indicates the checked bytes match that reference; it does not prove that the file is safe or malware-free.</p>
+          <p class="field-help">Files are processed in this browser only. Nothing is uploaded or saved. The 100 MiB limit exists because Web Crypto digest is not streaming and may require the complete file in memory.</p>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>

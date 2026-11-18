@@ -127,6 +127,86 @@ const tools = [
     keywords: "electricity cost watts kwh power consumption calculator",
     href: "tools/electricity-cost-calculator.html",
   },
+  {
+    name: "Dead Pixel & Screen Test",
+    id: "dead-pixel-screen-test",
+    category: "technology",
+    description: "Show colour fields and patterns to help inspect a display for pixel issues.",
+    keywords: "monitor display dead pixel stuck pixel screen test colour color",
+    href: "tools/dead-pixel-screen-test.html",
+  },
+  {
+    name: "Password Generator & Strength Meter",
+    id: "password-generator",
+    category: "everyday",
+    description: "Generate passwords and review their estimated strength locally.",
+    keywords: "password generator strength security passphrase random",
+    href: "tools/password-generator.html",
+  },
+  {
+    name: "File Checksum Verifier",
+    id: "file-checksum-verifier",
+    category: "development",
+    description: "Calculate file hashes and compare them with a supplied checksum.",
+    keywords: "file hash checksum verify sha256 integrity download",
+    href: "tools/file-checksum-verifier.html",
+  },
+  {
+    name: "Monitor Size Visualiser",
+    id: "monitor-size-visualiser",
+    category: "technology",
+    description: "Visualise monitor dimensions using a screen size and aspect ratio.",
+    keywords: "monitor screen size visualiser visualizer dimensions aspect ratio display",
+    href: "tools/monitor-size-visualiser.html",
+  },
+  {
+    name: "Monitor Comparison",
+    id: "monitor-comparison",
+    category: "technology",
+    description: "Compare monitor specifications side by side using details you provide.",
+    keywords: "monitor display comparison specs resolution refresh rate size",
+    href: "tools/monitor-comparison.html",
+  },
+  {
+    name: "CPU Comparison",
+    id: "cpu-comparison",
+    category: "gaming",
+    description: "Compare CPU specifications side by side using supplied information.",
+    keywords: "cpu processor comparison cores threads clock speed hardware",
+    href: "tools/cpu-comparison.html",
+  },
+  {
+    name: "GPU Comparison",
+    id: "gpu-comparison",
+    category: "gaming",
+    description: "Compare GPU specifications side by side using supplied information.",
+    keywords: "gpu graphics card comparison vram memory hardware",
+    href: "tools/gpu-comparison.html",
+  },
+  {
+    name: "Motherboard & RAM Compatibility",
+    id: "motherboard-ram-compatibility",
+    category: "technology",
+    description: "Check supplied CPU, motherboard, and RAM details for possible conflicts.",
+    keywords: "motherboard ram memory cpu socket ddr compatibility ecc",
+    href: "tools/motherboard-ram-compatibility.html",
+  },
+  {
+    name: "PSU Wattage Estimator",
+    id: "psu-wattage-estimator",
+    category: "technology",
+    description: "Estimate system power from component inputs and set a planning target.",
+    keywords: "psu power supply wattage estimate cpu gpu components safety margin",
+    href: "tools/psu-wattage-estimator.html",
+  },
+  {
+    name: "PC Bottleneck Explainer",
+    id: "pc-bottleneck-explainer",
+    category: "gaming",
+    description: "Explore possible workload limits using system details and your own measurements.",
+    keywords: "pc bottleneck cpu gpu ram vram performance utilisation utilization fps",
+    href: "tools/pc-bottleneck-explainer.html",
+  },
 ];
 
 const toolGrid = document.querySelector("#tool-grid");
@@ -144,6 +224,20 @@ const emptyDescription = document.querySelector("#empty-description");
 const resetDirectoryButton = document.querySelector("#reset-directory");
 
 let activeCategory = window.NeonCore.getPreferences().category;
+
+function updateFilterCounts() {
+  filterButtons.forEach((button) => {
+    const count = button.querySelector("span");
+    if (!count || button.dataset.filter === "favorites") {
+      return;
+    }
+
+    const matchingTools = button.dataset.filter === "all"
+      ? tools
+      : tools.filter((tool) => tool.category === button.dataset.filter);
+    count.textContent = String(matchingTools.length).padStart(2, "0");
+  });
+}
 
 function createToolCard(tool, index, favoriteIds) {
   const card = document.createElement("article");
@@ -307,5 +401,6 @@ document.addEventListener("neoncore:preferenceschange", (event) => {
 
 currentYear.textContent = new Date().getFullYear();
 updateActiveFilter();
+updateFilterCounts();
 renderRecentTools();
 renderTools();

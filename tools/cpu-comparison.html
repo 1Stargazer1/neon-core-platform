@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Compare processor specifications and trade-offs without invented benchmarks or performance rankings.">
+    <title>CPU Comparison | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/cpu-comparison">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="CPU Comparison | NEON//CORE">
+    <meta property="og:description" content="Compare processor specifications and trade-offs without invented benchmarks or performance rankings.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/cpu-comparison">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CPU Comparison | NEON//CORE">
+    <meta name="twitter:description" content="Compare processor specifications and trade-offs without invented benchmarks or performance rankings.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/cpu-comparison.js" defer></script>
+  </head>
+  <body data-tool-id="cpu-comparison">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell cpu-comparison-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> COMPUTING / PROCESSOR TOOL</p>
+          <h1>CPU <span class="accent-text">comparison.</span></h1>
+          <p>Compare processor specifications without invented benchmarks or performance rankings.</p>
+        </header>
+
+        <p class="cpu-comparison-notice">No real processor specifications are prefilled. Enter verified or user-supplied values for both CPUs; this tool does not look up products or estimate benchmark performance.</p>
+
+        <form class="cpu-comparison-form" id="cpu-comparison-form" novalidate>
+          <div class="cpu-config-grid">
+            <fieldset class="surface-panel cpu-config-panel" aria-labelledby="cpu-a-heading">
+              <legend class="visually-hidden">CPU A specifications</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">PROCESSOR A</span>
+                <span class="utility-index">CPU / 01</span>
+              </div>
+              <h2 id="cpu-a-heading">CPU A</h2>
+              <div class="cpu-field-grid">
+                <div class="form-field">
+                  <label for="a-manufacturer">Manufacturer</label>
+                  <select class="form-control" id="a-manufacturer" required aria-describedby="a-manufacturer-hint">
+                    <option value="" selected>Select manufacturer</option>
+                    <option value="intel">Intel</option>
+                    <option value="amd">AMD</option>
+                    <option value="apple">Apple</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="cpu-input-hint" id="a-manufacturer-hint">Required; select the stated manufacturer.</small>
+                  <p class="input-error" id="a-manufacturer-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-model">Processor name or model</label>
+                  <input class="form-control" id="a-model" type="text" maxlength="100" autocomplete="off" required aria-describedby="a-model-hint">
+                  <small class="cpu-input-hint" id="a-model-hint">Required; enter the model name exactly as listed.</small>
+                  <p class="input-error" id="a-model-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-architecture">Architecture or generation <small>(optional)</small></label>
+                  <input class="form-control" id="a-architecture" type="text" maxlength="80" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="a-socket">Socket or platform <small>(optional)</small></label>
+                  <input class="form-control" id="a-socket" type="text" maxlength="80" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="a-cores">Total physical cores</label>
+                  <input class="form-control" id="a-cores" type="number" min="1" max="256" step="1" required inputmode="numeric" aria-describedby="a-cores-hint">
+                  <small class="cpu-input-hint" id="a-cores-hint">Whole number, 1–256.</small>
+                  <p class="input-error" id="a-cores-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-threads">Total threads</label>
+                  <input class="form-control" id="a-threads" type="number" min="1" max="512" step="1" required inputmode="numeric" aria-describedby="a-threads-hint">
+                  <small class="cpu-input-hint" id="a-threads-hint">Whole number, 1–512; no universal thread/core ratio is assumed.</small>
+                  <p class="input-error" id="a-threads-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-p-cores">Performance cores <small>(optional)</small></label>
+                  <input class="form-control" id="a-p-cores" type="number" min="0" max="256" step="1" inputmode="numeric" aria-describedby="a-p-cores-hint">
+                  <small class="cpu-input-hint" id="a-p-cores-hint">Whole number, 0–256; leave blank if not supplied.</small>
+                  <p class="input-error" id="a-p-cores-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-e-cores">Efficiency cores <small>(optional)</small></label>
+                  <input class="form-control" id="a-e-cores" type="number" min="0" max="256" step="1" inputmode="numeric" aria-describedby="a-e-cores-hint">
+                  <small class="cpu-input-hint" id="a-e-cores-hint">Whole number, 0–256; leave blank if not supplied.</small>
+                  <p class="input-error" id="a-e-cores-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-base-clock">Base clock <small>(GHz, optional)</small></label>
+                  <input class="form-control" id="a-base-clock" type="number" min="0.1" max="10" step="any" inputmode="decimal" aria-describedby="a-base-clock-hint">
+                  <small class="cpu-input-hint" id="a-base-clock-hint">If supplied: 0.1–10 GHz.</small>
+                  <p class="input-error" id="a-base-clock-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-boost-clock">Maximum boost clock <small>(GHz, optional)</small></label>
+                  <input class="form-control" id="a-boost-clock" type="number" min="0.1" max="10" step="any" inputmode="decimal" aria-describedby="a-boost-clock-hint">
+                  <small class="cpu-input-hint" id="a-boost-clock-hint">If supplied: 0.1–10 GHz.</small>
+                  <p class="input-error" id="a-boost-clock-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-l2-cache">L2 cache <small>(MB, optional)</small></label>
+                  <input class="form-control" id="a-l2-cache" type="number" min="0.01" max="2048" step="any" inputmode="decimal" aria-describedby="a-l2-cache-hint">
+                  <small class="cpu-input-hint" id="a-l2-cache-hint">If supplied: 0.01–2,048 MB.</small>
+                  <p class="input-error" id="a-l2-cache-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-l3-cache">L3 cache <small>(MB, optional)</small></label>
+                  <input class="form-control" id="a-l3-cache" type="number" min="0.01" max="2048" step="any" inputmode="decimal" aria-describedby="a-l3-cache-hint">
+                  <small class="cpu-input-hint" id="a-l3-cache-hint">If supplied: 0.01–2,048 MB.</small>
+                  <p class="input-error" id="a-l3-cache-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-base-power">Manufacturer-rated base/default power <small>(W, optional)</small></label>
+                  <input class="form-control" id="a-base-power" type="number" min="1" max="1000" step="any" inputmode="decimal" aria-describedby="a-base-power-hint">
+                  <small class="cpu-input-hint" id="a-base-power-hint">If supplied: 1–1,000 W.</small>
+                  <p class="input-error" id="a-base-power-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-max-power">Manufacturer-rated maximum/turbo power <small>(W, optional)</small></label>
+                  <input class="form-control" id="a-max-power" type="number" min="1" max="1000" step="any" inputmode="decimal" aria-describedby="a-max-power-hint">
+                  <small class="cpu-input-hint" id="a-max-power-hint">If supplied: 1–1,000 W.</small>
+                  <p class="input-error" id="a-max-power-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-graphics">Integrated graphics</label>
+                  <select class="form-control" id="a-graphics" required aria-describedby="a-graphics-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                  <small class="cpu-input-hint" id="a-graphics-hint">Select Unknown if availability is not confirmed.</small>
+                  <p class="input-error" id="a-graphics-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-price">Price <small>(AUD, optional)</small></label>
+                  <input class="form-control" id="a-price" type="number" min="0.01" max="100000" step="0.01" inputmode="decimal" aria-describedby="a-price-hint">
+                  <small class="cpu-input-hint" id="a-price-hint">If supplied: AUD 0.01–100,000, up to 2 decimal places.</small>
+                  <p class="input-error" id="a-price-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field cpu-wide-field">
+                  <label for="a-memory">Memory support description <small>(optional)</small></label>
+                  <input class="form-control" id="a-memory" type="text" maxlength="120" autocomplete="off" placeholder="Use a manufacturer-listed description">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel cpu-config-panel" aria-labelledby="cpu-b-heading">
+              <legend class="visually-hidden">CPU B specifications</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">PROCESSOR B</span>
+                <span class="utility-index">CPU / 02</span>
+              </div>
+              <h2 id="cpu-b-heading">CPU B</h2>
+              <div class="cpu-field-grid">
+                <div class="form-field">
+                  <label for="b-manufacturer">Manufacturer</label>
+                  <select class="form-control" id="b-manufacturer" required aria-describedby="b-manufacturer-hint">
+                    <option value="" selected>Select manufacturer</option>
+                    <option value="intel">Intel</option>
+                    <option value="amd">AMD</option>
+                    <option value="apple">Apple</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="cpu-input-hint" id="b-manufacturer-hint">Required; select the stated manufacturer.</small>
+                  <p class="input-error" id="b-manufacturer-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-model">Processor name or model</label>
+                  <input class="form-control" id="b-model" type="text" maxlength="100" autocomplete="off" required aria-describedby="b-model-hint">
+                  <small class="cpu-input-hint" id="b-model-hint">Required; enter the model name exactly as listed.</small>
+                  <p class="input-error" id="b-model-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-architecture">Architecture or generation <small>(optional)</small></label>
+                  <input class="form-control" id="b-architecture" type="text" maxlength="80" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="b-socket">Socket or platform <small>(optional)</small></label>
+                  <input class="form-control" id="b-socket" type="text" maxlength="80" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="b-cores">Total physical cores</label>
+                  <input class="form-control" id="b-cores" type="number" min="1" max="256" step="1" required inputmode="numeric" aria-describedby="b-cores-hint">
+                  <small class="cpu-input-hint" id="b-cores-hint">Whole number, 1–256.</small>
+                  <p class="input-error" id="b-cores-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-threads">Total threads</label>
+                  <input class="form-control" id="b-threads" type="number" min="1" max="512" step="1" required inputmode="numeric" aria-describedby="b-threads-hint">
+                  <small class="cpu-input-hint" id="b-threads-hint">Whole number, 1–512; no universal thread/core ratio is assumed.</small>
+                  <p class="input-error" id="b-threads-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-p-cores">Performance cores <small>(optional)</small></label>
+                  <input class="form-control" id="b-p-cores" type="number" min="0" max="256" step="1" inputmode="numeric" aria-describedby="b-p-cores-hint">
+                  <small class="cpu-input-hint" id="b-p-cores-hint">Whole number, 0–256; leave blank if not supplied.</small>
+                  <p class="input-error" id="b-p-cores-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-e-cores">Efficiency cores <small>(optional)</small></label>
+                  <input class="form-control" id="b-e-cores" type="number" min="0" max="256" step="1" inputmode="numeric" aria-describedby="b-e-cores-hint">
+                  <small class="cpu-input-hint" id="b-e-cores-hint">Whole number, 0–256; leave blank if not supplied.</small>
+                  <p class="input-error" id="b-e-cores-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-base-clock">Base clock <small>(GHz, optional)</small></label>
+                  <input class="form-control" id="b-base-clock" type="number" min="0.1" max="10" step="any" inputmode="decimal" aria-describedby="b-base-clock-hint">
+                  <small class="cpu-input-hint" id="b-base-clock-hint">If supplied: 0.1–10 GHz.</small>
+                  <p class="input-error" id="b-base-clock-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-boost-clock">Maximum boost clock <small>(GHz, optional)</small></label>
+                  <input class="form-control" id="b-boost-clock" type="number" min="0.1" max="10" step="any" inputmode="decimal" aria-describedby="b-boost-clock-hint">
+                  <small class="cpu-input-hint" id="b-boost-clock-hint">If supplied: 0.1–10 GHz.</small>
+                  <p class="input-error" id="b-boost-clock-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-l2-cache">L2 cache <small>(MB, optional)</small></label>
+                  <input class="form-control" id="b-l2-cache" type="number" min="0.01" max="2048" step="any" inputmode="decimal" aria-describedby="b-l2-cache-hint">
+                  <small class="cpu-input-hint" id="b-l2-cache-hint">If supplied: 0.01–2,048 MB.</small>
+                  <p class="input-error" id="b-l2-cache-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-l3-cache">L3 cache <small>(MB, optional)</small></label>
+                  <input class="form-control" id="b-l3-cache" type="number" min="0.01" max="2048" step="any" inputmode="decimal" aria-describedby="b-l3-cache-hint">
+                  <small class="cpu-input-hint" id="b-l3-cache-hint">If supplied: 0.01–2,048 MB.</small>
+                  <p class="input-error" id="b-l3-cache-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-base-power">Manufacturer-rated base/default power <small>(W, optional)</small></label>
+                  <input class="form-control" id="b-base-power" type="number" min="1" max="1000" step="any" inputmode="decimal" aria-describedby="b-base-power-hint">
+                  <small class="cpu-input-hint" id="b-base-power-hint">If supplied: 1–1,000 W.</small>
+                  <p class="input-error" id="b-base-power-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-max-power">Manufacturer-rated maximum/turbo power <small>(W, optional)</small></label>
+                  <input class="form-control" id="b-max-power" type="number" min="1" max="1000" step="any" inputmode="decimal" aria-describedby="b-max-power-hint">
+                  <small class="cpu-input-hint" id="b-max-power-hint">If supplied: 1–1,000 W.</small>
+                  <p class="input-error" id="b-max-power-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-graphics">Integrated graphics</label>
+                  <select class="form-control" id="b-graphics" required aria-describedby="b-graphics-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                  <small class="cpu-input-hint" id="b-graphics-hint">Select Unknown if availability is not confirmed.</small>
+                  <p class="input-error" id="b-graphics-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-price">Price <small>(AUD, optional)</small></label>
+                  <input class="form-control" id="b-price" type="number" min="0.01" max="100000" step="0.01" inputmode="decimal" aria-describedby="b-price-hint">
+                  <small class="cpu-input-hint" id="b-price-hint">If supplied: AUD 0.01–100,000, up to 2 decimal places.</small>
+                  <p class="input-error" id="b-price-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field cpu-wide-field">
+                  <label for="b-memory">Memory support description <small>(optional)</small></label>
+                  <input class="form-control" id="b-memory" type="text" maxlength="120" autocomplete="off" placeholder="Use a manufacturer-listed description">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="cpu-comparison-actions">
+            <button class="button button-primary" type="submit">Compare CPUs</button>
+            <button class="button button-quiet" id="reset-cpus" type="button">Reset</button>
+            <p class="cpu-comparison-status" id="cpu-comparison-status" role="status" aria-live="polite">Enter specifications for both processors to compare them.</p>
+          </div>
+        </form>
+
+        <section class="cpu-metrics-section" aria-labelledby="cpu-metrics-title">
+          <header class="cpu-section-heading">
+            <p class="mono-label">CALCULATED DIFFERENCES</p>
+            <h2 id="cpu-metrics-title">Monitor the values, not a synthetic score.</h2>
+          </header>
+          <div class="cpu-metric-grid">
+            <div><span>Physical core difference</span><output id="metric-core-difference">—</output></div>
+            <div><span>Core-count difference vs A</span><output id="metric-core-percent">—</output></div>
+            <div><span>Thread difference</span><output id="metric-thread-difference">—</output></div>
+            <div><span>Thread-count difference vs A</span><output id="metric-thread-percent">—</output></div>
+            <div><span>L2 cache difference</span><output id="metric-l2-difference">—</output></div>
+            <div><span>L3 cache difference</span><output id="metric-l3-difference">—</output></div>
+            <div><span>Base clock difference</span><output id="metric-base-clock-difference">—</output></div>
+            <div><span>Maximum boost difference</span><output id="metric-boost-clock-difference">—</output></div>
+            <div><span>Price difference (AUD)</span><output id="metric-price-difference">—</output></div>
+          </div>
+          <p class="cpu-metric-caveat">Percentage differences use CPU A as the baseline. Optional metrics show a difference only when both values are supplied. These calculations are specification differences, not performance scores.</p>
+        </section>
+
+        <section class="cpu-table-section" aria-labelledby="cpu-table-title">
+          <header class="cpu-section-heading">
+            <p class="mono-label">SIDE-BY-SIDE SPECIFICATIONS</p>
+            <h2 id="cpu-table-title">Processor comparison.</h2>
+          </header>
+          <div class="cpu-table-scroll" role="region" aria-label="CPU comparison table; scroll horizontally on narrow screens" tabindex="0">
+            <table class="cpu-comparison-table">
+              <caption>Values are entered specifications. Numerical differences are CPU B minus CPU A. Power ratings are listed without treating manufacturer definitions as equivalent.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Specification</th>
+                  <th scope="col"><output id="a-table-name">CPU A</output></th>
+                  <th scope="col"><output id="b-table-name">CPU B</output></th>
+                  <th scope="col">Difference / context</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Processor model</th><td id="a-value-model">—</td><td id="b-value-model">—</td><td>Model names are entered labels; no product lookup is performed.</td></tr>
+                <tr><th scope="row">Manufacturer</th><td id="a-value-manufacturer">—</td><td id="b-value-manufacturer">—</td><td>Manufacturer-specific specifications may use different definitions.</td></tr>
+                <tr><th scope="row">Architecture / generation</th><td id="a-value-architecture">—</td><td id="b-value-architecture">—</td><td>GHz and core counts alone are not directly comparable across architectures.</td></tr>
+                <tr><th scope="row">Physical cores</th><td id="a-value-cores">—</td><td id="b-value-cores">—</td><td id="diff-cores">—</td></tr>
+                <tr><th scope="row">Core configuration</th><td id="a-value-core-config">—</td><td id="b-value-core-config">—</td><td>Core types can have different capabilities; blank counts are not inferred.</td></tr>
+                <tr><th scope="row">Threads</th><td id="a-value-threads">—</td><td id="b-value-threads">—</td><td id="diff-threads">—</td></tr>
+                <tr><th scope="row">Base clock</th><td id="a-value-base-clock">—</td><td id="b-value-base-clock">—</td><td id="diff-base-clock">—</td></tr>
+                <tr><th scope="row">Maximum boost clock</th><td id="a-value-boost-clock">—</td><td id="b-value-boost-clock">—</td><td id="diff-boost-clock">—</td></tr>
+                <tr><th scope="row">L2 cache</th><td id="a-value-l2-cache">—</td><td id="b-value-l2-cache">—</td><td id="diff-l2-cache">—</td></tr>
+                <tr><th scope="row">L3 cache</th><td id="a-value-l3-cache">—</td><td id="b-value-l3-cache">—</td><td id="diff-l3-cache">—</td></tr>
+                <tr><th scope="row">Rated base / default power</th><td id="a-value-base-power">—</td><td id="b-value-base-power">—</td><td>Manufacturer definitions vary; this is not measured consumption.</td></tr>
+                <tr><th scope="row">Rated maximum / turbo power</th><td id="a-value-max-power">—</td><td id="b-value-max-power">—</td><td>Manufacturer definitions vary; this is not measured consumption.</td></tr>
+                <tr><th scope="row">Socket / platform</th><td id="a-value-socket">—</td><td id="b-value-socket">—</td><td>A matching socket label alone does not confirm motherboard compatibility.</td></tr>
+                <tr><th scope="row">Integrated graphics</th><td id="a-value-graphics">—</td><td id="b-value-graphics">—</td><td>Availability is user-supplied and is not a graphics performance measure.</td></tr>
+                <tr><th scope="row">Memory support</th><td id="a-value-memory">—</td><td id="b-value-memory">—</td><td>Verify the CPU, motherboard, and memory configuration as a complete platform.</td></tr>
+                <tr><th scope="row">Price (AUD)</th><td id="a-value-price">—</td><td id="b-value-price">—</td><td id="diff-price">—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cpu-explanations" aria-labelledby="cpu-explanations-title">
+          <header class="cpu-section-heading">
+            <p class="mono-label">SPECIFICATION-BASED NOTES</p>
+            <h2 id="cpu-explanations-title">Consider the workload and platform.</h2>
+            <p>These notes use only the specifications entered above. They do not predict benchmarks, gaming FPS, or an overall winner.</p>
+          </header>
+          <div class="cpu-explanation-grid">
+            <article class="surface-panel cpu-explanation">
+              <h3>Gaming</h3>
+              <p id="explanation-gaming">Compare valid CPU specifications to see a conditional gaming note.</p>
+            </article>
+            <article class="surface-panel cpu-explanation">
+              <h3>Multitasking</h3>
+              <p id="explanation-multitasking">Compare valid CPU specifications to see a conditional multitasking note.</p>
+            </article>
+            <article class="surface-panel cpu-explanation">
+              <h3>Productivity</h3>
+              <p id="explanation-productivity">Compare valid CPU specifications to see a conditional productivity note.</p>
+            </article>
+            <article class="surface-panel cpu-explanation">
+              <h3>Power and cooling</h3>
+              <p id="explanation-power">Compare valid CPU specifications to see a power and cooling note.</p>
+            </article>
+            <article class="surface-panel cpu-explanation">
+              <h3>Platform compatibility</h3>
+              <p id="explanation-platform">Compare valid CPU specifications to see a platform compatibility note.</p>
+            </article>
+            <article class="surface-panel cpu-explanation">
+              <h3>Value</h3>
+              <p id="explanation-value">Compare valid CPU specifications to see a price note.</p>
+            </article>
+          </div>
+        </section>
+
+        <aside class="calculation-note cpu-architecture-caveats" aria-labelledby="cpu-caveats-title">
+          <p class="mono-label" id="cpu-caveats-title">HOW TO READ CPU SPECIFICATIONS</p>
+          <p>GHz is not directly comparable across CPU architectures. Core count alone does not determine performance, and a thread is not the same as a physical core. Hybrid designs can contain different core types with different capabilities.</p>
+          <p>Cache size alone does not determine gaming performance. Advertised maximum boost frequency may not be sustained. Rated power figures are not equivalent to actual measured power consumption, which depends on workload, platform settings, and cooling.</p>
+        </aside>
+        <p class="tool-footnote">All comparisons run locally in this browser. No processor data is fetched, transmitted, or saved.</p>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>

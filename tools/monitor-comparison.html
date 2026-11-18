@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Compare monitor specifications, calculated display metrics, and practical trade-offs.">
+    <title>Monitor Comparison | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/monitor-comparison">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="Monitor Comparison | NEON//CORE">
+    <meta property="og:description" content="Compare monitor specifications, calculated display metrics, and practical trade-offs.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/monitor-comparison">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Monitor Comparison | NEON//CORE">
+    <meta name="twitter:description" content="Compare monitor specifications, calculated display metrics, and practical trade-offs.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/monitor-comparison.js" defer></script>
+  </head>
+  <body data-tool-id="monitor-comparison">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell monitor-comparison-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> GAMING / DISPLAY TOOL</p>
+          <h1>Monitor <span class="accent-text">comparison.</span></h1>
+          <p>Compare the specifications that matter to your setup and how you use a display.</p>
+        </header>
+
+        <p class="monitor-example-disclaimer"><strong>Illustrative examples:</strong> The prefilled values are fictional examples, not real product specifications. Replace them with verified details for the displays you are considering.</p>
+
+        <form class="monitor-comparison-form" id="monitor-comparison-form" novalidate>
+          <div class="monitor-comparison-config-grid">
+            <fieldset class="surface-panel monitor-comparison-panel" aria-labelledby="monitor-a-heading">
+              <legend class="visually-hidden">Monitor A specifications</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">DISPLAY A</span>
+                <span class="utility-index">EXAMPLE 01</span>
+              </div>
+              <h2 id="monitor-a-heading">Monitor A</h2>
+              <div class="monitor-comparison-field-grid">
+                <div class="form-field monitor-comparison-wide">
+                  <label for="a-name">Monitor name or model <small>(optional)</small></label>
+                  <input class="form-control" id="a-name" type="text" maxlength="60" autocomplete="off" value="Example A — 27-inch gaming display">
+                  <small class="monitor-comparison-hint">Name is for this comparison only.</small>
+                </div>
+                <div class="form-field">
+                  <label for="a-size">Screen size <small>(inches)</small></label>
+                  <input class="form-control" id="a-size" type="number" min="8" max="100" step="any" value="27" required inputmode="decimal" aria-describedby="a-size-hint">
+                  <small class="monitor-comparison-hint" id="a-size-hint">Allowed range: 8–100 inches.</small>
+                  <p class="input-error" id="a-size-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-refresh-rate">Refresh rate <small>(Hz)</small></label>
+                  <input class="form-control" id="a-refresh-rate" type="number" min="1" max="1000" step="any" value="165" required inputmode="decimal" aria-describedby="a-refresh-rate-hint">
+                  <small class="monitor-comparison-hint" id="a-refresh-rate-hint">Allowed range: 1–1,000 Hz.</small>
+                  <p class="input-error" id="a-refresh-rate-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-resolution-width">Resolution width <small>(pixels)</small></label>
+                  <input class="form-control" id="a-resolution-width" type="number" min="320" max="16384" step="1" value="2560" required inputmode="numeric" aria-describedby="a-resolution-width-hint">
+                  <small class="monitor-comparison-hint" id="a-resolution-width-hint">Whole number, 320–16,384.</small>
+                  <p class="input-error" id="a-resolution-width-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-resolution-height">Resolution height <small>(pixels)</small></label>
+                  <input class="form-control" id="a-resolution-height" type="number" min="200" max="16384" step="1" value="1440" required inputmode="numeric" aria-describedby="a-resolution-height-hint">
+                  <small class="monitor-comparison-hint" id="a-resolution-height-hint">Whole number, 200–16,384.</small>
+                  <p class="input-error" id="a-resolution-height-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-panel">Panel technology</label>
+                  <select class="form-control" id="a-panel" required aria-describedby="a-panel-hint">
+                    <option value="">Select a technology</option>
+                    <option value="ips" selected>IPS</option>
+                    <option value="va">VA</option>
+                    <option value="tn">TN</option>
+                    <option value="oled">OLED</option>
+                    <option value="qd-oled">QD-OLED</option>
+                    <option value="mini-led-lcd">Mini-LED LCD</option>
+                    <option value="other">Other</option>
+                    <option value="unknown">Unknown</option>
+                  </select>
+                  <small class="monitor-comparison-hint" id="a-panel-hint">Choose Unknown if the panel type is not confirmed.</small>
+                  <p class="input-error" id="a-panel-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-sync">Adaptive sync</label>
+                  <select class="form-control" id="a-sync" required aria-describedby="a-sync-hint">
+                    <option value="">Select a support claim</option>
+                    <option value="freesync" selected>FreeSync</option>
+                    <option value="g-sync-compatible">G-SYNC Compatible</option>
+                    <option value="g-sync">G-SYNC</option>
+                    <option value="other">Other</option>
+                    <option value="none">None</option>
+                    <option value="unknown">Unknown</option>
+                  </select>
+                  <small class="monitor-comparison-hint" id="a-sync-hint">Compatibility and operation are not tested.</small>
+                  <p class="input-error" id="a-sync-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-response-time">Advertised response time <small>(ms, optional)</small></label>
+                  <input class="form-control" id="a-response-time" type="number" min="0.1" max="100" step="any" value="1" inputmode="decimal" aria-describedby="a-response-time-hint">
+                  <small class="monitor-comparison-hint" id="a-response-time-hint">If supplied: 0.1–100 ms; manufacturer claim.</small>
+                  <p class="input-error" id="a-response-time-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-hdr">HDR support or certification <small>(optional)</small></label>
+                  <input class="form-control" id="a-hdr" type="text" maxlength="80" value="HDR10 (illustrative)" autocomplete="off" placeholder="e.g. HDR10">
+                  <small class="monitor-comparison-hint">Enter the claimed format or certification.</small>
+                </div>
+                <div class="form-field">
+                  <label for="a-brightness">Advertised brightness <small>(nits, optional)</small></label>
+                  <input class="form-control" id="a-brightness" type="number" min="1" max="5000" step="any" value="350" inputmode="decimal" aria-describedby="a-brightness-hint">
+                  <small class="monitor-comparison-hint" id="a-brightness-hint">If supplied: 1–5,000 nits.</small>
+                  <p class="input-error" id="a-brightness-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-gamut">Colour gamut coverage <small>(optional)</small></label>
+                  <input class="form-control" id="a-gamut" type="text" maxlength="80" value="sRGB 99% (illustrative)" autocomplete="off" placeholder="e.g. sRGB 99%">
+                  <small class="monitor-comparison-hint">Include the named colour space; not independently verified.</small>
+                </div>
+                <div class="form-field monitor-comparison-wide">
+                  <label for="a-price">Price <small>(AUD, optional)</small></label>
+                  <input class="form-control" id="a-price" type="number" min="0.01" max="100000" step="0.01" value="499" inputmode="decimal" aria-describedby="a-price-hint">
+                  <small class="monitor-comparison-hint" id="a-price-hint">If supplied: AUD 0.01–100,000.</small>
+                  <p class="input-error" id="a-price-error" role="alert" hidden></p>
+                </div>
+              </div>
+              <p class="monitor-panel-explanation" id="a-panel-explanation" aria-live="polite"></p>
+            </fieldset>
+
+            <fieldset class="surface-panel monitor-comparison-panel" aria-labelledby="monitor-b-heading">
+              <legend class="visually-hidden">Monitor B specifications</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">DISPLAY B</span>
+                <span class="utility-index">EXAMPLE 02</span>
+              </div>
+              <h2 id="monitor-b-heading">Monitor B</h2>
+              <div class="monitor-comparison-field-grid">
+                <div class="form-field monitor-comparison-wide">
+                  <label for="b-name">Monitor name or model <small>(optional)</small></label>
+                  <input class="form-control" id="b-name" type="text" maxlength="60" autocomplete="off" value="Example B — 32-inch 4K display">
+                  <small class="monitor-comparison-hint">Name is for this comparison only.</small>
+                </div>
+                <div class="form-field">
+                  <label for="b-size">Screen size <small>(inches)</small></label>
+                  <input class="form-control" id="b-size" type="number" min="8" max="100" step="any" value="32" required inputmode="decimal" aria-describedby="b-size-hint">
+                  <small class="monitor-comparison-hint" id="b-size-hint">Allowed range: 8–100 inches.</small>
+                  <p class="input-error" id="b-size-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-refresh-rate">Refresh rate <small>(Hz)</small></label>
+                  <input class="form-control" id="b-refresh-rate" type="number" min="1" max="1000" step="any" value="144" required inputmode="decimal" aria-describedby="b-refresh-rate-hint">
+                  <small class="monitor-comparison-hint" id="b-refresh-rate-hint">Allowed range: 1–1,000 Hz.</small>
+                  <p class="input-error" id="b-refresh-rate-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-resolution-width">Resolution width <small>(pixels)</small></label>
+                  <input class="form-control" id="b-resolution-width" type="number" min="320" max="16384" step="1" value="3840" required inputmode="numeric" aria-describedby="b-resolution-width-hint">
+                  <small class="monitor-comparison-hint" id="b-resolution-width-hint">Whole number, 320–16,384.</small>
+                  <p class="input-error" id="b-resolution-width-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-resolution-height">Resolution height <small>(pixels)</small></label>
+                  <input class="form-control" id="b-resolution-height" type="number" min="200" max="16384" step="1" value="2160" required inputmode="numeric" aria-describedby="b-resolution-height-hint">
+                  <small class="monitor-comparison-hint" id="b-resolution-height-hint">Whole number, 200–16,384.</small>
+                  <p class="input-error" id="b-resolution-height-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-panel">Panel technology</label>
+                  <select class="form-control" id="b-panel" required aria-describedby="b-panel-hint">
+                    <option value="">Select a technology</option>
+                    <option value="ips">IPS</option>
+                    <option value="va" selected>VA</option>
+                    <option value="tn">TN</option>
+                    <option value="oled">OLED</option>
+                    <option value="qd-oled">QD-OLED</option>
+                    <option value="mini-led-lcd">Mini-LED LCD</option>
+                    <option value="other">Other</option>
+                    <option value="unknown">Unknown</option>
+                  </select>
+                  <small class="monitor-comparison-hint" id="b-panel-hint">Choose Unknown if the panel type is not confirmed.</small>
+                  <p class="input-error" id="b-panel-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-sync">Adaptive sync</label>
+                  <select class="form-control" id="b-sync" required aria-describedby="b-sync-hint">
+                    <option value="">Select a support claim</option>
+                    <option value="freesync">FreeSync</option>
+                    <option value="g-sync-compatible" selected>G-SYNC Compatible</option>
+                    <option value="g-sync">G-SYNC</option>
+                    <option value="other">Other</option>
+                    <option value="none">None</option>
+                    <option value="unknown">Unknown</option>
+                  </select>
+                  <small class="monitor-comparison-hint" id="b-sync-hint">Compatibility and operation are not tested.</small>
+                  <p class="input-error" id="b-sync-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-response-time">Advertised response time <small>(ms, optional)</small></label>
+                  <input class="form-control" id="b-response-time" type="number" min="0.1" max="100" step="any" value="1" inputmode="decimal" aria-describedby="b-response-time-hint">
+                  <small class="monitor-comparison-hint" id="b-response-time-hint">If supplied: 0.1–100 ms; manufacturer claim.</small>
+                  <p class="input-error" id="b-response-time-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-hdr">HDR support or certification <small>(optional)</small></label>
+                  <input class="form-control" id="b-hdr" type="text" maxlength="80" value="DisplayHDR 400 (illustrative)" autocomplete="off" placeholder="e.g. HDR10, DisplayHDR 400">
+                  <small class="monitor-comparison-hint">Enter the claimed format or certification.</small>
+                </div>
+                <div class="form-field">
+                  <label for="b-brightness">Advertised brightness <small>(nits, optional)</small></label>
+                  <input class="form-control" id="b-brightness" type="number" min="1" max="5000" step="any" value="400" inputmode="decimal" aria-describedby="b-brightness-hint">
+                  <small class="monitor-comparison-hint" id="b-brightness-hint">If supplied: 1–5,000 nits.</small>
+                  <p class="input-error" id="b-brightness-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-gamut">Colour gamut coverage <small>(optional)</small></label>
+                  <input class="form-control" id="b-gamut" type="text" maxlength="80" value="DCI-P3 95% (illustrative)" autocomplete="off" placeholder="e.g. DCI-P3 95%">
+                  <small class="monitor-comparison-hint">Include the named colour space; not independently verified.</small>
+                </div>
+                <div class="form-field monitor-comparison-wide">
+                  <label for="b-price">Price <small>(AUD, optional)</small></label>
+                  <input class="form-control" id="b-price" type="number" min="0.01" max="100000" step="0.01" value="899" inputmode="decimal" aria-describedby="b-price-hint">
+                  <small class="monitor-comparison-hint" id="b-price-hint">If supplied: AUD 0.01–100,000.</small>
+                  <p class="input-error" id="b-price-error" role="alert" hidden></p>
+                </div>
+              </div>
+              <p class="monitor-panel-explanation" id="b-panel-explanation" aria-live="polite"></p>
+            </fieldset>
+          </div>
+
+          <div class="monitor-comparison-actions">
+            <button class="button button-primary" type="submit">Compare monitors</button>
+            <button class="button button-quiet" id="reset-comparison" type="button">Reset examples</button>
+            <p class="monitor-comparison-status" id="comparison-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+
+        <section class="monitor-calculated-section" aria-labelledby="calculated-title">
+          <header class="monitor-section-heading">
+            <p class="mono-label">CALCULATED METRICS</p>
+            <h2 id="calculated-title">Pixel density, size, and timing.</h2>
+          </header>
+          <div class="monitor-calculated-grid">
+            <section class="surface-panel monitor-calculated-panel" aria-labelledby="a-calculated-name">
+              <h3 id="a-calculated-name"><output id="a-metrics-name">Monitor A</output></h3>
+              <dl class="monitor-calculated-list">
+                <div><dt>Pixel density</dt><dd><output id="a-metric-ppi">—</output></dd></div>
+                <div><dt>Total pixels</dt><dd><output id="a-metric-pixels">—</output></dd></div>
+                <div><dt>Aspect ratio</dt><dd><output id="a-metric-aspect">—</output></dd></div>
+                <div><dt>Refresh interval</dt><dd><output id="a-metric-interval">—</output></dd></div>
+                <div><dt>Physical width × height</dt><dd><output id="a-metric-physical-size">—</output></dd></div>
+                <div><dt>Display area</dt><dd><output id="a-metric-area">—</output></dd></div>
+              </dl>
+            </section>
+            <section class="surface-panel monitor-calculated-panel" aria-labelledby="b-calculated-name">
+              <h3 id="b-calculated-name"><output id="b-metrics-name">Monitor B</output></h3>
+              <dl class="monitor-calculated-list">
+                <div><dt>Pixel density</dt><dd><output id="b-metric-ppi">—</output></dd></div>
+                <div><dt>Total pixels</dt><dd><output id="b-metric-pixels">—</output></dd></div>
+                <div><dt>Aspect ratio</dt><dd><output id="b-metric-aspect">—</output></dd></div>
+                <div><dt>Refresh interval</dt><dd><output id="b-metric-interval">—</output></dd></div>
+                <div><dt>Physical width × height</dt><dd><output id="b-metric-physical-size">—</output></dd></div>
+                <div><dt>Display area</dt><dd><output id="b-metric-area">—</output></dd></div>
+              </dl>
+            </section>
+          </div>
+          <p class="monitor-calculation-caveat">Physical dimensions are estimates from diagonal size and the resolution aspect ratio. Refresh interval (1,000 ÷ Hz) is not pixel response time or total input latency.</p>
+        </section>
+
+        <section class="monitor-table-section" aria-labelledby="comparison-table-title">
+          <header class="monitor-section-heading">
+            <p class="mono-label">SIDE-BY-SIDE SPECIFICATIONS</p>
+            <h2 id="comparison-table-title">Compare the entered details.</h2>
+          </header>
+          <div class="monitor-table-scroll" role="region" aria-label="Monitor comparison table; scroll horizontally on narrow screens" tabindex="0">
+            <table class="monitor-comparison-table">
+              <caption>Differences are Monitor B minus Monitor A where a direct numeric comparison is meaningful. Values are user-entered unless identified as calculated.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Specification</th>
+                  <th scope="col"><output id="a-table-name">Monitor A</output></th>
+                  <th scope="col"><output id="b-table-name">Monitor B</output></th>
+                  <th scope="col">Difference</th>
+                  <th scope="col">How to interpret it</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Name / model</th><td id="a-value-name">—</td><td id="b-value-name">—</td><td id="diff-name">—</td><td>Names are labels only; they do not verify a product.</td></tr>
+                <tr><th scope="row">Screen size</th><td id="a-value-size">—</td><td id="b-value-size">—</td><td id="diff-size">—</td><td>Diagonal size alone does not describe the viewing area shape.</td></tr>
+                <tr><th scope="row">Resolution</th><td id="a-value-resolution">—</td><td id="b-value-resolution">—</td><td id="diff-resolution">—</td><td>More pixels can increase rendering workload; actual frame rates are not estimated.</td></tr>
+                <tr><th scope="row">Total pixel count</th><td id="a-value-pixels">—</td><td id="b-value-pixels">—</td><td id="diff-pixels">—</td><td>Pixel count is calculated from the entered resolution.</td></tr>
+                <tr><th scope="row">Aspect ratio</th><td id="a-value-aspect">—</td><td id="b-value-aspect">—</td><td id="diff-aspect">—</td><td>Content fit and workspace shape depend on the application and viewing setup.</td></tr>
+                <tr><th scope="row">Pixel density</th><td id="a-value-ppi">—</td><td id="b-value-ppi">—</td><td id="diff-ppi">—</td><td>Higher PPI generally means finer pixel density at comparable viewing conditions.</td></tr>
+                <tr><th scope="row">Refresh rate</th><td id="a-value-refresh">—</td><td id="b-value-refresh">—</td><td id="diff-refresh">—</td><td>Higher rates can improve motion smoothness when the system delivers enough frames.</td></tr>
+                <tr><th scope="row">Refresh interval</th><td id="a-value-interval">—</td><td id="b-value-interval">—</td><td id="diff-interval">—</td><td>This is 1,000 ÷ refresh rate, not response time or total latency.</td></tr>
+                <tr><th scope="row">Panel technology</th><td id="a-value-panel">—</td><td id="b-value-panel">—</td><td id="diff-panel">—</td><td>Technology suggests trade-offs, not measured performance for a specific model.</td></tr>
+                <tr><th scope="row">Advertised response time</th><td id="a-value-response">—</td><td id="b-value-response">—</td><td id="diff-response">—</td><td>Claims may use different methods; they are not directly comparable without consistent testing.</td></tr>
+                <tr><th scope="row">Adaptive sync</th><td id="a-value-sync">—</td><td id="b-value-sync">—</td><td id="diff-sync">—</td><td>Support claims are not a test of GPU compatibility or operation.</td></tr>
+                <tr><th scope="row">HDR support / certification</th><td id="a-value-hdr">—</td><td id="b-value-hdr">—</td><td id="diff-hdr">—</td><td>Entered support does not establish HDR brightness, contrast, or image quality.</td></tr>
+                <tr><th scope="row">Advertised brightness</th><td id="a-value-brightness">—</td><td id="b-value-brightness">—</td><td id="diff-brightness">—</td><td>Brightness claims alone do not measure HDR performance or picture quality.</td></tr>
+                <tr><th scope="row">Colour gamut coverage</th><td id="a-value-gamut">—</td><td id="b-value-gamut">—</td><td id="diff-gamut">—</td><td>Different colour spaces cannot be directly ranked; coverage is not colour accuracy.</td></tr>
+                <tr><th scope="row">Physical dimensions</th><td id="a-value-physical-size">—</td><td id="b-value-physical-size">—</td><td id="diff-physical-size">—</td><td>Calculated from screen diagonal and resolution ratio; bezels are excluded.</td></tr>
+                <tr><th scope="row">Display area</th><td id="a-value-area">—</td><td id="b-value-area">—</td><td id="diff-area">—</td><td>Area difference is also shown relative to Monitor A; it is not a quality score.</td></tr>
+                <tr><th scope="row">Price (AUD)</th><td id="a-value-price">—</td><td id="b-value-price">—</td><td id="diff-price">—</td><td>Compare current, like-for-like prices; no product or market data is fetched.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="monitor-use-cases" aria-labelledby="use-cases-title">
+          <header class="monitor-section-heading">
+            <p class="mono-label">SPECIFICATION-BASED NOTES</p>
+            <h2 id="use-cases-title">Consider your use case.</h2>
+            <p>These notes use only the values entered above; they do not rank the monitors or predict unmeasured performance.</p>
+          </header>
+          <div class="monitor-use-case-grid">
+            <article class="surface-panel monitor-use-case">
+              <h3>Competitive gaming</h3>
+              <p id="use-case-competitive">—</p>
+            </article>
+            <article class="surface-panel monitor-use-case">
+              <h3>General gaming</h3>
+              <p id="use-case-general-gaming">—</p>
+            </article>
+            <article class="surface-panel monitor-use-case">
+              <h3>Productivity</h3>
+              <p id="use-case-productivity">—</p>
+            </article>
+            <article class="surface-panel monitor-use-case">
+              <h3>Creative work</h3>
+              <p id="use-case-creative">—</p>
+            </article>
+            <article class="surface-panel monitor-use-case">
+              <h3>Everyday use</h3>
+              <p id="use-case-everyday">—</p>
+            </article>
+          </div>
+        </section>
+
+        <aside class="calculation-note monitor-comparison-privacy" aria-labelledby="panel-technology-title">
+          <p class="mono-label" id="panel-technology-title">PANEL TECHNOLOGY NOTES</p>
+          <p>IPS LCD panels are often selected for viewing angles and colour consistency; contrast and response vary by model. VA LCD panels are often associated with higher native contrast, while transition behaviour varies. TN LCD panels can offer fast transitions in some models, with viewing-angle and colour trade-offs.</p>
+          <p>OLED panels are self-emissive and can produce deep blacks; brightness behavior and image-retention considerations vary. QD-OLED combines OLED emission with quantum-dot colour conversion; results still vary by model. Mini-LED LCD uses a zoned backlight that can support local dimming; zone count and implementation affect results.</p>
+          <p>Panel technology alone does not establish response time, colour accuracy, contrast, HDR performance, or motion clarity. Actual results vary between individual monitor models.</p>
+        </aside>
+        <p class="tool-footnote">All calculations and comparison notes run locally in this browser. Specifications are not transmitted or saved.</p>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Check user-entered CPU, motherboard, and RAM specifications for potential conflicts and verification needs.">
+    <title>Motherboard &amp; RAM Compatibility | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/motherboard-ram-compatibility">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="Motherboard &amp; RAM Compatibility | NEON//CORE">
+    <meta property="og:description" content="Check entered CPU, motherboard, and memory specifications without guaranteeing compatibility.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/motherboard-ram-compatibility">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Motherboard &amp; RAM Compatibility | NEON//CORE">
+    <meta name="twitter:description" content="Check entered CPU, motherboard, and memory specifications without guaranteeing compatibility.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/motherboard-ram-compatibility.js" defer></script>
+  </head>
+  <body data-tool-id="motherboard-ram-compatibility">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell memory-compatibility-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> COMPUTING / PLATFORM TOOL</p>
+          <h1>Motherboard &amp; RAM <span class="accent-text">compatibility.</span></h1>
+          <p>Check entered CPU, motherboard, and memory specifications for conflicts and information that still needs manufacturer verification.</p>
+        </header>
+
+        <p class="memory-compatibility-notice">No real hardware specifications are prefilled. This tool compares only what you enter; it does not look up products, CPU support lists, BIOS data, or memory QVLs. A matching result is not a compatibility guarantee.</p>
+
+        <form class="memory-compatibility-form" id="memory-compatibility-form" novalidate>
+          <div class="memory-component-grid">
+            <fieldset class="surface-panel memory-component-panel" aria-labelledby="cpu-specs-heading">
+              <legend class="visually-hidden">CPU specifications</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">PROCESSOR</span>
+                <span class="utility-index">PLATFORM / 01</span>
+              </div>
+              <h2 id="cpu-specs-heading">CPU</h2>
+              <div class="memory-field-grid">
+                <div class="form-field">
+                  <label for="cpu-model">CPU model <small>(optional)</small></label>
+                  <input class="form-control" id="cpu-model" type="text" maxlength="100" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="cpu-manufacturer">Manufacturer</label>
+                  <select class="form-control" id="cpu-manufacturer" required aria-describedby="cpu-manufacturer-hint">
+                    <option value="" selected>Select manufacturer</option>
+                    <option value="intel">Intel</option>
+                    <option value="amd">AMD</option>
+                    <option value="apple">Apple</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="memory-input-hint" id="cpu-manufacturer-hint">Required.</small>
+                  <p class="input-error" id="cpu-manufacturer-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="cpu-socket">Socket or platform label</label>
+                  <input class="form-control" id="cpu-socket" type="text" maxlength="80" autocomplete="off" required aria-describedby="cpu-socket-hint">
+                  <small class="memory-input-hint" id="cpu-socket-hint">Enter the listed label, or “Unknown”. Matching labels are necessary, not sufficient.</small>
+                  <p class="input-error" id="cpu-socket-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="cpu-memory-generation">Supported memory generation</label>
+                  <select class="form-control" id="cpu-memory-generation" required aria-describedby="cpu-memory-generation-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="ddr4">DDR4</option>
+                    <option value="ddr5">DDR5</option>
+                    <option value="lpddr4">LPDDR4</option>
+                    <option value="lpddr5">LPDDR5</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="memory-input-hint" id="cpu-memory-generation-hint">Select Unknown when not confirmed.</small>
+                  <p class="input-error" id="cpu-memory-generation-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="cpu-max-capacity">Advertised maximum memory capacity <small>(GB, optional)</small></label>
+                  <input class="form-control" id="cpu-max-capacity" type="number" min="1" max="4096" step="any" inputmode="decimal" aria-describedby="cpu-max-capacity-hint">
+                  <small class="memory-input-hint" id="cpu-max-capacity-hint">If supplied: 1–4,096 GB.</small>
+                  <p class="input-error" id="cpu-max-capacity-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="cpu-speeds">Supported memory speeds <small>(optional)</small></label>
+                  <input class="form-control" id="cpu-speeds" type="text" maxlength="120" autocomplete="off" placeholder="4800, 5600" aria-describedby="cpu-speeds-hint">
+                  <small class="memory-input-hint" id="cpu-speeds-hint">Comma-separated MT/s values only; e.g. 4800, 5600.</small>
+                  <p class="input-error" id="cpu-speeds-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="cpu-ecc">ECC support</label>
+                  <select class="form-control" id="cpu-ecc" required aria-describedby="cpu-ecc-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                  <small class="memory-input-hint" id="cpu-ecc-hint">Select Unknown when not confirmed.</small>
+                  <p class="input-error" id="cpu-ecc-error" role="alert" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel memory-component-panel" aria-labelledby="board-specs-heading">
+              <legend class="visually-hidden">Motherboard specifications</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">MAINBOARD</span>
+                <span class="utility-index">PLATFORM / 02</span>
+              </div>
+              <h2 id="board-specs-heading">Motherboard</h2>
+              <div class="memory-field-grid">
+                <div class="form-field">
+                  <label for="board-model">Motherboard model <small>(optional)</small></label>
+                  <input class="form-control" id="board-model" type="text" maxlength="100" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="board-socket">Socket label</label>
+                  <input class="form-control" id="board-socket" type="text" maxlength="80" autocomplete="off" required aria-describedby="board-socket-hint">
+                  <small class="memory-input-hint" id="board-socket-hint">Enter the listed label, or “Unknown”. Matching labels are not a guarantee.</small>
+                  <p class="input-error" id="board-socket-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="board-chipset">Chipset <small>(optional)</small></label>
+                  <input class="form-control" id="board-chipset" type="text" maxlength="80" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="board-memory-generation">Supported memory generation</label>
+                  <select class="form-control" id="board-memory-generation" required aria-describedby="board-memory-generation-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="ddr4">DDR4</option>
+                    <option value="ddr5">DDR5</option>
+                    <option value="lpddr4">LPDDR4</option>
+                    <option value="lpddr5">LPDDR5</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="memory-input-hint" id="board-memory-generation-hint">Select Unknown when not confirmed.</small>
+                  <p class="input-error" id="board-memory-generation-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="board-slot-type">Memory slot type</label>
+                  <select class="form-control" id="board-slot-type" required aria-describedby="board-slot-type-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="dimm">DIMM</option>
+                    <option value="so-dimm">SO-DIMM</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="memory-input-hint" id="board-slot-type-hint">Physical module fit must be verified.</small>
+                  <p class="input-error" id="board-slot-type-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="board-slot-count">Number of memory slots</label>
+                  <input class="form-control" id="board-slot-count" type="number" min="1" max="16" step="1" required inputmode="numeric" aria-describedby="board-slot-count-hint">
+                  <small class="memory-input-hint" id="board-slot-count-hint">Whole number, 1–16.</small>
+                  <p class="input-error" id="board-slot-count-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="board-max-capacity">Maximum supported capacity <small>(GB)</small></label>
+                  <input class="form-control" id="board-max-capacity" type="number" min="1" max="4096" step="any" required inputmode="decimal" aria-describedby="board-max-capacity-hint">
+                  <small class="memory-input-hint" id="board-max-capacity-hint">Required; 1–4,096 GB.</small>
+                  <p class="input-error" id="board-max-capacity-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="board-slot-capacity">Maximum capacity per slot <small>(GB, optional)</small></label>
+                  <input class="form-control" id="board-slot-capacity" type="number" min="0.1" max="1024" step="any" inputmode="decimal" aria-describedby="board-slot-capacity-hint">
+                  <small class="memory-input-hint" id="board-slot-capacity-hint">If supplied: 0.1–1,024 GB per slot.</small>
+                  <p class="input-error" id="board-slot-capacity-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="board-speeds">Supported memory speeds <small>(optional)</small></label>
+                  <input class="form-control" id="board-speeds" type="text" maxlength="120" autocomplete="off" placeholder="4800, 5600" aria-describedby="board-speeds-hint">
+                  <small class="memory-input-hint" id="board-speeds-hint">Comma-separated MT/s values only; e.g. 4800, 5600.</small>
+                  <p class="input-error" id="board-speeds-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="board-ecc">ECC support</label>
+                  <select class="form-control" id="board-ecc" required aria-describedby="board-ecc-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                  <small class="memory-input-hint" id="board-ecc-hint">Select Unknown when not confirmed.</small>
+                  <p class="input-error" id="board-ecc-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="board-bios">BIOS version <small>(optional)</small></label>
+                  <input class="form-control" id="board-bios" type="text" maxlength="80" autocomplete="off">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel memory-component-panel" aria-labelledby="ram-specs-heading">
+              <legend class="visually-hidden">RAM specifications</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">MEMORY KIT</span>
+                <span class="utility-index">PLATFORM / 03</span>
+              </div>
+              <h2 id="ram-specs-heading">RAM</h2>
+              <div class="memory-field-grid">
+                <div class="form-field">
+                  <label for="ram-kit">RAM kit name <small>(optional)</small></label>
+                  <input class="form-control" id="ram-kit" type="text" maxlength="100" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="ram-generation">Memory generation</label>
+                  <select class="form-control" id="ram-generation" required aria-describedby="ram-generation-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="ddr4">DDR4</option>
+                    <option value="ddr5">DDR5</option>
+                    <option value="lpddr4">LPDDR4</option>
+                    <option value="lpddr5">LPDDR5</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="memory-input-hint" id="ram-generation-hint">Select Unknown when not confirmed.</small>
+                  <p class="input-error" id="ram-generation-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="ram-module-type">Module type</label>
+                  <select class="form-control" id="ram-module-type" required aria-describedby="ram-module-type-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="dimm">DIMM</option>
+                    <option value="so-dimm">SO-DIMM</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="memory-input-hint" id="ram-module-type-hint">Select Unknown when not confirmed.</small>
+                  <p class="input-error" id="ram-module-type-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="ram-module-count">Number of modules</label>
+                  <input class="form-control" id="ram-module-count" type="number" min="1" max="16" step="1" required inputmode="numeric" aria-describedby="ram-module-count-hint">
+                  <small class="memory-input-hint" id="ram-module-count-hint">Whole number, 1–16.</small>
+                  <p class="input-error" id="ram-module-count-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="ram-module-capacity">Capacity per module <small>(GB)</small></label>
+                  <input class="form-control" id="ram-module-capacity" type="number" min="0.1" max="512" step="any" required inputmode="decimal" aria-describedby="ram-module-capacity-hint">
+                  <small class="memory-input-hint" id="ram-module-capacity-hint">Required; 0.1–512 GB.</small>
+                  <p class="input-error" id="ram-module-capacity-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="ram-speed">Advertised speed <small>(MT/s)</small></label>
+                  <input class="form-control" id="ram-speed" type="number" min="100" max="20000" step="1" required inputmode="numeric" aria-describedby="ram-speed-hint">
+                  <small class="memory-input-hint" id="ram-speed-hint">Whole number, 100–20,000 MT/s.</small>
+                  <p class="input-error" id="ram-speed-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="ram-ecc-type">ECC type</label>
+                  <select class="form-control" id="ram-ecc-type" required aria-describedby="ram-ecc-type-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="non-ecc">Non-ECC</option>
+                    <option value="ecc-udimm">ECC UDIMM</option>
+                    <option value="ecc-rdimm">ECC RDIMM</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="memory-input-hint" id="ram-ecc-type-hint">ECC module types are not interchangeable.</small>
+                  <p class="input-error" id="ram-ecc-type-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="ram-buffer-type">Registered / unbuffered type</label>
+                  <select class="form-control" id="ram-buffer-type" required aria-describedby="ram-buffer-type-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="registered">Registered / buffered</option>
+                    <option value="unbuffered">Unbuffered</option>
+                    <option value="not-applicable">Not applicable</option>
+                  </select>
+                  <small class="memory-input-hint" id="ram-buffer-type-hint">Choose the kit's stated type where applicable.</small>
+                  <p class="input-error" id="ram-buffer-type-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field memory-wide-field">
+                  <label for="ram-profile">XMP / EXPO profile information <small>(optional)</small></label>
+                  <input class="form-control" id="ram-profile" type="text" maxlength="120" autocomplete="off" placeholder="User-supplied profile details">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="memory-compatibility-actions">
+            <button class="button button-primary" type="submit">Check Compatibility</button>
+            <button class="button button-quiet" id="reset-memory-compatibility" type="button">Reset</button>
+            <p class="memory-compatibility-status" id="memory-compatibility-status" role="status" aria-live="polite">Enter the specifications and run the checks. Unknown values will remain unverified.</p>
+          </div>
+        </form>
+
+        <section class="memory-results-section" aria-labelledby="memory-results-title">
+          <header class="memory-section-heading">
+            <p class="mono-label">QUALIFIED ASSESSMENT</p>
+            <h2 id="memory-results-title">Checks are not a compatibility guarantee.</h2>
+          </header>
+          <div class="memory-overall-result" id="memory-overall-result" data-state="not-evaluated" role="status" aria-live="polite">
+            <span class="memory-result-state" id="memory-overall-state">Not evaluated</span>
+            <p id="memory-overall-message">Run the checks to evaluate the entered specifications.</p>
+          </div>
+          <p class="memory-total-capacity">Calculated installed memory: <output id="memory-total-capacity">—</output></p>
+          <div class="memory-check-grid" id="memory-checks">
+            <article class="surface-panel memory-check" id="check-socket" data-state="not-evaluated">
+              <h3>CPU and motherboard socket</h3>
+              <span class="memory-check-state">Not evaluated</span>
+              <p class="memory-check-message">Enter both socket labels to compare them.</p>
+            </article>
+            <article class="surface-panel memory-check" id="check-generation" data-state="not-evaluated">
+              <h3>Memory generation</h3>
+              <span class="memory-check-state">Not evaluated</span>
+              <p class="memory-check-message">Compare CPU, motherboard, and RAM generations.</p>
+            </article>
+            <article class="surface-panel memory-check" id="check-form-factor" data-state="not-evaluated">
+              <h3>Module form factor</h3>
+              <span class="memory-check-state">Not evaluated</span>
+              <p class="memory-check-message">Compare the motherboard slot and RAM module types.</p>
+            </article>
+            <article class="surface-panel memory-check" id="check-slot-count" data-state="not-evaluated">
+              <h3>Module count and slots</h3>
+              <span class="memory-check-state">Not evaluated</span>
+              <p class="memory-check-message">Compare the number of modules with motherboard slots.</p>
+            </article>
+            <article class="surface-panel memory-check" id="check-board-capacity" data-state="not-evaluated">
+              <h3>Motherboard total capacity</h3>
+              <span class="memory-check-state">Not evaluated</span>
+              <p class="memory-check-message">Calculate total kit capacity and compare with the board limit.</p>
+            </article>
+            <article class="surface-panel memory-check" id="check-slot-capacity" data-state="not-evaluated">
+              <h3>Per-slot capacity</h3>
+              <span class="memory-check-state">Not evaluated</span>
+              <p class="memory-check-message">Compare module capacity with the stated per-slot limit.</p>
+            </article>
+            <article class="surface-panel memory-check" id="check-cpu-capacity" data-state="not-evaluated">
+              <h3>CPU memory capacity</h3>
+              <span class="memory-check-state">Not evaluated</span>
+              <p class="memory-check-message">Compare kit capacity with the CPU's stated limit when supplied.</p>
+            </article>
+            <article class="surface-panel memory-check" id="check-cpu-speed" data-state="not-evaluated">
+              <h3>CPU-listed memory speed</h3>
+              <span class="memory-check-state">Not evaluated</span>
+              <p class="memory-check-message">Compare the advertised kit speed with CPU speed information.</p>
+            </article>
+            <article class="surface-panel memory-check" id="check-board-speed" data-state="not-evaluated">
+              <h3>Motherboard-listed memory speed</h3>
+              <span class="memory-check-state">Not evaluated</span>
+              <p class="memory-check-message">Compare the advertised kit speed with motherboard speed information.</p>
+            </article>
+            <article class="surface-panel memory-check" id="check-ecc" data-state="not-evaluated">
+              <h3>ECC and registered memory</h3>
+              <span class="memory-check-state">Not evaluated</span>
+              <p class="memory-check-message">Review ECC capability and module buffering separately.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="memory-recommendations-section" aria-labelledby="memory-recommendations-title">
+          <header class="memory-section-heading">
+            <p class="mono-label">NEXT VERIFICATION STEPS</p>
+            <h2 id="memory-recommendations-title">Confirm the exact platform and kit.</h2>
+          </header>
+          <ul class="memory-recommendations" id="memory-recommendations">
+            <li>Check the motherboard CPU support list, chipset restrictions, and minimum required BIOS version.</li>
+            <li>Confirm the exact RAM part number and supported memory configuration with the motherboard manufacturer.</li>
+          </ul>
+          <p class="memory-recommendation-note">A memory QVL lists tested configurations; it is not necessarily an exhaustive list of all memory that can work.</p>
+        </section>
+
+        <aside class="calculation-note memory-compatibility-caveats" aria-labelledby="memory-caveats-title">
+          <p class="mono-label" id="memory-caveats-title">IMPORTANT LIMITATIONS</p>
+          <p>DDR generations and DIMM / SO-DIMM form factors are not interchangeable. Matching socket labels do not establish CPU support: model-specific support lists, BIOS versions, and chipset restrictions may apply.</p>
+          <p>Advertised memory speed may require XMP / EXPO or manual configuration. CPU, motherboard, BIOS, and module population all affect supported speeds; a speed above a listed official value is not by itself proof of incompatibility, and stability is not guaranteed.</p>
+          <p>ECC capability and physical module acceptance do not prove ECC operation. ECC UDIMM and registered ECC RDIMM are different; verify CPU, motherboard, BIOS, and exact kit support with manufacturers.</p>
+        </aside>
+        <p class="tool-footnote">All checks run locally in this browser. Entered hardware specifications are not transmitted or saved by this tool.</p>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>

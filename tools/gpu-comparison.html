@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Compare GPU specifications and theoretical memory bandwidth without invented benchmarks or FPS.">
+    <title>GPU Comparison | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/gpu-comparison">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="GPU Comparison | NEON//CORE">
+    <meta property="og:description" content="Compare GPU specifications and theoretical memory bandwidth without invented benchmarks or FPS.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/gpu-comparison">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPU Comparison | NEON//CORE">
+    <meta name="twitter:description" content="Compare GPU specifications and theoretical memory bandwidth without invented benchmarks or FPS.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/gpu-comparison.js" defer></script>
+  </head>
+  <body data-tool-id="gpu-comparison">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell gpu-comparison-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> GAMING / GRAPHICS TOOL</p>
+          <h1>GPU <span class="accent-text">comparison.</span></h1>
+          <p>Compare user-entered graphics specifications without invented benchmarks, FPS, or rankings.</p>
+        </header>
+
+        <p class="gpu-comparison-notice">No real GPU specifications are prefilled. Enter verified or user-supplied values; this tool does not look up products or estimate performance.</p>
+
+        <form class="gpu-comparison-form" id="gpu-comparison-form" novalidate>
+          <div class="gpu-config-grid">
+            <fieldset class="surface-panel gpu-config-panel" aria-labelledby="gpu-a-heading">
+              <legend class="visually-hidden">GPU A specifications</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">GRAPHICS PROCESSOR A</span>
+                <span class="utility-index">GPU / 01</span>
+              </div>
+              <h2 id="gpu-a-heading">GPU A</h2>
+              <div class="gpu-field-grid">
+                <div class="form-field">
+                  <label for="a-manufacturer">Manufacturer</label>
+                  <select class="form-control" id="a-manufacturer" required aria-describedby="a-manufacturer-hint">
+                    <option value="" selected>Select manufacturer</option>
+                    <option value="nvidia">NVIDIA</option>
+                    <option value="amd">AMD</option>
+                    <option value="intel">Intel</option>
+                    <option value="apple">Apple</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="gpu-input-hint" id="a-manufacturer-hint">Required; select the stated manufacturer.</small>
+                  <p class="input-error" id="a-manufacturer-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-model">GPU model or name</label>
+                  <input class="form-control" id="a-model" type="text" maxlength="100" autocomplete="off" required aria-describedby="a-model-hint">
+                  <small class="gpu-input-hint" id="a-model-hint">Required; enter the model name as listed.</small>
+                  <p class="input-error" id="a-model-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-architecture">Architecture or generation <small>(optional)</small></label>
+                  <input class="form-control" id="a-architecture" type="text" maxlength="80" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="a-type">GPU type</label>
+                  <select class="form-control" id="a-type" required aria-describedby="a-type-hint">
+                    <option value="" selected>Select GPU type</option>
+                    <option value="dedicated">Dedicated</option>
+                    <option value="integrated">Integrated</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="gpu-input-hint" id="a-type-hint">Required; needed to assess bandwidth applicability.</small>
+                  <p class="input-error" id="a-type-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-vram">VRAM capacity <small>(GB, optional)</small></label>
+                  <input class="form-control" id="a-vram" type="number" min="0.1" max="512" step="any" inputmode="decimal" aria-describedby="a-vram-hint">
+                  <small class="gpu-input-hint" id="a-vram-hint">If supplied: 0.1–512 GB. Leave blank when unavailable or not comparable.</small>
+                  <p class="input-error" id="a-vram-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-vram-tech">VRAM technology</label>
+                  <select class="form-control" id="a-vram-tech" aria-describedby="a-vram-tech-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="gddr6">GDDR6</option>
+                    <option value="gddr6x">GDDR6X</option>
+                    <option value="gddr7">GDDR7</option>
+                    <option value="hbm">HBM</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="gpu-input-hint" id="a-vram-tech-hint">Select Unknown if unconfirmed.</small>
+                  <p class="input-error" id="a-vram-tech-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-bus-width">Memory bus width <small>(bits, optional)</small></label>
+                  <input class="form-control" id="a-bus-width" type="number" min="8" max="8192" step="1" inputmode="numeric" aria-describedby="a-bus-width-hint">
+                  <small class="gpu-input-hint" id="a-bus-width-hint">If supplied: 8–8,192 bits, in multiples of 8.</small>
+                  <p class="input-error" id="a-bus-width-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-data-rate">Effective memory data rate <small>(Gbps per pin, optional)</small></label>
+                  <input class="form-control" id="a-data-rate" type="number" min="0.1" max="100" step="any" inputmode="decimal" aria-describedby="a-data-rate-hint">
+                  <small class="gpu-input-hint" id="a-data-rate-hint">If supplied: 0.1–100 Gbps per pin.</small>
+                  <p class="input-error" id="a-data-rate-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-advertised-bandwidth">Advertised memory bandwidth <small>(GB/s, optional)</small></label>
+                  <input class="form-control" id="a-advertised-bandwidth" type="number" min="0.1" max="10000" step="any" inputmode="decimal" aria-describedby="a-advertised-bandwidth-hint">
+                  <small class="gpu-input-hint" id="a-advertised-bandwidth-hint">If supplied: 0.1–10,000 GB/s; shown separately from calculation.</small>
+                  <p class="input-error" id="a-advertised-bandwidth-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-base-clock">Base clock <small>(MHz, optional)</small></label>
+                  <input class="form-control" id="a-base-clock" type="number" min="1" max="10000" step="any" inputmode="decimal" aria-describedby="a-base-clock-hint">
+                  <small class="gpu-input-hint" id="a-base-clock-hint">If supplied: 1–10,000 MHz.</small>
+                  <p class="input-error" id="a-base-clock-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-boost-clock">Boost clock <small>(MHz, optional)</small></label>
+                  <input class="form-control" id="a-boost-clock" type="number" min="1" max="10000" step="any" inputmode="decimal" aria-describedby="a-boost-clock-hint">
+                  <small class="gpu-input-hint" id="a-boost-clock-hint">If supplied: 1–10,000 MHz.</small>
+                  <p class="input-error" id="a-boost-clock-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-unit-count">Shader / compute unit count <small>(optional)</small></label>
+                  <input class="form-control" id="a-unit-count" type="number" min="1" max="100000" step="1" inputmode="numeric" aria-describedby="a-unit-count-hint">
+                  <small class="gpu-input-hint" id="a-unit-count-hint">If supplied: whole number, 1–100,000.</small>
+                  <p class="input-error" id="a-unit-count-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-unit-name">Shader / compute unit terminology <small>(optional)</small></label>
+                  <input class="form-control" id="a-unit-name" type="text" maxlength="80" autocomplete="off" placeholder="e.g. CUDA cores, stream processors">
+                </div>
+                <div class="form-field">
+                  <label for="a-board-power">Manufacturer-rated board power <small>(W, optional)</small></label>
+                  <input class="form-control" id="a-board-power" type="number" min="1" max="2000" step="any" inputmode="decimal" aria-describedby="a-board-power-hint">
+                  <small class="gpu-input-hint" id="a-board-power-hint">If supplied: 1–2,000 W; not measured consumption.</small>
+                  <p class="input-error" id="a-board-power-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-psu">Recommended PSU wattage <small>(W, optional)</small></label>
+                  <input class="form-control" id="a-psu" type="number" min="1" max="3000" step="any" inputmode="decimal" aria-describedby="a-psu-hint">
+                  <small class="gpu-input-hint" id="a-psu-hint">If supplied: 1–3,000 W; system recommendation, not GPU draw.</small>
+                  <p class="input-error" id="a-psu-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-ray-tracing">Ray tracing support</label>
+                  <select class="form-control" id="a-ray-tracing" required aria-describedby="a-ray-tracing-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                  <small class="gpu-input-hint" id="a-ray-tracing-hint">Support does not establish ray tracing performance.</small>
+                  <p class="input-error" id="a-ray-tracing-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="a-price">Price <small>(AUD, optional)</small></label>
+                  <input class="form-control" id="a-price" type="number" min="0.01" max="100000" step="0.01" inputmode="decimal" aria-describedby="a-price-hint">
+                  <small class="gpu-input-hint" id="a-price-hint">If supplied: AUD 0.01–100,000, up to 2 decimal places.</small>
+                  <p class="input-error" id="a-price-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field gpu-wide-field">
+                  <label for="a-encoding">Hardware encoding support <small>(optional)</small></label>
+                  <input class="form-control" id="a-encoding" type="text" maxlength="120" autocomplete="off" placeholder="Enter a verified codec/encoder description">
+                </div>
+                <div class="form-field gpu-wide-field">
+                  <label for="a-display-outputs">Display output support <small>(optional)</small></label>
+                  <input class="form-control" id="a-display-outputs" type="text" maxlength="120" autocomplete="off" placeholder="Enter verified output/standard details">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel gpu-config-panel" aria-labelledby="gpu-b-heading">
+              <legend class="visually-hidden">GPU B specifications</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">GRAPHICS PROCESSOR B</span>
+                <span class="utility-index">GPU / 02</span>
+              </div>
+              <h2 id="gpu-b-heading">GPU B</h2>
+              <div class="gpu-field-grid">
+                <div class="form-field">
+                  <label for="b-manufacturer">Manufacturer</label>
+                  <select class="form-control" id="b-manufacturer" required aria-describedby="b-manufacturer-hint">
+                    <option value="" selected>Select manufacturer</option>
+                    <option value="nvidia">NVIDIA</option>
+                    <option value="amd">AMD</option>
+                    <option value="intel">Intel</option>
+                    <option value="apple">Apple</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="gpu-input-hint" id="b-manufacturer-hint">Required; select the stated manufacturer.</small>
+                  <p class="input-error" id="b-manufacturer-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-model">GPU model or name</label>
+                  <input class="form-control" id="b-model" type="text" maxlength="100" autocomplete="off" required aria-describedby="b-model-hint">
+                  <small class="gpu-input-hint" id="b-model-hint">Required; enter the model name as listed.</small>
+                  <p class="input-error" id="b-model-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-architecture">Architecture or generation <small>(optional)</small></label>
+                  <input class="form-control" id="b-architecture" type="text" maxlength="80" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="b-type">GPU type</label>
+                  <select class="form-control" id="b-type" required aria-describedby="b-type-hint">
+                    <option value="" selected>Select GPU type</option>
+                    <option value="dedicated">Dedicated</option>
+                    <option value="integrated">Integrated</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="gpu-input-hint" id="b-type-hint">Required; needed to assess bandwidth applicability.</small>
+                  <p class="input-error" id="b-type-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-vram">VRAM capacity <small>(GB, optional)</small></label>
+                  <input class="form-control" id="b-vram" type="number" min="0.1" max="512" step="any" inputmode="decimal" aria-describedby="b-vram-hint">
+                  <small class="gpu-input-hint" id="b-vram-hint">If supplied: 0.1–512 GB. Leave blank when unavailable or not comparable.</small>
+                  <p class="input-error" id="b-vram-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-vram-tech">VRAM technology</label>
+                  <select class="form-control" id="b-vram-tech" aria-describedby="b-vram-tech-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="gddr6">GDDR6</option>
+                    <option value="gddr6x">GDDR6X</option>
+                    <option value="gddr7">GDDR7</option>
+                    <option value="hbm">HBM</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <small class="gpu-input-hint" id="b-vram-tech-hint">Select Unknown if unconfirmed.</small>
+                  <p class="input-error" id="b-vram-tech-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-bus-width">Memory bus width <small>(bits, optional)</small></label>
+                  <input class="form-control" id="b-bus-width" type="number" min="8" max="8192" step="1" inputmode="numeric" aria-describedby="b-bus-width-hint">
+                  <small class="gpu-input-hint" id="b-bus-width-hint">If supplied: 8–8,192 bits, in multiples of 8.</small>
+                  <p class="input-error" id="b-bus-width-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-data-rate">Effective memory data rate <small>(Gbps per pin, optional)</small></label>
+                  <input class="form-control" id="b-data-rate" type="number" min="0.1" max="100" step="any" inputmode="decimal" aria-describedby="b-data-rate-hint">
+                  <small class="gpu-input-hint" id="b-data-rate-hint">If supplied: 0.1–100 Gbps per pin.</small>
+                  <p class="input-error" id="b-data-rate-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-advertised-bandwidth">Advertised memory bandwidth <small>(GB/s, optional)</small></label>
+                  <input class="form-control" id="b-advertised-bandwidth" type="number" min="0.1" max="10000" step="any" inputmode="decimal" aria-describedby="b-advertised-bandwidth-hint">
+                  <small class="gpu-input-hint" id="b-advertised-bandwidth-hint">If supplied: 0.1–10,000 GB/s; shown separately from calculation.</small>
+                  <p class="input-error" id="b-advertised-bandwidth-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-base-clock">Base clock <small>(MHz, optional)</small></label>
+                  <input class="form-control" id="b-base-clock" type="number" min="1" max="10000" step="any" inputmode="decimal" aria-describedby="b-base-clock-hint">
+                  <small class="gpu-input-hint" id="b-base-clock-hint">If supplied: 1–10,000 MHz.</small>
+                  <p class="input-error" id="b-base-clock-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-boost-clock">Boost clock <small>(MHz, optional)</small></label>
+                  <input class="form-control" id="b-boost-clock" type="number" min="1" max="10000" step="any" inputmode="decimal" aria-describedby="b-boost-clock-hint">
+                  <small class="gpu-input-hint" id="b-boost-clock-hint">If supplied: 1–10,000 MHz.</small>
+                  <p class="input-error" id="b-boost-clock-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-unit-count">Shader / compute unit count <small>(optional)</small></label>
+                  <input class="form-control" id="b-unit-count" type="number" min="1" max="100000" step="1" inputmode="numeric" aria-describedby="b-unit-count-hint">
+                  <small class="gpu-input-hint" id="b-unit-count-hint">If supplied: whole number, 1–100,000.</small>
+                  <p class="input-error" id="b-unit-count-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-unit-name">Shader / compute unit terminology <small>(optional)</small></label>
+                  <input class="form-control" id="b-unit-name" type="text" maxlength="80" autocomplete="off" placeholder="e.g. CUDA cores, stream processors">
+                </div>
+                <div class="form-field">
+                  <label for="b-board-power">Manufacturer-rated board power <small>(W, optional)</small></label>
+                  <input class="form-control" id="b-board-power" type="number" min="1" max="2000" step="any" inputmode="decimal" aria-describedby="b-board-power-hint">
+                  <small class="gpu-input-hint" id="b-board-power-hint">If supplied: 1–2,000 W; not measured consumption.</small>
+                  <p class="input-error" id="b-board-power-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-psu">Recommended PSU wattage <small>(W, optional)</small></label>
+                  <input class="form-control" id="b-psu" type="number" min="1" max="3000" step="any" inputmode="decimal" aria-describedby="b-psu-hint">
+                  <small class="gpu-input-hint" id="b-psu-hint">If supplied: 1–3,000 W; system recommendation, not GPU draw.</small>
+                  <p class="input-error" id="b-psu-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-ray-tracing">Ray tracing support</label>
+                  <select class="form-control" id="b-ray-tracing" required aria-describedby="b-ray-tracing-hint">
+                    <option value="unknown" selected>Unknown</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                  </select>
+                  <small class="gpu-input-hint" id="b-ray-tracing-hint">Support does not establish ray tracing performance.</small>
+                  <p class="input-error" id="b-ray-tracing-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="b-price">Price <small>(AUD, optional)</small></label>
+                  <input class="form-control" id="b-price" type="number" min="0.01" max="100000" step="0.01" inputmode="decimal" aria-describedby="b-price-hint">
+                  <small class="gpu-input-hint" id="b-price-hint">If supplied: AUD 0.01–100,000, up to 2 decimal places.</small>
+                  <p class="input-error" id="b-price-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field gpu-wide-field">
+                  <label for="b-encoding">Hardware encoding support <small>(optional)</small></label>
+                  <input class="form-control" id="b-encoding" type="text" maxlength="120" autocomplete="off" placeholder="Enter a verified codec/encoder description">
+                </div>
+                <div class="form-field gpu-wide-field">
+                  <label for="b-display-outputs">Display output support <small>(optional)</small></label>
+                  <input class="form-control" id="b-display-outputs" type="text" maxlength="120" autocomplete="off" placeholder="Enter verified output/standard details">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="gpu-comparison-actions">
+            <button class="button button-primary" type="submit">Compare GPUs</button>
+            <button class="button button-quiet" id="reset-gpus" type="button">Reset</button>
+            <p class="gpu-comparison-status" id="gpu-comparison-status" role="status" aria-live="polite">Enter required specifications for both GPUs to compare them.</p>
+          </div>
+        </form>
+
+        <section class="gpu-metrics-section" aria-labelledby="gpu-metrics-title">
+          <header class="gpu-section-heading">
+            <p class="mono-label">CALCULATED DIFFERENCES</p>
+            <h2 id="gpu-metrics-title">Compare entered values.</h2>
+          </header>
+          <div class="gpu-metric-grid">
+            <div><span>VRAM capacity difference</span><output id="metric-vram-difference">—</output></div>
+            <div><span>VRAM difference vs A</span><output id="metric-vram-percent">—</output></div>
+            <div><span>Memory bus width difference</span><output id="metric-bus-width-difference">—</output></div>
+            <div><span>Theoretical bandwidth difference</span><output id="metric-calculated-bandwidth-difference">—</output></div>
+            <div><span>Advertised bandwidth difference</span><output id="metric-advertised-bandwidth-difference">—</output></div>
+            <div><span>Base clock difference</span><output id="metric-base-clock-difference">—</output></div>
+            <div><span>Boost clock difference</span><output id="metric-boost-clock-difference">—</output></div>
+            <div><span>Rated board power difference</span><output id="metric-board-power-difference">—</output></div>
+            <div><span>Price difference (AUD)</span><output id="metric-price-difference">—</output></div>
+          </div>
+          <p class="gpu-metric-caveat">Differences are GPU B minus GPU A. VRAM percentage uses GPU A as the baseline and is shown only when the capacity comparison is applicable. No performance-per-watt or performance-per-dollar score is calculated.</p>
+        </section>
+
+        <section class="gpu-table-section" aria-labelledby="gpu-table-title">
+          <header class="gpu-section-heading">
+            <p class="mono-label">SIDE-BY-SIDE SPECIFICATIONS</p>
+            <h2 id="gpu-table-title">GPU comparison.</h2>
+          </header>
+          <div class="gpu-table-scroll" role="region" aria-label="GPU comparison table; scroll horizontally on narrow screens" tabindex="0">
+            <table class="gpu-comparison-table">
+              <caption>Entered specifications are user-supplied. Calculated theoretical bandwidth is separate from advertised bandwidth; differences are shown only when their inputs are comparable.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Specification</th>
+                  <th scope="col"><output id="a-table-name">GPU A</output></th>
+                  <th scope="col"><output id="b-table-name">GPU B</output></th>
+                  <th scope="col">Difference / interpretation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Model / name</th><td id="a-value-model">—</td><td id="b-value-model">—</td><td>No product lookup or verification is performed.</td></tr>
+                <tr><th scope="row">Manufacturer</th><td id="a-value-manufacturer">—</td><td id="b-value-manufacturer">—</td><td>Manufacturer identity does not establish application performance.</td></tr>
+                <tr><th scope="row">Architecture / generation</th><td id="a-value-architecture">—</td><td id="b-value-architecture">—</td><td>Architecture affects how execution units, clocks, and memory are used.</td></tr>
+                <tr><th scope="row">GPU type</th><td id="a-value-type">—</td><td id="b-value-type">—</td><td>Integrated and dedicated GPUs may use fundamentally different memory architectures.</td></tr>
+                <tr><th scope="row">VRAM capacity</th><td id="a-value-vram">—</td><td id="b-value-vram">—</td><td>Capacity alone does not determine GPU speed; unified memory may not be directly comparable.</td></tr>
+                <tr><th scope="row">VRAM technology</th><td id="a-value-vram-tech">—</td><td id="b-value-vram-tech">—</td><td>Different memory technologies and designs affect interpretation.</td></tr>
+                <tr><th scope="row">Memory bus width</th><td id="a-value-bus-width">—</td><td id="b-value-bus-width">—</td><td>Bus width alone does not determine memory bandwidth or performance.</td></tr>
+                <tr><th scope="row">Effective data rate</th><td id="a-value-data-rate">—</td><td id="b-value-data-rate">—</td><td>Comparable only when rates use the same per-pin definition and memory technology.</td></tr>
+                <tr><th scope="row">Calculated theoretical bandwidth</th><td id="a-value-calculated-bandwidth">—</td><td id="b-value-calculated-bandwidth">—</td><td>Formula is conditional; it is not a measured or universal bandwidth value.</td></tr>
+                <tr><th scope="row">Advertised bandwidth</th><td id="a-value-advertised-bandwidth">—</td><td id="b-value-advertised-bandwidth">—</td><td>Displayed independently; rounding, definitions, or architecture may explain differences.</td></tr>
+                <tr><th scope="row">Base clock</th><td id="a-value-base-clock">—</td><td id="b-value-base-clock">—</td><td>Clock differences alone do not establish performance.</td></tr>
+                <tr><th scope="row">Boost clock</th><td id="a-value-boost-clock">—</td><td id="b-value-boost-clock">—</td><td>Advertised boost may not be sustained; clock is not a performance score.</td></tr>
+                <tr><th scope="row">Shader / compute units</th><td id="a-value-unit-count">—</td><td id="b-value-unit-count">—</td><td id="diff-unit-count">—</td></tr>
+                <tr><th scope="row">Execution-unit terminology</th><td id="a-value-unit-name">—</td><td id="b-value-unit-name">—</td><td>CUDA cores, stream processors, and other units are not directly equivalent.</td></tr>
+                <tr><th scope="row">Manufacturer-rated board power</th><td id="a-value-board-power">—</td><td id="b-value-board-power">—</td><td id="diff-board-power">—</td></tr>
+                <tr><th scope="row">Recommended PSU</th><td id="a-value-psu">—</td><td id="b-value-psu">—</td><td id="diff-psu">—</td></tr>
+                <tr><th scope="row">Ray tracing support</th><td id="a-value-ray-tracing">—</td><td id="b-value-ray-tracing">—</td><td>Support does not establish ray tracing performance.</td></tr>
+                <tr><th scope="row">Hardware encoding</th><td id="a-value-encoding">—</td><td id="b-value-encoding">—</td><td>Codec support, software, drivers, and quality settings matter.</td></tr>
+                <tr><th scope="row">Display output support</th><td id="a-value-display-outputs">—</td><td id="b-value-display-outputs">—</td><td>Check exact display, resolution, refresh, and connection requirements.</td></tr>
+                <tr><th scope="row">Price (AUD)</th><td id="a-value-price">—</td><td id="b-value-price">—</td><td id="diff-price">—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="gpu-guidance" aria-labelledby="gpu-gaming-title">
+          <header class="gpu-section-heading">
+            <p class="mono-label">WORKLOAD CONSIDERATIONS</p>
+            <h2 id="gpu-gaming-title">Gaming guidance.</h2>
+            <p>These notes explain dependencies, not predicted frame rates or a GPU ranking.</p>
+          </header>
+          <div class="gpu-guidance-grid">
+            <article class="surface-panel gpu-guidance-card"><h3>1080p gaming</h3><p id="guide-1080p">Compare valid GPU specifications to see a conditional note.</p></article>
+            <article class="surface-panel gpu-guidance-card"><h3>1440p gaming</h3><p id="guide-1440p">Compare valid GPU specifications to see a conditional note.</p></article>
+            <article class="surface-panel gpu-guidance-card"><h3>4K gaming</h3><p id="guide-4k">Compare valid GPU specifications to see a conditional note.</p></article>
+            <article class="surface-panel gpu-guidance-card"><h3>High-refresh gaming</h3><p id="guide-high-refresh">Compare valid GPU specifications to see a conditional note.</p></article>
+            <article class="surface-panel gpu-guidance-card"><h3>Ray tracing</h3><p id="guide-ray-tracing">Compare valid GPU specifications to see a conditional note.</p></article>
+            <article class="surface-panel gpu-guidance-card"><h3>VRAM requirements</h3><p id="guide-vram">Compare valid GPU specifications to see a conditional note.</p></article>
+            <article class="surface-panel gpu-guidance-card"><h3>GPU and CPU interaction</h3><p id="guide-cpu">Compare valid GPU specifications to see a conditional note.</p></article>
+          </div>
+        </section>
+
+        <section class="gpu-guidance" aria-labelledby="gpu-productivity-title">
+          <header class="gpu-section-heading">
+            <p class="mono-label">SOFTWARE AND WORKLOAD SUPPORT</p>
+            <h2 id="gpu-productivity-title">Productivity considerations.</h2>
+          </header>
+          <div class="gpu-guidance-grid">
+            <article class="surface-panel gpu-guidance-card"><h3>Video editing</h3><p id="guide-video">Compare valid GPU specifications to see a conditional note.</p></article>
+            <article class="surface-panel gpu-guidance-card"><h3>3D rendering</h3><p id="guide-rendering">Compare valid GPU specifications to see a conditional note.</p></article>
+            <article class="surface-panel gpu-guidance-card"><h3>GPU compute</h3><p id="guide-compute">Compare valid GPU specifications to see a conditional note.</p></article>
+            <article class="surface-panel gpu-guidance-card"><h3>Streaming and recording</h3><p id="guide-streaming">Compare valid GPU specifications to see a conditional note.</p></article>
+            <article class="surface-panel gpu-guidance-card"><h3>AI workloads</h3><p id="guide-ai">Compare valid GPU specifications to see a conditional note.</p></article>
+          </div>
+        </section>
+
+        <aside class="calculation-note gpu-accuracy-notes" aria-labelledby="gpu-accuracy-title">
+          <p class="mono-label" id="gpu-accuracy-title">READING GPU SPECIFICATIONS</p>
+          <p>CUDA cores, stream processors, and other execution-unit counts are not directly equivalent. Clock speeds alone do not determine performance; VRAM capacity and bandwidth alone do not determine gaming performance. Ray tracing support does not establish ray tracing speed.</p>
+          <p>Integrated GPUs may use unified system memory rather than dedicated VRAM. The bandwidth formula below is only used for a dedicated GPU with a selected GDDR6, GDDR6X, GDDR7, or HBM technology and both bus width and effective per-pin data rate supplied.</p>
+          <p>For that case, theoretical bandwidth (GB/s) = bus width (bits) × effective data rate (Gbps per pin) ÷ 8. The formula assumes a conventional external memory interface and directly applicable effective per-pin rate. Advertised bandwidth is shown separately; rounding, definitions, or architecture can cause differences.</p>
+          <p>Manufacturer-rated board power is not measured consumption. A recommended PSU is a system-level recommendation, not GPU draw. No performance-per-watt, performance-per-dollar, benchmark, or synthetic score is generated.</p>
+        </aside>
+        <p class="tool-footnote">All comparisons run locally in this browser. GPU specifications are not fetched, transmitted, or saved.</p>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="Estimate PC power requirements from user-entered component wattages and a configurable planning margin.">
+    <title>PSU Wattage Estimator | NEON//CORE</title>
+    <link rel="canonical" href="https://neoncoretools.com/tools/psu-wattage-estimator">
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="NEON//CORE">
+    <meta property="og:title" content="PSU Wattage Estimator | NEON//CORE">
+    <meta property="og:description" content="Estimate system power from entered component wattages. No component ratings are looked up or assumed.">
+    <meta property="og:url" content="https://neoncoretools.com/tools/psu-wattage-estimator">
+    <meta property="og:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PSU Wattage Estimator | NEON//CORE">
+    <meta name="twitter:description" content="Estimate system power from entered component wattages. No component ratings are looked up or assumed.">
+    <meta name="twitter:image" content="https://neoncoretools.com/assets/images/social-preview.png">
+    <meta name="twitter:image:alt" content="NEON//CORE: digital tools for gaming, technology, and everyday life">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tool-pages.css">
+    <script src="../js/platform.js" defer></script>
+    <script src="../js/tools/psu-wattage-estimator.js" defer></script>
+  </head>
+  <body data-tool-id="psu-wattage-estimator">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html#top" aria-label="NEON Core home">
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          <span>NEON<span class="brand-divider">//</span>CORE</span>
+        </a>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-link" href="../index.html#tools">Tool directory</a>
+          <a class="nav-link" href="../index.html#about">About</a>
+        </nav>
+        <a class="header-action" href="../index.html#tools">All tools <span aria-hidden="true">↗</span></a>
+      </div>
+    </header>
+
+    <main class="utility-main" id="main-content">
+      <div class="utility-shell psu-estimator-shell">
+        <a class="tool-back-link" href="../index.html#tools"><span aria-hidden="true">←</span> TOOL DIRECTORY</a>
+        <header class="tool-heading">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> COMPUTING / POWER TOOL</p>
+          <h1>PSU wattage <span class="accent-text">estimator.</span></h1>
+          <p>Estimate a system's steady-state power from your own component figures and choose a planning capacity target.</p>
+        </header>
+
+        <p class="psu-estimator-notice">No component wattages are prefilled. Enter estimates from the relevant component or PSU manufacturer; this tool does not look up products, measure consumption, or guarantee a PSU is suitable.</p>
+
+        <form class="psu-estimator-form" id="psu-estimator-form" novalidate>
+          <div class="psu-input-grid">
+            <fieldset class="surface-panel psu-component-panel" aria-labelledby="cpu-input-heading">
+              <legend class="visually-hidden">CPU power estimate</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">PROCESSOR</span>
+                <span class="utility-index">POWER / 01</span>
+              </div>
+              <h2 id="cpu-input-heading">CPU</h2>
+              <div class="psu-field-grid">
+                <div class="form-field psu-full-field">
+                  <label for="cpu-model">CPU model <small>(optional)</small></label>
+                  <input class="form-control" id="cpu-model" type="text" maxlength="100" autocomplete="off">
+                </div>
+                <div class="form-field psu-full-field">
+                  <label for="cpu-watts">Estimated CPU peak power <small>(W)</small></label>
+                  <input class="form-control" id="cpu-watts" type="number" min="1" max="2000" step="any" required inputmode="decimal" aria-describedby="cpu-watts-hint">
+                  <small class="psu-input-hint" id="cpu-watts-hint">Required; 1–2,000 W, up to 2 decimal places, from a source you trust.</small>
+                  <p class="input-error" id="cpu-watts-error" role="alert" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel psu-component-panel" aria-labelledby="gpu-input-heading">
+              <legend class="visually-hidden">GPU power estimate</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">GRAPHICS</span>
+                <span class="utility-index">POWER / 02</span>
+              </div>
+              <h2 id="gpu-input-heading">GPU</h2>
+              <div class="psu-field-grid">
+                <div class="form-field psu-full-field">
+                  <label for="gpu-model">GPU model <small>(optional)</small></label>
+                  <input class="form-control" id="gpu-model" type="text" maxlength="100" autocomplete="off">
+                </div>
+                <div class="form-field">
+                  <label for="gpu-watts">Estimated board power <small>(W per GPU)</small></label>
+                  <input class="form-control" id="gpu-watts" type="number" min="1" max="3000" step="any" inputmode="decimal" aria-describedby="gpu-watts-hint">
+                  <small class="psu-input-hint" id="gpu-watts-hint">Required when count is above zero; 1–3,000 W per GPU, up to 2 decimal places.</small>
+                  <p class="input-error" id="gpu-watts-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="gpu-count">Number of GPUs</label>
+                  <input class="form-control" id="gpu-count" type="number" min="0" max="4" step="1" required inputmode="numeric" aria-describedby="gpu-count-hint">
+                  <small class="psu-input-hint" id="gpu-count-hint">Whole number, 0–4.</small>
+                  <p class="input-error" id="gpu-count-error" role="alert" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel psu-component-panel" aria-labelledby="motherboard-input-heading">
+              <legend class="visually-hidden">Motherboard power estimate</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">MAINBOARD</span>
+                <span class="utility-index">POWER / 03</span>
+              </div>
+              <h2 id="motherboard-input-heading">Motherboard</h2>
+              <div class="psu-field-grid">
+                <div class="form-field psu-full-field">
+                  <label for="motherboard-watts">Estimated motherboard power <small>(W)</small></label>
+                  <input class="form-control" id="motherboard-watts" type="number" min="1" max="1000" step="any" required inputmode="decimal" aria-describedby="motherboard-watts-hint">
+                  <small class="psu-input-hint" id="motherboard-watts-hint">Required; 1–1,000 W, up to 2 decimal places. Use a separate board estimate that does not double-count the CPU.</small>
+                  <p class="input-error" id="motherboard-watts-error" role="alert" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel psu-component-panel" aria-labelledby="ram-input-heading">
+              <legend class="visually-hidden">RAM power estimate</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">MEMORY</span>
+                <span class="utility-index">POWER / 04</span>
+              </div>
+              <h2 id="ram-input-heading">RAM</h2>
+              <div class="psu-field-grid">
+                <div class="form-field">
+                  <label for="ram-count">Number of RAM modules</label>
+                  <input class="form-control" id="ram-count" type="number" min="1" max="16" step="1" required inputmode="numeric" aria-describedby="ram-count-hint">
+                  <small class="psu-input-hint" id="ram-count-hint">Whole number, 1–16.</small>
+                  <p class="input-error" id="ram-count-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="ram-watts">Estimated power per module <small>(W)</small></label>
+                  <input class="form-control" id="ram-watts" type="number" min="0.1" max="100" step="any" required inputmode="decimal" aria-describedby="ram-watts-hint">
+                  <small class="psu-input-hint" id="ram-watts-hint">Required; 0.1–100 W per module, up to 2 decimal places.</small>
+                  <p class="input-error" id="ram-watts-error" role="alert" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel psu-component-panel" aria-labelledby="storage-input-heading">
+              <legend class="visually-hidden">Storage power estimates</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">STORAGE</span>
+                <span class="utility-index">POWER / 05</span>
+              </div>
+              <h2 id="storage-input-heading">Storage</h2>
+              <div class="psu-field-grid">
+                <div class="form-field">
+                  <label for="ssd-count">Number of SSDs</label>
+                  <input class="form-control" id="ssd-count" type="number" min="0" max="32" step="1" required inputmode="numeric" aria-describedby="ssd-count-hint">
+                  <small class="psu-input-hint" id="ssd-count-hint">Whole number, 0–32.</small>
+                  <p class="input-error" id="ssd-count-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="ssd-watts">Estimated power per SSD <small>(W)</small></label>
+                  <input class="form-control" id="ssd-watts" type="number" min="0.1" max="100" step="any" inputmode="decimal" aria-describedby="ssd-watts-hint">
+                  <small class="psu-input-hint" id="ssd-watts-hint">Required when count is above zero; 0.1–100 W each, up to 2 decimal places.</small>
+                  <p class="input-error" id="ssd-watts-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="hdd-count">Number of HDDs</label>
+                  <input class="form-control" id="hdd-count" type="number" min="0" max="32" step="1" required inputmode="numeric" aria-describedby="hdd-count-hint">
+                  <small class="psu-input-hint" id="hdd-count-hint">Whole number, 0–32.</small>
+                  <p class="input-error" id="hdd-count-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="hdd-watts">Estimated power per HDD <small>(W)</small></label>
+                  <input class="form-control" id="hdd-watts" type="number" min="0.1" max="100" step="any" inputmode="decimal" aria-describedby="hdd-watts-hint">
+                  <small class="psu-input-hint" id="hdd-watts-hint">Required when count is above zero; 0.1–100 W each, up to 2 decimal places.</small>
+                  <p class="input-error" id="hdd-watts-error" role="alert" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel psu-component-panel" aria-labelledby="cooling-input-heading">
+              <legend class="visually-hidden">Cooling power estimates</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">COOLING</span>
+                <span class="utility-index">POWER / 06</span>
+              </div>
+              <h2 id="cooling-input-heading">Cooling</h2>
+              <div class="psu-field-grid">
+                <div class="form-field">
+                  <label for="fan-count">Number of case fans</label>
+                  <input class="form-control" id="fan-count" type="number" min="0" max="64" step="1" required inputmode="numeric" aria-describedby="fan-count-hint">
+                  <small class="psu-input-hint" id="fan-count-hint">Whole number, 0–64.</small>
+                  <p class="input-error" id="fan-count-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="fan-watts">Estimated power per fan <small>(W)</small></label>
+                  <input class="form-control" id="fan-watts" type="number" min="0.1" max="100" step="any" inputmode="decimal" aria-describedby="fan-watts-hint">
+                  <small class="psu-input-hint" id="fan-watts-hint">Required when count is above zero; 0.1–100 W each, up to 2 decimal places.</small>
+                  <p class="input-error" id="fan-watts-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="pump-count">Number of liquid-cooling pumps</label>
+                  <input class="form-control" id="pump-count" type="number" min="0" max="8" step="1" required inputmode="numeric" aria-describedby="pump-count-hint">
+                  <small class="psu-input-hint" id="pump-count-hint">Whole number, 0–8.</small>
+                  <p class="input-error" id="pump-count-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="pump-watts">Estimated power per pump <small>(W)</small></label>
+                  <input class="form-control" id="pump-watts" type="number" min="0.1" max="500" step="any" inputmode="decimal" aria-describedby="pump-watts-hint">
+                  <small class="psu-input-hint" id="pump-watts-hint">Required when count is above zero; 0.1–500 W each, up to 2 decimal places.</small>
+                  <p class="input-error" id="pump-watts-error" role="alert" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel psu-component-panel" aria-labelledby="other-input-heading">
+              <legend class="visually-hidden">Additional component power estimate</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">OTHER</span>
+                <span class="utility-index">POWER / 07</span>
+              </div>
+              <h2 id="other-input-heading">Other components</h2>
+              <div class="psu-field-grid">
+                <div class="form-field psu-full-field">
+                  <label for="other-watts">Additional internal component power <small>(W)</small></label>
+                  <input class="form-control" id="other-watts" type="number" min="0" max="5000" step="any" required inputmode="decimal" aria-describedby="other-watts-hint">
+                  <small class="psu-input-hint" id="other-watts-hint">Required; enter 0 if none, or 0–5,000 W with up to 2 decimal places.</small>
+                  <p class="input-error" id="other-watts-error" role="alert" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="surface-panel psu-component-panel psu-settings-panel" aria-labelledby="psu-input-heading">
+              <legend class="visually-hidden">Existing power supply and safety margin</legend>
+              <div class="utility-panel-heading">
+                <span class="mono-label">PLANNING</span>
+                <span class="utility-index">POWER / 08</span>
+              </div>
+              <h2 id="psu-input-heading">PSU planning</h2>
+              <div class="psu-field-grid">
+                <div class="form-field">
+                  <label for="existing-psu">Existing PSU rated wattage <small>(W, optional)</small></label>
+                  <input class="form-control" id="existing-psu" type="number" min="1" max="10000" step="1" inputmode="numeric" aria-describedby="existing-psu-hint">
+                  <small class="psu-input-hint" id="existing-psu-hint">If supplied: whole number, 1–10,000 W.</small>
+                  <p class="input-error" id="existing-psu-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field">
+                  <label for="safety-margin">Safety margin preset</label>
+                  <select class="form-control" id="safety-margin" required aria-describedby="safety-margin-hint">
+                    <option value="20">20%</option>
+                    <option value="25" selected>25%</option>
+                    <option value="30">30%</option>
+                    <option value="40">40%</option>
+                    <option value="custom">Custom</option>
+                  </select>
+                  <small class="psu-input-hint" id="safety-margin-hint">A planning allowance, not a guarantee against transients or electrical behavior.</small>
+                  <p class="input-error" id="safety-margin-error" role="alert" hidden></p>
+                </div>
+                <div class="form-field psu-full-field">
+                  <label for="custom-margin">Custom safety margin <small>(%, 0–100)</small></label>
+                  <input class="form-control" id="custom-margin" type="number" min="0" max="100" step="any" inputmode="decimal" disabled aria-describedby="custom-margin-hint">
+                  <small class="psu-input-hint" id="custom-margin-hint">Enabled only when Custom is selected; 0–100%, up to 2 decimal places.</small>
+                  <p class="input-error" id="custom-margin-error" role="alert" hidden></p>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="psu-estimator-actions">
+            <button class="button button-primary" type="submit">Calculate Estimate</button>
+            <button class="button button-quiet" id="reset-psu-estimator" type="button">Reset</button>
+            <p class="psu-estimator-status" id="psu-estimator-status" role="status" aria-live="polite">Enter component power estimates to calculate a planning target.</p>
+          </div>
+        </form>
+
+        <section class="psu-results-section" aria-labelledby="psu-results-title">
+          <header class="psu-section-heading">
+            <p class="mono-label">POWER BREAKDOWN</p>
+            <h2 id="psu-results-title">Auditable inputs and totals.</h2>
+          </header>
+          <div class="psu-breakdown-grid">
+            <div><span>CPU</span><output id="result-cpu">—</output></div>
+            <div><span>GPU(s)</span><output id="result-gpu">—</output></div>
+            <div><span>Motherboard</span><output id="result-motherboard">—</output></div>
+            <div><span>RAM</span><output id="result-ram">—</output></div>
+            <div><span>SSD(s)</span><output id="result-ssd">—</output></div>
+            <div><span>HDD(s)</span><output id="result-hdd">—</output></div>
+            <div><span>Case fans</span><output id="result-fans">—</output></div>
+            <div><span>Liquid-cooling pumps</span><output id="result-pumps">—</output></div>
+            <div><span>Other components</span><output id="result-other">—</output></div>
+          </div>
+          <div class="psu-total-grid">
+            <div><span>Estimated system power</span><output id="result-total">—</output></div>
+            <div><span>Selected safety margin</span><output id="result-margin">—</output></div>
+            <div><span>Margin-adjusted target</span><output id="result-target">—</output></div>
+            <div><span>Minimum whole-watt target</span><output id="result-rounded-target">—</output></div>
+            <div><span>Suggested standard PSU tier</span><output id="result-tier">—</output></div>
+          </div>
+          <p class="psu-result-caveat">The target is a planning estimate based on entered values. It is not a guarantee of safe or suitable operation. Component peak power, transient behavior, PSU output ratings, connectors, rails, quality, and system configuration can change requirements.</p>
+        </section>
+
+        <section class="psu-existing-section" aria-labelledby="psu-existing-title">
+          <header class="psu-section-heading">
+            <p class="mono-label">EXISTING PSU</p>
+            <h2 id="psu-existing-title">Compare its label rating with the estimate.</h2>
+          </header>
+          <div class="psu-existing-result" id="existing-psu-result" data-state="not-evaluated">
+            <span class="psu-existing-state" id="existing-psu-state">Not evaluated</span>
+            <p id="existing-psu-message">Enter an existing PSU wattage to compare it after calculation.</p>
+            <div class="psu-existing-differences">
+              <div><span>PSU rating − system estimate</span><output id="existing-psu-diff-estimate">—</output></div>
+              <div><span>PSU rating − margin target</span><output id="existing-psu-diff-target">—</output></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="psu-education-section" aria-labelledby="psu-education-title">
+          <header class="psu-section-heading">
+            <p class="mono-label">POWER SUPPLY NOTES</p>
+            <h2 id="psu-education-title">Verify more than the wattage label.</h2>
+          </header>
+          <div class="psu-education-grid">
+            <article class="surface-panel psu-education-card">
+              <h3>Rated wattage and draw</h3>
+              <p>A PSU's rated output capacity is not the same as the power the system continuously draws from the wall. Actual consumption varies with workload and operating conditions.</p>
+            </article>
+            <article class="surface-panel psu-education-card">
+              <h3>Efficiency certification</h3>
+              <p>80 PLUS certification describes efficiency under specified test conditions; it does not establish overall electrical quality, reliability, or suitability.</p>
+            </article>
+            <article class="surface-panel psu-education-card">
+              <h3>GPU transients</h3>
+              <p>Some GPUs can produce short-duration power spikes that a steady-state sum does not capture. The selected margin cannot guarantee handling of transients.</p>
+            </article>
+            <article class="surface-panel psu-education-card">
+              <h3>Connectors and cables</h3>
+              <p>Check required GPU power connectors, CPU EPS connectors, motherboard connectors, cable capacity, and the PSU manufacturer's cabling specifications.</p>
+            </article>
+            <article class="surface-panel psu-education-card">
+              <h3>Physical compatibility</h3>
+              <p>Confirm PSU dimensions, mounting, airflow, and cable reach against the case and the rest of the build.</p>
+            </article>
+            <article class="surface-panel psu-education-card">
+              <h3>Manufacturer guidance</h3>
+              <p>Consult the GPU manufacturer's PSU recommendation and the PSU manufacturer's specifications for the exact models. This tool does not generate model-specific recommendations.</p>
+            </article>
+          </div>
+        </section>
+
+        <aside class="calculation-note psu-estimator-caveats" aria-labelledby="psu-caveats-title">
+          <p class="mono-label" id="psu-caveats-title">HOW TO READ THIS ESTIMATE</p>
+          <p>All component wattages are user-entered estimates, not measured values or product lookups. Ensure the inputs do not double-count power; workload, CPU/GPU boost behavior, storage spin-up, peripherals, and other components can affect actual demand.</p>
+          <p>The safety margin is a planning allowance only. Confirm continuous output ratings, rail limits, build quality, transient behavior, connectors, GPU maker guidance, and case fit before choosing or reusing a PSU.</p>
+        </aside>
+        <p class="tool-footnote">All calculations run locally in this browser. Entered component specifications are not transmitted or saved by this tool.</p>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner section-shell">
+        <a class="brand footer-brand" href="../index.html#top" aria-label="NEON Core home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span>NEON<span class="brand-divider">//</span>CORE</span></a>
+        <p>Digital tools for the real world.</p>
+        <nav class="footer-nav" aria-label="Footer navigation"><a href="../contact.html">Contact</a><a href="../privacy.html">Privacy Policy</a></nav>
+        <a class="back-to-top" href="#main-content">Back to top <span aria-hidden="true">&#8593;</span></a>
+        <span class="footer-copyright">&#169; 2026 NEON//CORE</span>
+      </div>
+    </footer>
+  </body>
+</html>

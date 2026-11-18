@@ -1,5 +1,5 @@
 const preferenceStorageKey = "neon-core.preferences.v1";
-const validCategories = ["all", "gaming", "technology", "everyday", "favorites"];
+const validCategories = ["all", "gaming", "technology", "development", "everyday", "favorites"];
 
 function normalizePreferences(value = {}) {
   return {
